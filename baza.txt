@@ -1,0 +1,5 @@
+CREATE TABLE Dom ("domID" int, naziv text, adresa text,spratnost int, kapacitet int, zauzeto int, PRIMARY KEY(naziv, "domID"));
+CREATE TABLE Direktor (id int, ime text, prezime text, user_name text, password text,"domID" int, PRIMARY KEY(id));
+CREATE TABLE Zaposleni (jmbg int, ime text, prezime text, radno_mesto text, radni_staz int, datum_rodjenja date, user_name text, password text, "domID" int, PRIMARY KEY((ime,prezime), jmbg));
+CREATE TABLE Korisnik ("reg_broj" int, jmbg text, ime text, prezime text, datum_rodjenja date, pol text, starosna_odredba text, licna_primanja text, br_zdravstvene_knjizice text, zdravstveno_stanje text, pokretljivost text, lekovi text, podnosilac_zahteva text, "domID" int,"izvestaj_id" int, PRIMARY KEY("reg_broj"));
+CREATE TABLE Izvestaj("izvestaj_id" int, datum date, aktivnost text, "reg_broj" int, PRIMARY KEY("izvestaj_id",datum));
