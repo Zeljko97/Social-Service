@@ -1,0 +1,1 @@
+C:\GITHUB\Social-Service\SocialService\SocialService\bin\Debug\SocialService.exe.config
