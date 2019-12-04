@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using SocialServiceDataLayer;
+using SocialServiceDataLayer.QueryEntities;
 
 namespace SocialService
 {
@@ -15,6 +17,12 @@ namespace SocialService
         public Form1()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+            dataGridView1.DataSource = DataProvider.GetIzvestaj(1);
         }
     }
 }

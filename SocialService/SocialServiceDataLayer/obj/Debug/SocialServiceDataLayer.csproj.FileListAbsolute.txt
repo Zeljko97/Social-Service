@@ -1,0 +1,17 @@
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\SocialServiceDataLayer.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\SocialServiceDataLayer.pdb
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Cassandra.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\LZ4.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Microsoft.Extensions.Logging.Abstractions.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Microsoft.Extensions.Logging.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Newtonsoft.Json.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\System.Threading.Tasks.Dataflow.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Cassandra.xml
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Microsoft.Extensions.DependencyInjection.Abstractions.xml
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Microsoft.Extensions.Logging.xml
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Microsoft.Extensions.Logging.Abstractions.xml
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Newtonsoft.Json.xml
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\System.Threading.Tasks.Dataflow.xml
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.dll
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.pdb
