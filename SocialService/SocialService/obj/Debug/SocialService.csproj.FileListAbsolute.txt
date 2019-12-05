@@ -22,3 +22,6 @@ C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.Pro
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.csproj.GenerateResource.Cache
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.exe
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.pdb
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.LogInDirektor.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormaZaposleni.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormNoviZaposleni.resources

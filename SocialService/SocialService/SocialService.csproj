@@ -85,10 +85,37 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormaZaposleni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormaZaposleni.Designer.cs">
+      <DependentUpon>FormaZaposleni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormNoviZaposleni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormNoviZaposleni.Designer.cs">
+      <DependentUpon>FormNoviZaposleni.cs</DependentUpon>
+    </Compile>
+    <Compile Include="LogInDirektor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInDirektor.Designer.cs">
+      <DependentUpon>LogInDirektor.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormaZaposleni.resx">
+      <DependentUpon>FormaZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormNoviZaposleni.resx">
+      <DependentUpon>FormNoviZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInDirektor.resx">
+      <DependentUpon>LogInDirektor.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
