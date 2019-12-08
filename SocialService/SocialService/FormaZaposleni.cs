@@ -38,7 +38,7 @@ namespace SocialService
             string ime = (string)dataGridView1[1, indexRow].Value;
             string prezime = (string)dataGridView1[2, indexRow].Value;
 
-           
+
 
             DataProvider.DeleteZaposlen(ime, prezime);
 

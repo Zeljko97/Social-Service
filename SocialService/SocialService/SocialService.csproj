@@ -91,6 +91,12 @@
     <Compile Include="FormaZaposleni.Designer.cs">
       <DependentUpon>FormaZaposleni.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKorisnici.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKorisnici.Designer.cs">
+      <DependentUpon>FormKorisnici.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNoviZaposleni.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -103,6 +109,12 @@
     <Compile Include="LogInDirektor.Designer.cs">
       <DependentUpon>LogInDirektor.cs</DependentUpon>
     </Compile>
+    <Compile Include="LogInSocijalniRadnik.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="LogInSocijalniRadnik.Designer.cs">
+      <DependentUpon>LogInSocijalniRadnik.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Form1.resx">
@@ -111,11 +123,17 @@
     <EmbeddedResource Include="FormaZaposleni.resx">
       <DependentUpon>FormaZaposleni.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FormKorisnici.resx">
+      <DependentUpon>FormKorisnici.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="FormNoviZaposleni.resx">
       <DependentUpon>FormNoviZaposleni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInDirektor.resx">
       <DependentUpon>LogInDirektor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LogInSocijalniRadnik.resx">
+      <DependentUpon>LogInSocijalniRadnik.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

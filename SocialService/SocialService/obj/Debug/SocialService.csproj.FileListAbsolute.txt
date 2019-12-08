@@ -25,3 +25,5 @@ C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.pdb
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.LogInDirektor.resources
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormaZaposleni.resources
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormNoviZaposleni.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.LogInSocijalniRadnik.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormKorisnici.resources
