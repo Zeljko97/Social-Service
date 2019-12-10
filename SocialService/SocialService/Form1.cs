@@ -21,11 +21,7 @@ namespace SocialService
 
         private void button1_Click(object sender, EventArgs e)
         {
-         
-    
-          //  DataProvider.AddZaposlen("15165484212312","Ivana", "Stefanovic", 4,"1989-04-15","sestra", 2);
-            //dataGridView1.DataSource = DataProvider.GetDomovi();
-            DataProvider.DeleteKorisnik("Marina", "Maric");
+           
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -41,6 +37,12 @@ namespace SocialService
             lg.Show();
 
             
+        }
+
+        private void btnLekar_Click(object sender, EventArgs e)
+        {
+            LogInLekar ll = new LogInLekar();
+            ll.Show();
         }
     }
 }

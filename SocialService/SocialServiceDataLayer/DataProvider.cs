@@ -105,12 +105,12 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return null;
 
-           // Row zaposlenData = session.Execute("select * from \"zaposleni\" where \"ime\"='" + ime +"' and \"prezime\" ='" + prezime +"'").FirstOrDefault();
+          //  Row zaposlenData = session.Execute("select * from \"zaposleni\" where \"ime\"='" + ime +"' and \"prezime\" ='" + prezime +"'").FirstOrDefault();
 
-           // zaposleni = DataProvider.GetZaposleni();
+            zaposleni = DataProvider.GetZaposleni();
 
             Zaposleni zaposlen = new Zaposleni();
-
+            
             for(int i = 0;i<zaposleni.Count;i++)
             {
                 if (zaposleni[i].ime == ime && zaposleni[i].prezime == prezime)
@@ -185,7 +185,7 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return;
 
-            RowSet row = session.Execute("update \"zaposleni\" set user_name = '" + ussername + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz = " + radni_staz+ "");
+            RowSet row = session.Execute("update \"zaposleni\" set user_name = '" + ussername + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz= " + radni_staz);
         }
 
 
@@ -254,14 +254,14 @@ namespace SocialServiceDataLayer
         }
 
 
-        public static void AddIzvestaj(int id,DateTime date,string aktivnost, int reg_broj)
+        public static void AddIzvestaj(int id,string date,string aktivnost, int reg_broj)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            RowSet izvestajData = session.Execute("insert into \"izvestaj\" (\"izvestaj_id\", datum,aktivnost, \"reg_broj\") values (" + id +", " + date + ", '" + aktivnost + "', " + reg_broj +")");
+            RowSet izvestajData = session.Execute("insert into \"izvestaj\" (\"izvestaj_id\", datum,aktivnost, \"reg_broj\") values (" + id +", '" + date + "', '" + aktivnost + "', " + reg_broj +")");
         }
 
         public static void DeleteIzvestaj(int id)
@@ -284,7 +284,7 @@ namespace SocialServiceDataLayer
                 return;
 
             RowSet row = session.Execute("update \"izvestaj\" set aktivnost = '" + aktivnost + "' where izvestaj_id= " + izvestaj_id + "");
-
+           
         }
 
 
@@ -489,6 +489,29 @@ namespace SocialServiceDataLayer
 
             }
             return korisnici;
+
+        }
+
+        public static Korisnik GetKorisnik(string ime, string prezime)
+        {
+            ISession session = SessionManager.GetSession();
+            List<Korisnik> korisnici = new List<Korisnik>();
+
+            if (session == null)
+                return null;
+
+            korisnici = DataProvider.getKorisnici();
+
+            Korisnik korisnik = new Korisnik();
+
+            for (int i = 0; i <korisnici.Count; i++)
+            {
+                if (korisnici[i].ime == ime && korisnici[i].prezime == prezime)
+                    korisnik = korisnici[i];
+            }
+
+            return korisnik;
+
 
         }
 

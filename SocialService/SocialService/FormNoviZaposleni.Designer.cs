@@ -138,7 +138,7 @@
             // 
             // dtpDatumRodjenja
             // 
-            this.dtpDatumRodjenja.CustomFormat = "yyyy-mm-dd";
+            this.dtpDatumRodjenja.CustomFormat = "yyyy-MM-dd";
             this.dtpDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumRodjenja.Location = new System.Drawing.Point(115, 145);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";

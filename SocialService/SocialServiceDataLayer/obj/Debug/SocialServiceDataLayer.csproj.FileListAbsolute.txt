@@ -15,3 +15,4 @@ C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Newtonso
 C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\System.Threading.Tasks.Dataflow.xml
 C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.dll
 C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.pdb
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.csprojResolveAssemblyReference.cache

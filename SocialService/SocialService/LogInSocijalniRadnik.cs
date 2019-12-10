@@ -49,8 +49,8 @@ namespace SocialService
 
         private void btnSingIn_Click(object sender, EventArgs e)
         {
-            //SingInSocijalniRadnik f = new SingInSocijalniRadnik();
-           // f.Show();
+            SingInSocijalniRadnik f = new SingInSocijalniRadnik();
+            f.Show();
         }
     }
 }
