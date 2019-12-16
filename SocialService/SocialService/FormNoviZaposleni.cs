@@ -45,9 +45,9 @@ namespace SocialService
             int domID = dom[0].domID;
 
             int radniStaz = Convert.ToInt32(cbRadniStaz.SelectedItem.ToString());
-            string datum = dtpDatumRodjenja.Value.ToString("yyyy-mm-dd");
+            string datum = dtpDatumRodjenja.Value.ToString("yyyy-MM-dd");
           
-            DataProvider.AddZaposlen(txtJMBG.Text, txtIme.Text, txtPrezime.Text, radniStaz,datum, txtRadnoMesto.Text, domID);
+            DataProvider.AddZaposlen(txtJMBG.Text, txtIme.Text, txtPrezime.Text, radniStaz,datum, cbRadnoMesto.Text, domID);
 
             FormaZaposleni fz = new FormaZaposleni();
             fz.Show();

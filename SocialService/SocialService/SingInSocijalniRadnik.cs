@@ -23,14 +23,23 @@ namespace SocialService
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string ime = txtIme.Text;
-            string prezime = txtPrezime.Text;
+            //string ime = txtIme.Text;
+            //string prezime = txtPrezime.Text;
 
-           socRadnik = DataProvider.GetZaposlen(ime, prezime);
+        //   socRadnik = DataProvider.GetZaposlen(ime, prezime);
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = dataGridView1[1, indexRow].Value.ToString();
+            string prezime = dataGridView1[2,indexRow].Value.ToString();
+
+            socRadnik = DataProvider.GetZaposlen(ime, prezime);
 
             if (socRadnik == null)
                 MessageBox.Show("Pogresno uneto ime!");
-            else if(socRadnik.user_name != null && socRadnik.password != null)
+            else if(socRadnik.radno_mesto != "Socijalni radnik")
+            {
+                MessageBox.Show("Nije moguc pristup.");
+            }
+            else if(socRadnik.user_name != "" && socRadnik.password != "")
             {
                 MessageBox.Show("Korisnicko ime vec postoji!");
             }
@@ -50,14 +59,39 @@ namespace SocialService
 
         private void btnSingIn_Click(object sender, EventArgs e)
         {
-            string ime = txtIme.Text;
-            string prezime = txtPrezime.Text;
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = dataGridView1[1, indexRow].Value.ToString();
+            string prezime = dataGridView1[2, indexRow].Value.ToString();
+
+            
             string userName = txtUsername.Text;
             string password = txtPassword.Text;
 
             int radni_staz = socRadnik.radni_staz;
             DataProvider.UpdateZaposlen(ime, prezime,radni_staz, userName, password);
             MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.");
+        }
+
+        private void SingInSocijalniRadnik_Load(object sender, EventArgs e)
+        {
+            List<Zaposleni> zaposleni = new List<Zaposleni>();
+
+            zaposleni = DataProvider.GetZaposleni();
+
+            List<Zaposleni> socRadnici = new List<Zaposleni>();
+            for(int i = 0;i<zaposleni.Count; i++)
+            {
+                if (zaposleni[i].radno_mesto == "Socijalni radnik")
+                    socRadnici.Add(zaposleni[i]);
+            }
+
+            dataGridView1.DataSource = socRadnici;
+           
+            dataGridView1.Columns["user_name"].Visible = false;
+            dataGridView1.Columns["password"].Visible = false;
+            dataGridView1.Columns["domID"].Visible = false;
+            dataGridView1.Columns["datum_rodjenja"].Visible = false;
+
         }
     }
 }

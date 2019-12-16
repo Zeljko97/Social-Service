@@ -21,7 +21,7 @@ namespace SocialService
 
         private void button1_Click(object sender, EventArgs e)
         {
-           
+
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -36,13 +36,26 @@ namespace SocialService
             LogInSocijalniRadnik lg = new LogInSocijalniRadnik();
             lg.Show();
 
-            
+
         }
 
         private void btnLekar_Click(object sender, EventArgs e)
         {
             LogInLekar ll = new LogInLekar();
             ll.Show();
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            List<Zaposleni> z = new List<Zaposleni>();
+
+            z = DataProvider.pribaviZaposlenog("Kosta", "Perovic");
+            dataGridView1.DataSource = z;
         }
     }
 }

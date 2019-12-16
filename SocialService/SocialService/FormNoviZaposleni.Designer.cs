@@ -38,11 +38,11 @@
             this.label6 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
             this.txtJMBG = new System.Windows.Forms.TextBox();
-            this.txtRadnoMesto = new System.Windows.Forms.TextBox();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.cbRadniStaz = new System.Windows.Forms.ComboBox();
             this.cbDom = new System.Windows.Forms.ComboBox();
             this.btnDodaj = new System.Windows.Forms.Button();
+            this.cbRadnoMesto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
             // 
             // label1
@@ -129,13 +129,6 @@
             this.txtJMBG.Size = new System.Drawing.Size(100, 20);
             this.txtJMBG.TabIndex = 9;
             // 
-            // txtRadnoMesto
-            // 
-            this.txtRadnoMesto.Location = new System.Drawing.Point(440, 61);
-            this.txtRadnoMesto.Name = "txtRadnoMesto";
-            this.txtRadnoMesto.Size = new System.Drawing.Size(100, 20);
-            this.txtRadnoMesto.TabIndex = 10;
-            // 
             // dtpDatumRodjenja
             // 
             this.dtpDatumRodjenja.CustomFormat = "yyyy-MM-dd";
@@ -171,16 +164,29 @@
             this.btnDodaj.UseVisualStyleBackColor = true;
             this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
+            // cbRadnoMesto
+            // 
+            this.cbRadnoMesto.FormattingEnabled = true;
+            this.cbRadnoMesto.Items.AddRange(new object[] {
+            "Socijalni radnik",
+            "Domar",
+            "Lekar",
+            "Medicinska sestra"});
+            this.cbRadnoMesto.Location = new System.Drawing.Point(440, 58);
+            this.cbRadnoMesto.Name = "cbRadnoMesto";
+            this.cbRadnoMesto.Size = new System.Drawing.Size(121, 21);
+            this.cbRadnoMesto.TabIndex = 15;
+            // 
             // FormNoviZaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(689, 360);
+            this.Controls.Add(this.cbRadnoMesto);
             this.Controls.Add(this.btnDodaj);
             this.Controls.Add(this.cbDom);
             this.Controls.Add(this.cbRadniStaz);
             this.Controls.Add(this.dtpDatumRodjenja);
-            this.Controls.Add(this.txtRadnoMesto);
             this.Controls.Add(this.txtJMBG);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
@@ -211,10 +217,10 @@
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtJMBG;
-        private System.Windows.Forms.TextBox txtRadnoMesto;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.ComboBox cbRadniStaz;
         private System.Windows.Forms.ComboBox cbDom;
         private System.Windows.Forms.Button btnDodaj;
+        private System.Windows.Forms.ComboBox cbRadnoMesto;
     }
 }
