@@ -38,9 +38,11 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(12, 27);
+            this.button2.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.button2.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(12, 16);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(140, 23);
+            this.button2.Size = new System.Drawing.Size(137, 29);
             this.button2.TabIndex = 2;
             this.button2.Text = "Direktor";
             this.button2.UseVisualStyleBackColor = true;
@@ -48,9 +50,11 @@
             // 
             // btnSocijalniRadnik
             // 
-            this.btnSocijalniRadnik.Location = new System.Drawing.Point(12, 66);
+            this.btnSocijalniRadnik.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSocijalniRadnik.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSocijalniRadnik.Location = new System.Drawing.Point(12, 51);
             this.btnSocijalniRadnik.Name = "btnSocijalniRadnik";
-            this.btnSocijalniRadnik.Size = new System.Drawing.Size(140, 23);
+            this.btnSocijalniRadnik.Size = new System.Drawing.Size(137, 29);
             this.btnSocijalniRadnik.TabIndex = 4;
             this.btnSocijalniRadnik.Text = "Socijalni radnik";
             this.btnSocijalniRadnik.UseVisualStyleBackColor = true;
@@ -58,9 +62,11 @@
             // 
             // btnLekar
             // 
-            this.btnLekar.Location = new System.Drawing.Point(12, 107);
+            this.btnLekar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnLekar.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLekar.Location = new System.Drawing.Point(12, 86);
             this.btnLekar.Name = "btnLekar";
-            this.btnLekar.Size = new System.Drawing.Size(140, 23);
+            this.btnLekar.Size = new System.Drawing.Size(137, 29);
             this.btnLekar.TabIndex = 5;
             this.btnLekar.Text = "Lekar";
             this.btnLekar.UseVisualStyleBackColor = true;
@@ -69,18 +75,18 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(141, 152);
+            this.dataGridView1.Location = new System.Drawing.Point(155, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+            this.dataGridView1.Size = new System.Drawing.Size(333, 240);
             this.dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(12, 167);
+            this.button1.Location = new System.Drawing.Point(267, 258);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
+            this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 7;
-            this.button1.Text = "button1";
+            this.button1.Text = "Za testiranje";
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click_1);
             // 
@@ -88,14 +94,16 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(382, 324);
+            this.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.ClientSize = new System.Drawing.Size(549, 324);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.btnLekar);
             this.Controls.Add(this.btnSocijalniRadnik);
             this.Controls.Add(this.button2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "Social-Service";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);

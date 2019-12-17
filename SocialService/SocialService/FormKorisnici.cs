@@ -23,9 +23,7 @@ namespace SocialService
         {
             List<Korisnik> lista = new List<Korisnik>();
             lista = DataProvider.getKorisnici();
-
             dataGridView1.DataSource = lista;
-
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -34,11 +32,14 @@ namespace SocialService
             string ime = (string)dataGridView1[2, indexRow].Value;
             string prezime = (string)dataGridView1[3, indexRow].Value;
 
-
-
             DataProvider.DeleteKorisnik(ime, prezime);
 
             dataGridView1.DataSource = DataProvider.getKorisnici();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

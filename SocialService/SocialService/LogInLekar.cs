@@ -21,20 +21,36 @@ namespace SocialService
 
         private void btnOK_Click(object sender, EventArgs e)
         {
-            string userName = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            bool a = DataProvider.CheckUserNameZaposleni(userName, password);
-
-
-           FormaLekar fl = new FormaLekar();
-            if (a == true)
+            if (txtUsername.Text == string.Empty)
             {
-                fl.Show();
-                this.Close();
+                errorProvider1.SetError(txtUsername, "Korisnicko ime mora biti ukucano!");
+            }
+            else if (txtPassword.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtPassword, "Lozinka mora biti ukucana!");
             }
             else
-                MessageBox.Show("Pogresan user_name, ili lozinka!");
+            {
+                string userName = txtUsername.Text;
+                string password = txtPassword.Text;
+
+                bool a = DataProvider.CheckUserNameZaposleni(userName, password);
+
+
+                FormaLekar fl = new FormaLekar();
+                if (a == true)
+                {
+                    fl.Show();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Pogresan user_name, ili lozinka!");
+            }
+        }
+
+        private void LogInLekar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -26,20 +26,31 @@ namespace SocialService
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            bool a = DataProvider.CheckUserNameZaposleni(username, password);
-
-
-            FormKorisnici fz = new FormKorisnici();
-            if (a == true)
+            if (txtUsername.Text == string.Empty)
             {
-                fz.Show();
-                this.Close();
+                errorProvider1.SetError(txtUsername, "Korisnicko ime mora biti ukucano!");
+            }
+            else if (txtPassword.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtPassword, "Lozinka mora biti ukucana!");
             }
             else
-                MessageBox.Show("Pogresan user_name, ili lozinka!");
+            {
+                string username = txtUsername.Text;
+                string password = txtPassword.Text;
+
+                bool a = DataProvider.CheckUserNameZaposleni(username, password);
+
+
+                FormKorisnici fz = new FormKorisnici();
+                if (a == true)
+                {
+                    fz.Show();
+                    this.Close();
+                }
+                else
+                    MessageBox.Show("Pogresan user_name, ili lozinka!");
+            }
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -51,6 +62,11 @@ namespace SocialService
         {
             SingInSocijalniRadnik f = new SingInSocijalniRadnik();
             f.Show();
+        }
+
+        private void LogInSocijalniRadnik_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

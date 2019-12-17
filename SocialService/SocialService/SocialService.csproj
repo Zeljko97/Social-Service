@@ -97,6 +97,12 @@
     <Compile Include="FormaZaposleni.Designer.cs">
       <DependentUpon>FormaZaposleni.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormDodajKorisnika.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormDodajKorisnika.Designer.cs">
+      <DependentUpon>FormDodajKorisnika.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormKorisnici.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormaZaposleni.resx">
       <DependentUpon>FormaZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormDodajKorisnika.resx">
+      <DependentUpon>FormDodajKorisnika.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormKorisnici.resx">
       <DependentUpon>FormKorisnici.cs</DependentUpon>

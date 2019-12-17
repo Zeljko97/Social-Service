@@ -1,0 +1,50 @@
+   
+;;;;;;;;;;;;;;;;;;;;;;;;       TEST podaci za IZVESTAJ          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+insert into izvestaj ("izvestaj_id",datum,"aktivnost","reg_broj") VALUES(1,'1996-01-02','nesto', 21); 
+
+
+;;;;;;;;;;;;;;;;      TEST podaci za DIREKTOR-a      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (1,'Zeljko','Mitrovic','zeljko', 'mitar',1);
+insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (2,'Marko','Miloradovic','marezen', '123123',1);
+insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (3,'Ana','Ivanovic','anica', 'kiss69',2);
+
+;;;;;;;;;;;;;;;      TEST podaci za Zaposlene         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('14512546651231', 'Stefan', 'Jankovic','lekar', 4,'1980-08-14', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('14512546651231', 'Mrle', 'Mrkonjic','lekar', 4,'1980-08-14','mrle','mrle', 2);
+DataProvider.addZaposlen("15165484212312","Jovana", "Stefanovic", 4,"1979-04-15", 2);
+          
+
+;;;;;;;;;;;;;;;;;;;;;;;;     TEST podaci za DOM       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (1,'Dom za stare', 'Vojvode Misica 2',4,100,60);
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (2,'Cegarska Dolina', 'Donji Matejevac ',4,120,0);
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (3,'Gerontoloski centar Nis', 'Deveti Maj 4',3,80,5);
+
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;;       TEST podaci za Korisnike ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", "izvestaj_id") values (1,'5431231354354','Mirko','Stojkovic','1945-10-09','M','stara osoba','penzija','126545','','pokretan','','Marko Stojkovic',1,20);
+
+
+
+
+update "zaposleni" set "user_name" = 'kole', "password" = 'kole' where "ime" = 'Kosta' and "prezime" = 'Perovic' and radni_staz =3;
+
+
+Potrebno a nije moguce bas:
+
+select * from "dom" where "domID" = 1; 
+
+
+
+
+
+
+select * from "dom" where "domID" = 1; 
+
+
+
+insert into "izvestaj" ("izvestaj_id", aktivnost, datum, reg_broj) values(4,'nestoooo','2019-12-10',1);

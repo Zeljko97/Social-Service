@@ -21,7 +21,13 @@ namespace SocialService
 
         private void button1_Click(object sender, EventArgs e)
         {
-            dataGridView1.DataSource = DataProvider.GetZaposleni();
+            //da bi imao informaciju domID.
+            string username = LogInDirektor.UserName;
+            string password = LogInDirektor.PassWord;
+            dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(username, password));
+            dataGridView1.Columns["user_name"].Visible = false;
+            dataGridView1.Columns["password"].Visible = false;
+            dataGridView1.Columns["domID"].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -43,6 +49,20 @@ namespace SocialService
             DataProvider.DeleteZaposlen(ime, prezime);
 
             dataGridView1.DataSource = DataProvider.GetZaposleni();
+        }
+
+        private void FormaZaposleni_Load(object sender, EventArgs e)
+        {
+            string username = LogInDirektor.UserName;
+            string password = LogInDirektor.PassWord;
+            Dom dom = new Dom();
+            int d = DataProvider.DirektorIdDoma(username, password);
+            dom = DataProvider.GetDomID(d);
+            // ovo da proveri username i password direktora i da na osnovu njega vrati DOM u kom je on direktor
+            // da bi se u lblDom stampale informacije o domu.
+            lblDom.Text = dom.naziv;
+            lblAdresa.Text = dom.adresa;
+            lblKapacitet.Text = "Kapacitet doma: " + dom.kapacitet;
         }
     }
 }

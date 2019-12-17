@@ -14,6 +14,9 @@ namespace SocialService
 {
     public partial class LogInDirektor : Form
     {
+
+        public static string UserName = "";
+        public static string PassWord = "";
         public LogInDirektor()
         {
             InitializeComponent();
@@ -21,21 +24,34 @@ namespace SocialService
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
-            string username = txtUsername.Text;
-            string password = txtPassword.Text;
-
-            bool a = DataProvider.CheckUserNameDirektor(username, password);
-           
-
-            FormaZaposleni fz = new FormaZaposleni();
-            if (a == true)
+            if (txtUsername.Text==string.Empty)
             {
-                fz.Show();
-                this.Close();
+                errorProvider1.SetError(txtUsername,"Username mora biti ukucan!");
+            }
+            else if(txtPassword.Text == string.Empty)
+            {
+                errorProvider1.SetError(txtPassword, "password mora biti ukucan!");
             }
             else
-                MessageBox.Show("Pogresan user_name, ili lozinka!");
-            
+            { 
+
+                string username = txtUsername.Text;
+                string password = txtPassword.Text;
+
+                bool a = DataProvider.CheckUserNameDirektor(username, password);
+           
+
+                FormaZaposleni fz = new FormaZaposleni();
+                if (a == true)
+                {
+                    UserName = username;
+                    PassWord = password;
+                    fz.Show();
+                    this.Close();
+                }
+                 else
+                    MessageBox.Show("Pogresan user_name, ili lozinka!");
+                }
         }
 
         private void button1_Click(object sender, EventArgs e)

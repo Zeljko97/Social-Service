@@ -53,5 +53,10 @@ namespace SocialService
             fz.Show();
             this.Close();
         }
+
+        private void txtPrezime_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
