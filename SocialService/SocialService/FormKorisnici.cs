@@ -39,6 +39,9 @@ namespace SocialService
 
         private void button1_Click(object sender, EventArgs e)
         {
+            FormDodajKorisnika fdk = new FormDodajKorisnika();
+            fdk.Show();
+
 
         }
     }

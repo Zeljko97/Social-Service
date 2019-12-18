@@ -58,5 +58,11 @@ namespace SocialService
         {
             this.Close();
         }
+
+        private void btnSingIn_Click(object sender, EventArgs e)
+        {
+            FormSingInDirektor fd = new FormSingInDirektor();
+            fd.Show();
+        }
     }
 }

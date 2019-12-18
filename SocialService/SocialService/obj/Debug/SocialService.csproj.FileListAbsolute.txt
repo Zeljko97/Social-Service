@@ -65,3 +65,7 @@ E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.csp
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.exe
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.pdb
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormDodajKorisnika.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormDodajKorisnika.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormAdmin.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormNoviDirektor.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormSingInDirektor.resources

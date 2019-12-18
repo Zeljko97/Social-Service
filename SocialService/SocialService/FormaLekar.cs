@@ -59,7 +59,7 @@ namespace SocialService
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             int indexRow = dataGridView1.CurrentRow.Index;
-            int izvestaj_id = (int)dataGridView1[14, indexRow].Value;
+           // int izvestaj_id = (int)dataGridView1[14, indexRow].Value;
 
             int reg_broj = (int)dataGridView1[0, indexRow].Value;
 
@@ -71,8 +71,8 @@ namespace SocialService
             DateTime datum = DateTime.Today;       
             string d1 = datum.ToString("yyyy-MM-dd");
           
-            ///treba se resiti za id
-            DataProvider.AddIzvestaj(6, d1, aktivnost, reg_broj);
+            
+            DataProvider.AddIzvestaj(d1, aktivnost, reg_broj);
             MessageBox.Show("Uneli ste novi izvestaj.");
      
             

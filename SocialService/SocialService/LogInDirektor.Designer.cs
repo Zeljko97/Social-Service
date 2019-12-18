@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
+            this.btnSingIn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -100,12 +101,23 @@
             // 
             this.errorProvider1.ContainerControl = this;
             // 
+            // btnSingIn
+            // 
+            this.btnSingIn.Location = new System.Drawing.Point(152, 149);
+            this.btnSingIn.Name = "btnSingIn";
+            this.btnSingIn.Size = new System.Drawing.Size(75, 23);
+            this.btnSingIn.TabIndex = 6;
+            this.btnSingIn.Text = "SING IN";
+            this.btnSingIn.UseVisualStyleBackColor = true;
+            this.btnSingIn.Click += new System.EventHandler(this.btnSingIn_Click);
+            // 
             // LogInDirektor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-            this.ClientSize = new System.Drawing.Size(524, 167);
+            this.ClientSize = new System.Drawing.Size(524, 184);
+            this.Controls.Add(this.btnSingIn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -129,5 +141,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.ErrorProvider errorProvider1;
+        private System.Windows.Forms.Button btnSingIn;
     }
 }

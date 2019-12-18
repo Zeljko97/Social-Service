@@ -52,13 +52,28 @@ namespace SocialService
 
         private void button1_Click_1(object sender, EventArgs e)
         {
-            List<Direktor> z = new List<Direktor>();
+           /* List<Direktor> z = new List<Direktor>();
 
             z = DataProvider.GetDirektori();
             Direktor d = new Direktor();
             d = DataProvider.GetDirektor("zeljko","mitar");
             MessageBox.Show(d.ime+ " " + d.prezime);
-            dataGridView1.DataSource = z;
+            dataGridView1.DataSource = z;*/
+
+
+            List<Direktor> lista = new List<Direktor>();
+            Direktor direktor = new Direktor();
+            direktor = DataProvider.GetDirektor("Zarko", "Petrovic");
+
+            lista.Add(direktor);
+
+            dataGridView1.DataSource = lista;
+        }
+
+        private void btnAdmin_Click(object sender, EventArgs e)
+        {
+            FormAdmin fa = new FormAdmin();
+            fa.Show();
         }
     }
 }

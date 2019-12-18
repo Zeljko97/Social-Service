@@ -40,17 +40,21 @@ namespace SocialService
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             string domStr = cbDom.SelectedItem.ToString();
-            List<Dom> dom = new List<Dom>();
+           // List<Dom> dom = new List<Dom>();
+            //dom = DataProvider.GetDom(domStr);
+
+            Dom dom = new Dom();
             dom = DataProvider.GetDom(domStr);
-            int domID = dom[0].domID;
+            
+            int domID = dom.domID;
 
             int radniStaz = Convert.ToInt32(cbRadniStaz.SelectedItem.ToString());
             string datum = dtpDatumRodjenja.Value.ToString("yyyy-MM-dd");
           
             DataProvider.AddZaposlen(txtJMBG.Text, txtIme.Text, txtPrezime.Text, radniStaz,datum, cbRadnoMesto.Text, domID);
 
-            FormaZaposleni fz = new FormaZaposleni();
-            fz.Show();
+            //FormaZaposleni fz = new FormaZaposleni();
+            //fz.Show();
             this.Close();
         }
 

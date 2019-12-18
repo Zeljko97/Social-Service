@@ -8,7 +8,7 @@ namespace SocialServiceDataLayer.QueryEntities
 {
     public class Izvestaj
     {
-        public int izvestaj_id { get; set; }
+       
         public DateTime datum { get; set; }
         public string aktivnost { get; set; }
         public int reg_broj { get; set; }
