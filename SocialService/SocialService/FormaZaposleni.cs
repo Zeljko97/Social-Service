@@ -24,7 +24,21 @@ namespace SocialService
             //da bi imao informaciju domID.
             string username = LogInDirektor.UserName;
             string password = LogInDirektor.PassWord;
-            dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(username, password));
+
+            List<Direktor> lista = new List<Direktor>();
+            lista = DataProvider.GetDirektori();
+
+            Direktor direktor = new Direktor();
+
+            for (int i = 0; i < lista.Count;i++)
+            {
+                if(lista[i].user_name == username && lista[i].password == password)
+                {
+                    direktor = lista[i];
+                }
+            }
+
+                dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
             dataGridView1.Columns["user_name"].Visible = false;
             dataGridView1.Columns["password"].Visible = false;
             dataGridView1.Columns["domID"].Visible = false;

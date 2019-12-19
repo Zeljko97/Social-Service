@@ -63,7 +63,7 @@ namespace SocialService
 
             List<Direktor> lista = new List<Direktor>();
             Direktor direktor = new Direktor();
-            direktor = DataProvider.GetDirektor("Zarko", "Petrovic");
+            direktor = DataProvider.GetDirektor("Radovan", "Nikolic");
 
             lista.Add(direktor);
 

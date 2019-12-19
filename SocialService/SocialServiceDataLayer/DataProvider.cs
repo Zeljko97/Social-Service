@@ -608,14 +608,15 @@ namespace SocialServiceDataLayer
             return korisnici;
         }
 
-        public static void DeleteKorisnik(string ime, string prezime,int regBroj)
+        public static void DeleteKorisnik(/*string ime, string prezime,*/int regBroj)
         {
             ISession session = SessionManager.GetSession();
             
             if (session == null)
                 return;
             //promenjeno u bazi na regBroj?
-            RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = '" + regBroj.ToString() + "'");
+          //  RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = '" + regBroj.ToString() + "'");
+            RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = " + regBroj); //+ " and ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
         #endregion
 
@@ -725,12 +726,12 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return null;
 
-           // var direktoriData = session.Execute("select * from \"direktor\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
-            var direktoriData = session.Execute("select * from \"direktor\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
+            //var direktoriData = session.Execute("select * from \"direktor\" where username = '" + username + "'");
+            Row direktorData = session.Execute("select * from \"direktor\" where ime = '" + ime + "' and prezime = '" + prezime + "'").FirstOrDefault();
 
-            foreach (var direktorData in direktoriData)
+            if(direktorData != null)
             {
-              //  int id = Convert.ToInt32(direktorData["id"]); // ucitamo id
+                int id = Convert.ToInt32(direktorData["id"]); // ucitamo id
                 int domID = Convert.ToInt32(direktorData["domID"]); // id doma
 
              //   Direktor direktor = new Direktor();
@@ -738,7 +739,7 @@ namespace SocialServiceDataLayer
                 //ucitavanje:
                 direktor.ime = direktorData["ime"] != null ? direktorData["ime"].ToString() : string.Empty;
                 direktor.prezime = direktorData["prezime"] != null ? direktorData["prezime"].ToString() : string.Empty;
-             //   direktor.id = id != 0 ? id : 0;
+                direktor.id = id != 0 ? id : 0;
                 direktor.user_name = direktorData["user_name"] != null ? direktorData["user_name"].ToString() : string.Empty;
                 direktor.password = direktorData["password"] != null ? direktorData["password"].ToString() : string.Empty;
                 direktor.domID = domID != 0 ? domID : 0;
@@ -772,7 +773,8 @@ namespace SocialServiceDataLayer
             RowSet direktorData = session.Execute("update \"direktor\" set user_name = '" + user_name + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
 
-        public static int DirektorIdDoma(string ime, string prezime)
+       public static int DirektorIdDoma(string ime, string prezime)
+        
         {
             Direktor d = new Direktor();
             d = GetDirektor(ime, prezime);

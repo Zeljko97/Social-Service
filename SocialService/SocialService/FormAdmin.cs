@@ -67,7 +67,7 @@ namespace SocialService
             int kapacitet = Convert.ToInt32(cbKapacitet.SelectedItem.ToString());
             int zauzeto = Convert.ToInt32(cbZauzeto.SelectedItem.ToString());
 
-            DataProvider.AddDom(2,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,zauzeto);
+            DataProvider.AddDom(3,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,zauzeto);
            
             List<Dom> domovi = new List<Dom>();
 
