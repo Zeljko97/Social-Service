@@ -50,14 +50,20 @@ namespace SocialService
             string starosnaOdredba = cbStarosnaOdredba.SelectedItem.ToString();
             string brojKnjizice = txtZdrastvenaKnjizica.Text;
             string licna_primanja = cbLicnaPrimanja.SelectedItem.ToString();
-            string podnosilac_zahteva = txtPodnosilacZahteva.ToString();
+            string podnosilac_zahteva = txtPodnosilacZahteva.Text;
 
             string nazivDoma = cbDomovi.SelectedItem.ToString();
             Dom  dom = DataProvider.GetDom(nazivDoma);
+            int id = Properties.Settings.Default.ID_korisnik;
 
-            DataProvider.AddKorisnik(4, jmbg, ime, prezime, datum, pol, starosnaOdredba, licna_primanja, brojKnjizice, "", pokretljivost, lekovi, podnosilac_zahteva, dom.domID);
+            DataProvider.AddKorisnik(id, jmbg, ime, prezime, datum, pol, starosnaOdredba, licna_primanja, brojKnjizice, "", pokretljivost, lekovi, podnosilac_zahteva, dom.domID);
 
-            MessageBox.Show("Uspesno dodat korisnik");
+            
+            MessageBox.Show("Uspesno dodat korisnik","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            //kada uspesno ubaci korisnika,uveca se id :
+            Properties.Settings.Default.ID_korisnik += 1;
+            Properties.Settings.Default.Save();
+            this.Close();
         }
 
         private void FormDodajKorisnika_Load(object sender, EventArgs e)

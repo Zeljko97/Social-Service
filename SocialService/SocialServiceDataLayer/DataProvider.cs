@@ -557,10 +557,8 @@ namespace SocialServiceDataLayer
             string lekovi, string podnosilac,int domID)
         {
             ISession session = SessionManager.GetSession();
-            
             if(session == null)
                 return;
-
             RowSet row =session.Execute("insert into \"korisnik\" (reg_broj,jmbg,ime,prezime,datum_rodjenja,pol,starosna_odredba,licna_primanja,br_zdravstvene_knjizice,zdravstveno_stanje,pokretljivost,lekovi,podnosilac_zahteva,\"domID\") values (" + reg_broj + ", '" + jmbg + "', '" + ime + "', '" + prezime + "', '" + datum + "', '" + pol + "', '" + starosna_odredba + "', '" + licna_primanja + "', '" + br_zdravstvene + "', '" + zdravstveno_stanje + "', '" + pokretljivost + "', '" + lekovi + "', '" + podnosilac + "', " + domID + ")");
         }
 
@@ -583,7 +581,6 @@ namespace SocialServiceDataLayer
                 //int licna_primanja = Convert.ToInt32(korisnikData["licna_primanja"]);
                 int domID = Convert.ToInt32(korisnikData["domID"]);
                 int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
-
                 string datum1 = korisnikData["datum_rodjenja"].ToString();
                 DateTime datum = DateTime.Parse(datum1);
 
@@ -611,15 +608,14 @@ namespace SocialServiceDataLayer
             return korisnici;
         }
 
-        public static void DeleteKorisnik(string ime, string prezime)
+        public static void DeleteKorisnik(string ime, string prezime,int regBroj)
         {
             ISession session = SessionManager.GetSession();
             
-
             if (session == null)
                 return;
-
-            RowSet row = session.Execute("delete from \"korisnik\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
+            //promenjeno u bazi na regBroj?
+            RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = '" + regBroj.ToString() + "'");
         }
         #endregion
 

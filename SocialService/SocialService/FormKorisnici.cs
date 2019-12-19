@@ -31,8 +31,9 @@ namespace SocialService
             int indexRow = dataGridView1.CurrentRow.Index;
             string ime = (string)dataGridView1[2, indexRow].Value;
             string prezime = (string)dataGridView1[3, indexRow].Value;
+            int regBroj = Convert.ToInt32(dataGridView1[0,indexRow].Value); // mora po reg broju!
 
-            DataProvider.DeleteKorisnik(ime, prezime);
+            DataProvider.DeleteKorisnik(ime, prezime,regBroj);
 
             dataGridView1.DataSource = DataProvider.getKorisnici();
         }

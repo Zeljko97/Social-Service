@@ -32,6 +32,9 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.cbDomovi = new System.Windows.Forms.ComboBox();
+            this.btnDodaj = new System.Windows.Forms.Button();
             this.txtPodnosilacZahteva = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
             this.cbLicnaPrimanja = new System.Windows.Forms.ComboBox();
@@ -57,9 +60,6 @@
             this.label7 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.btnDodaj = new System.Windows.Forms.Button();
-            this.cbDomovi = new System.Windows.Forms.ComboBox();
-            this.label16 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
@@ -132,6 +132,34 @@
             this.panel1.Size = new System.Drawing.Size(837, 382);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label16.Location = new System.Drawing.Point(400, 150);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(36, 13);
+            this.label16.TabIndex = 28;
+            this.label16.Text = "Dom:";
+            // 
+            // cbDomovi
+            // 
+            this.cbDomovi.FormattingEnabled = true;
+            this.cbDomovi.Location = new System.Drawing.Point(537, 150);
+            this.cbDomovi.Name = "cbDomovi";
+            this.cbDomovi.Size = new System.Drawing.Size(204, 21);
+            this.cbDomovi.TabIndex = 27;
+            // 
+            // btnDodaj
+            // 
+            this.btnDodaj.Location = new System.Drawing.Point(516, 334);
+            this.btnDodaj.Name = "btnDodaj";
+            this.btnDodaj.Size = new System.Drawing.Size(163, 34);
+            this.btnDodaj.TabIndex = 4;
+            this.btnDodaj.Text = "DODAJ";
+            this.btnDodaj.UseVisualStyleBackColor = true;
+            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
             // 
             // txtPodnosilacZahteva
             // 
@@ -223,6 +251,7 @@
             this.txtJMBG.BackColor = System.Drawing.SystemColors.Menu;
             this.txtJMBG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtJMBG.Location = new System.Drawing.Point(96, 68);
+            this.txtJMBG.MaxLength = 13;
             this.txtJMBG.Name = "txtJMBG";
             this.txtJMBG.Size = new System.Drawing.Size(180, 21);
             this.txtJMBG.TabIndex = 18;
@@ -389,34 +418,6 @@
             this.label5.TabIndex = 4;
             this.label5.Text = "Prezime";
             // 
-            // btnDodaj
-            // 
-            this.btnDodaj.Location = new System.Drawing.Point(516, 344);
-            this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(163, 34);
-            this.btnDodaj.TabIndex = 4;
-            this.btnDodaj.Text = "DODAJ";
-            this.btnDodaj.UseVisualStyleBackColor = true;
-            this.btnDodaj.Click += new System.EventHandler(this.btnDodaj_Click);
-            // 
-            // cbDomovi
-            // 
-            this.cbDomovi.FormattingEnabled = true;
-            this.cbDomovi.Location = new System.Drawing.Point(537, 150);
-            this.cbDomovi.Name = "cbDomovi";
-            this.cbDomovi.Size = new System.Drawing.Size(204, 21);
-            this.cbDomovi.TabIndex = 27;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(400, 150);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 13);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Dom:";
-            // 
             // FormDodajKorisnika
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -429,7 +430,8 @@
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormDodajKorisnika";
-            this.Text = "FormDodajKorisnika";
+            this.ShowIcon = false;
+            this.Text = "Dodavanje novog korisnika doma";
             this.Load += new System.EventHandler(this.FormDodajKorisnika_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
