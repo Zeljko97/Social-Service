@@ -28,12 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDodajKorisnika));
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.cbDomovi = new System.Windows.Forms.ComboBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.txtPodnosilacZahteva = new System.Windows.Forms.TextBox();
             this.label15 = new System.Windows.Forms.Label();
@@ -100,8 +99,6 @@
             // panel1
             // 
             this.panel1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
-            this.panel1.Controls.Add(this.label16);
-            this.panel1.Controls.Add(this.cbDomovi);
             this.panel1.Controls.Add(this.btnDodaj);
             this.panel1.Controls.Add(this.txtPodnosilacZahteva);
             this.panel1.Controls.Add(this.label15);
@@ -132,24 +129,6 @@
             this.panel1.Size = new System.Drawing.Size(837, 382);
             this.panel1.TabIndex = 3;
             this.panel1.Paint += new System.Windows.Forms.PaintEventHandler(this.panel1_Paint);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label16.Location = new System.Drawing.Point(400, 150);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(36, 13);
-            this.label16.TabIndex = 28;
-            this.label16.Text = "Dom:";
-            // 
-            // cbDomovi
-            // 
-            this.cbDomovi.FormattingEnabled = true;
-            this.cbDomovi.Location = new System.Drawing.Point(537, 150);
-            this.cbDomovi.Name = "cbDomovi";
-            this.cbDomovi.Size = new System.Drawing.Size(204, 21);
-            this.cbDomovi.TabIndex = 27;
             // 
             // btnDodaj
             // 
@@ -196,9 +175,11 @@
             this.txtZdrastvenaKnjizica.BackColor = System.Drawing.SystemColors.Menu;
             this.txtZdrastvenaKnjizica.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtZdrastvenaKnjizica.Location = new System.Drawing.Point(537, 13);
+            this.txtZdrastvenaKnjizica.MaxLength = 15;
             this.txtZdrastvenaKnjizica.Name = "txtZdrastvenaKnjizica";
             this.txtZdrastvenaKnjizica.Size = new System.Drawing.Size(216, 21);
             this.txtZdrastvenaKnjizica.TabIndex = 23;
+            this.txtZdrastvenaKnjizica.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtZdrastvenaKnjizica_KeyPress);
             // 
             // cbStarosnaOdredba
             // 
@@ -245,6 +226,7 @@
             this.txtLekovi.Name = "txtLekovi";
             this.txtLekovi.Size = new System.Drawing.Size(180, 86);
             this.txtLekovi.TabIndex = 19;
+            this.txtLekovi.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLekovi_KeyPress);
             // 
             // txtJMBG
             // 
@@ -255,6 +237,7 @@
             this.txtJMBG.Name = "txtJMBG";
             this.txtJMBG.Size = new System.Drawing.Size(180, 21);
             this.txtJMBG.TabIndex = 18;
+            this.txtJMBG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJMBG_KeyPress);
             // 
             // txtPrezime
             // 
@@ -264,6 +247,7 @@
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(180, 21);
             this.txtPrezime.TabIndex = 17;
+            this.txtPrezime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezime_KeyPress);
             // 
             // txtIme
             // 
@@ -273,6 +257,7 @@
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(180, 21);
             this.txtIme.TabIndex = 16;
+            this.txtIme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIme_KeyPress);
             // 
             // label14
             // 
@@ -429,8 +414,8 @@
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "FormDodajKorisnika";
-            this.ShowIcon = false;
             this.Text = "Dodavanje novog korisnika doma";
             this.Load += new System.EventHandler(this.FormDodajKorisnika_Load);
             this.panel1.ResumeLayout(false);
@@ -474,7 +459,5 @@
         private System.Windows.Forms.TextBox txtZdrastvenaKnjizica;
         private System.Windows.Forms.ComboBox cbStarosnaOdredba;
         private System.Windows.Forms.Button btnDodaj;
-        private System.Windows.Forms.Label label16;
-        private System.Windows.Forms.ComboBox cbDomovi;
     }
 }

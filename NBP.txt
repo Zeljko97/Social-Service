@@ -7,7 +7,7 @@ insert into izvestaj ("izvestaj_id",datum,"aktivnost","reg_broj") VALUES(1,'1996
 ;;;;;;;;;;;;;;;;      TEST podaci za DIREKTOR-a      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (1,'Zeljko','Mitrovic','zeljko', 'mitar',1);
-insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (2,'Marko','Miloradovic','marezen', '123123',1);
+insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (2,'Marko','Miloradovic','marezen', '123123',3);
 insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (3,'Ana','Ivanovic','anica', 'kiss69',2);
 
 ;;;;;;;;;;;;;;;      TEST podaci za Zaposlene         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -34,16 +34,8 @@ insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "
 update "zaposleni" set "user_name" = 'kole', "password" = 'kole' where "ime" = 'Kosta' and "prezime" = 'Perovic' and radni_staz =3;
 
 
-Potrebno a nije moguce bas:
+Dodavanje novog zaposlenog treba da se doda samo direktno u dom direktora za koga smo se ulogovali,ne treba da ima izbor koji dom,koji dom moze da ima kada se dodaje u Admin rezimu
 
-select * from "dom" where "domID" = 1; 
-
-
-
-
-
-
-select * from "dom" where "domID" = 1; 
 
 
 

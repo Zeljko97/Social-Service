@@ -14,6 +14,10 @@ namespace SocialService
 {
     public partial class LogInSocijalniRadnik : Form
     {
+        //pomocnoL
+        public static string UserName = "";
+        public static string PassWord = "";
+
         public LogInSocijalniRadnik()
         {
             InitializeComponent();
@@ -36,11 +40,9 @@ namespace SocialService
             }
             else
             {
-                string username = txtUsername.Text;
-                string password = txtPassword.Text;
-
-                bool a = DataProvider.CheckUserNameZaposleni(username, password);
-
+                UserName = txtUsername.Text;
+                PassWord = txtPassword.Text;
+                bool a = DataProvider.CheckUserNameZaposleni(UserName, PassWord);
 
                 FormKorisnici fz = new FormKorisnici();
                 if (a == true)
@@ -49,7 +51,7 @@ namespace SocialService
                     this.Close();
                 }
                 else
-                    MessageBox.Show("Pogresan user_name, ili lozinka!");
+                    MessageBox.Show("Pogresno korisnicko ime ili lozinka!","error",MessageBoxButtons.OK,MessageBoxIcon.Error);
             }
         }
 

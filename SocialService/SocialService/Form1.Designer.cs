@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button2 = new System.Windows.Forms.Button();
             this.btnSocijalniRadnik = new System.Windows.Forms.Button();
             this.btnLekar = new System.Windows.Forms.Button();
@@ -78,12 +79,12 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(155, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(333, 240);
+            this.dataGridView1.Size = new System.Drawing.Size(365, 240);
             this.dataGridView1.TabIndex = 6;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(267, 258);
+            this.button1.Location = new System.Drawing.Point(273, 268);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(100, 23);
             this.button1.TabIndex = 7;
@@ -114,6 +115,7 @@
             this.Controls.Add(this.btnSocijalniRadnik);
             this.Controls.Add(this.button2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
             this.Text = "Social-Service";
             this.Load += new System.EventHandler(this.Form1_Load);

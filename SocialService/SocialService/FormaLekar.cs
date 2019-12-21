@@ -83,5 +83,19 @@ namespace SocialService
         {
 
         }
+        #region validation
+        private void txtIme_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        private void txtPrezime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        #endregion
+
+
     }
 }

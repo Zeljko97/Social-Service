@@ -14,6 +14,9 @@ namespace SocialService
 {
     public partial class FormaZaposleni : Form
     {
+        public static int id_doma;
+        //pomocno:
+        public static Zaposleni prenos;
         public FormaZaposleni()
         {
             InitializeComponent();
@@ -38,7 +41,7 @@ namespace SocialService
                 }
             }
 
-                dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
+            dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
             dataGridView1.Columns["user_name"].Visible = false;
             dataGridView1.Columns["password"].Visible = false;
             dataGridView1.Columns["domID"].Visible = false;
@@ -52,6 +55,7 @@ namespace SocialService
             this.Close();
         }
 
+        //brisanje radi
         private void btnObrisi_Click(object sender, EventArgs e)
         {
             int indexRow = dataGridView1.CurrentRow.Index;
@@ -85,13 +89,26 @@ namespace SocialService
                     direktor = lista[i];
             }
 
-            int d = DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime);
-            dom = DataProvider.GetDomID(d);
+            id_doma = DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime);
+            dom = DataProvider.GetDomID(id_doma);
             // ovo da proveri username i password direktora i da na osnovu njega vrati DOM u kom je on direktor
             // da bi se u lblDom stampale informacije o domu.
             lblDom.Text = dom.naziv;
+            Text = "  Direktor " + direktor.ime + " " + direktor.prezime;
             lblAdresa.Text = dom.adresa;
             lblKapacitet.Text = "Kapacitet doma: " + dom.kapacitet;
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            //ucita info
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[1, indexRow].Value;
+            string prezime = (string)dataGridView1[2, indexRow].Value;
+            prenos = DataProvider.GetZaposlen(ime, prezime);
+
+            FormUpdateZaposleni fnz = new FormUpdateZaposleni();
+            fnz.Show();
         }
     }
 }

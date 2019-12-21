@@ -39,68 +39,77 @@
             // 
             // txtIme
             // 
-            this.txtIme.Location = new System.Drawing.Point(114, 42);
+            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIme.Location = new System.Drawing.Point(79, 9);
             this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(100, 20);
+            this.txtIme.Size = new System.Drawing.Size(156, 22);
             this.txtIme.TabIndex = 0;
             // 
             // txtPrezime
             // 
-            this.txtPrezime.Location = new System.Drawing.Point(114, 82);
+            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrezime.Location = new System.Drawing.Point(79, 49);
             this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(100, 20);
+            this.txtPrezime.Size = new System.Drawing.Size(156, 22);
             this.txtPrezime.TabIndex = 1;
             // 
             // cbDom
             // 
+            this.cbDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDom.FormattingEnabled = true;
-            this.cbDom.Location = new System.Drawing.Point(114, 129);
+            this.cbDom.Location = new System.Drawing.Point(79, 96);
             this.cbDom.Name = "cbDom";
-            this.cbDom.Size = new System.Drawing.Size(121, 21);
+            this.cbDom.Size = new System.Drawing.Size(156, 24);
             this.cbDom.TabIndex = 2;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(25, 45);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(19, 15);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(27, 13);
+            this.label1.Size = new System.Drawing.Size(37, 16);
             this.label1.TabIndex = 3;
             this.label1.Text = "Ime:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(25, 82);
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(9, 52);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(44, 13);
+            this.label2.Size = new System.Drawing.Size(64, 16);
             this.label2.TabIndex = 4;
             this.label2.Text = "Prezime";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(25, 137);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(19, 99);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(32, 13);
+            this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 5;
             this.label3.Text = "Dom:";
             // 
             // btnUnesi
             // 
-            this.btnUnesi.Location = new System.Drawing.Point(114, 187);
+            this.btnUnesi.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.btnUnesi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnUnesi.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnUnesi.Location = new System.Drawing.Point(79, 126);
             this.btnUnesi.Name = "btnUnesi";
-            this.btnUnesi.Size = new System.Drawing.Size(121, 23);
+            this.btnUnesi.Size = new System.Drawing.Size(156, 43);
             this.btnUnesi.TabIndex = 6;
             this.btnUnesi.Text = "Unesi";
-            this.btnUnesi.UseVisualStyleBackColor = true;
+            this.btnUnesi.UseVisualStyleBackColor = false;
             this.btnUnesi.Click += new System.EventHandler(this.btnUnesi_Click);
             // 
             // FormNoviDirektor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 261);
+            this.ClientSize = new System.Drawing.Size(262, 174);
             this.Controls.Add(this.btnUnesi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
@@ -108,8 +117,10 @@
             this.Controls.Add(this.cbDom);
             this.Controls.Add(this.txtPrezime);
             this.Controls.Add(this.txtIme);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "FormNoviDirektor";
-            this.Text = "FormNoviDirektor";
+            this.ShowIcon = false;
+            this.Text = "Dodavanje novog direktora";
             this.Load += new System.EventHandler(this.FormNoviDirektor_Load);
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -72,3 +72,4 @@ C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.For
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormAdmin.resources
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormNoviDirektor.resources
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormSingInDirektor.resources
+E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormUpdateZaposleni.resources

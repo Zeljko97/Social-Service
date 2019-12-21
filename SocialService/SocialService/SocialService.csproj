@@ -133,6 +133,12 @@
     <Compile Include="FormSingInDirektor.Designer.cs">
       <DependentUpon>FormSingInDirektor.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormUpdateZaposleni.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormUpdateZaposleni.Designer.cs">
+      <DependentUpon>FormUpdateZaposleni.cs</DependentUpon>
+    </Compile>
     <Compile Include="LogInDirektor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -185,6 +191,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormSingInDirektor.resx">
       <DependentUpon>FormSingInDirektor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormUpdateZaposleni.resx">
+      <DependentUpon>FormUpdateZaposleni.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LogInDirektor.resx">
       <DependentUpon>LogInDirektor.cs</DependentUpon>

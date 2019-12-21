@@ -36,11 +36,9 @@
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.cbRadniStaz = new System.Windows.Forms.ComboBox();
-            this.cbDom = new System.Windows.Forms.ComboBox();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.cbRadnoMesto = new System.Windows.Forms.ComboBox();
             this.SuspendLayout();
@@ -68,19 +66,21 @@
             // txtIme
             // 
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(85, 31);
+            this.txtIme.Location = new System.Drawing.Point(104, 31);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(182, 22);
             this.txtIme.TabIndex = 2;
+            this.txtIme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIme_KeyPress);
             // 
             // txtPrezime
             // 
             this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.Location = new System.Drawing.Point(85, 64);
+            this.txtPrezime.Location = new System.Drawing.Point(104, 64);
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(182, 22);
             this.txtPrezime.TabIndex = 3;
             this.txtPrezime.TextChanged += new System.EventHandler(this.txtPrezime_TextChanged);
+            this.txtPrezime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezime_KeyPress);
             // 
             // label3
             // 
@@ -116,29 +116,21 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(12, 227);
+            this.label6.Location = new System.Drawing.Point(12, 219);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 15);
             this.label6.TabIndex = 7;
             this.label6.Text = "Radno mesto:";
             // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(35, 273);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(41, 15);
-            this.label7.TabIndex = 8;
-            this.label7.Text = "Dom:";
-            // 
             // txtJMBG
             // 
             this.txtJMBG.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtJMBG.Location = new System.Drawing.Point(85, 103);
+            this.txtJMBG.Location = new System.Drawing.Point(104, 103);
+            this.txtJMBG.MaxLength = 13;
             this.txtJMBG.Name = "txtJMBG";
             this.txtJMBG.Size = new System.Drawing.Size(182, 22);
             this.txtJMBG.TabIndex = 9;
+            this.txtJMBG.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtJMBG_KeyPress);
             // 
             // dtpDatumRodjenja
             // 
@@ -146,30 +138,23 @@
             this.dtpDatumRodjenja.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
             this.dtpDatumRodjenja.Location = new System.Drawing.Point(134, 139);
             this.dtpDatumRodjenja.Name = "dtpDatumRodjenja";
-            this.dtpDatumRodjenja.Size = new System.Drawing.Size(133, 20);
+            this.dtpDatumRodjenja.Size = new System.Drawing.Size(152, 20);
             this.dtpDatumRodjenja.TabIndex = 11;
             // 
             // cbRadniStaz
             // 
             this.cbRadniStaz.FormattingEnabled = true;
-            this.cbRadniStaz.Location = new System.Drawing.Point(126, 183);
+            this.cbRadniStaz.Location = new System.Drawing.Point(192, 178);
             this.cbRadniStaz.Name = "cbRadniStaz";
-            this.cbRadniStaz.Size = new System.Drawing.Size(50, 21);
+            this.cbRadniStaz.Size = new System.Drawing.Size(75, 21);
             this.cbRadniStaz.TabIndex = 12;
-            // 
-            // cbDom
-            // 
-            this.cbDom.FormattingEnabled = true;
-            this.cbDom.Location = new System.Drawing.Point(126, 267);
-            this.cbDom.Name = "cbDom";
-            this.cbDom.Size = new System.Drawing.Size(141, 21);
-            this.cbDom.TabIndex = 13;
             // 
             // btnDodaj
             // 
-            this.btnDodaj.Location = new System.Drawing.Point(67, 312);
+            this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodaj.Location = new System.Drawing.Point(85, 246);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(170, 36);
+            this.btnDodaj.Size = new System.Drawing.Size(182, 36);
             this.btnDodaj.TabIndex = 14;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.UseVisualStyleBackColor = true;
@@ -183,9 +168,9 @@
             "Domar",
             "Lekar",
             "Medicinska sestra"});
-            this.cbRadnoMesto.Location = new System.Drawing.Point(126, 227);
+            this.cbRadnoMesto.Location = new System.Drawing.Point(134, 219);
             this.cbRadnoMesto.Name = "cbRadnoMesto";
-            this.cbRadnoMesto.Size = new System.Drawing.Size(141, 21);
+            this.cbRadnoMesto.Size = new System.Drawing.Size(152, 21);
             this.cbRadnoMesto.TabIndex = 15;
             // 
             // FormNoviZaposleni
@@ -193,14 +178,12 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Lavender;
-            this.ClientSize = new System.Drawing.Size(310, 360);
+            this.ClientSize = new System.Drawing.Size(329, 292);
             this.Controls.Add(this.cbRadnoMesto);
             this.Controls.Add(this.btnDodaj);
-            this.Controls.Add(this.cbDom);
             this.Controls.Add(this.cbRadniStaz);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtJMBG);
-            this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
@@ -230,11 +213,9 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.ComboBox cbRadniStaz;
-        private System.Windows.Forms.ComboBox cbDom;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.ComboBox cbRadnoMesto;
     }

@@ -187,6 +187,31 @@ namespace SocialServiceDataLayer
 
             RowSet row = session.Execute("update \"zaposleni\" set user_name = '" + ussername + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz= " + radni_staz);
         }
+        //za promenu svih informacija,ako hoces da imamo:
+        /*public static void UpdateZaposlen(string ime, string prezime,string jmbg,string datum_rodjenja, int radni_staz, string radno_mesto)
+        {
+            ISession session = SessionManager.GetSession();
+            Zaposleni zaposlen = new Zaposleni();
+
+            if (session == null)
+                return;
+
+            RowSet row = session.Execute("update \"zaposleni\" set ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + "', datum_rodjenja = '" + datum_rodjenja + "', radni_staz = '" + radni_staz + "', radno_mesto = '" + radno_mesto + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz= " + radni_staz);
+        }*/
+
+            //dodato
+        public static int ZaposleniIdDoma(string ime, string prezime)
+
+        {
+            Zaposleni z = new Zaposleni();
+            z = GetZaposlen(ime, prezime);
+            if (z != null)
+            {
+                return z.domID;
+            }
+            else
+                return 0;
+        }
         #endregion
 
         #region Izvestaji
@@ -378,7 +403,6 @@ namespace SocialServiceDataLayer
             return dom;
         }
 
-
         public static void AddDom(int domID, string naziv, string adresa, int spratnost, int kapacitet, int zauzeto)
         {
             ISession session = SessionManager.GetSession();
@@ -411,6 +435,19 @@ namespace SocialServiceDataLayer
 
             RowSet row = session.Execute("update \"dom\" set kapacitet = " + kapacitet + ", zauzeto= " +  zauzeto + ", spratnost = " + spratnost + ", adresa = '" + adresa + "' where naziv = '" + naziv + "' and \"domID\" = " + domID);
 
+        }
+
+        //za povecavanje zauzetosti:
+        public static void ZauzetoIncrement(string naziv, int domID,int zauzeto)
+        {
+            ISession session = SessionManager.GetSession();
+            Dom dom = new Dom();
+
+            if (session == null)
+                return;
+
+            RowSet row = session.Execute("update \"dom\" set  zauzeto = " + zauzeto + " where naziv = '" + naziv + "' and \"domID\" = " + domID);
+            //a ovo radi u bazi:       update dom set zauzeto=6 where naziv='Dom za stare' and "domID"=1; 
         }
 
 

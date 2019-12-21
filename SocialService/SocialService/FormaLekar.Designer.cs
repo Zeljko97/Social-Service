@@ -94,6 +94,7 @@
             this.txtIme.Size = new System.Drawing.Size(141, 21);
             this.txtIme.TabIndex = 4;
             this.txtIme.TextChanged += new System.EventHandler(this.txtImePrezime_TextChanged);
+            this.txtIme.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtIme_KeyPress);
             // 
             // txtPrezime
             // 
@@ -102,6 +103,7 @@
             this.txtPrezime.Name = "txtPrezime";
             this.txtPrezime.Size = new System.Drawing.Size(145, 21);
             this.txtPrezime.TabIndex = 5;
+            this.txtPrezime.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezime_KeyPress);
             // 
             // btnPronadji
             // 

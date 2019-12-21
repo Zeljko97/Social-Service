@@ -41,20 +41,22 @@
             // 
             // btnOK
             // 
-            this.btnOK.Location = new System.Drawing.Point(288, 240);
+            this.btnOK.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnOK.Location = new System.Drawing.Point(228, 12);
             this.btnOK.Name = "btnOK";
-            this.btnOK.Size = new System.Drawing.Size(75, 23);
+            this.btnOK.Size = new System.Drawing.Size(75, 44);
             this.btnOK.TabIndex = 4;
-            this.btnOK.Text = "OK";
+            this.btnOK.Text = "Select ";
             this.btnOK.UseVisualStyleBackColor = true;
             this.btnOK.Click += new System.EventHandler(this.btnOK_Click);
             // 
             // label4
             // 
             this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.Location = new System.Drawing.Point(12, 223);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(78, 13);
+            this.label4.Size = new System.Drawing.Size(113, 16);
             this.label4.TabIndex = 6;
             this.label4.Text = "Korisnicko ime:";
             this.label4.Visible = false;
@@ -62,9 +64,10 @@
             // label5
             // 
             this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.Location = new System.Drawing.Point(12, 277);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(50, 13);
+            this.label5.Size = new System.Drawing.Size(69, 16);
             this.label5.TabIndex = 7;
             this.label5.Text = "Lozinka: ";
             this.label5.Visible = false;
@@ -72,47 +75,57 @@
             // label6
             // 
             this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.Location = new System.Drawing.Point(12, 181);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(157, 13);
+            this.label6.Size = new System.Drawing.Size(229, 16);
             this.label6.TabIndex = 8;
             this.label6.Text = "Unesite korisnicko ime i lozinku:";
             this.label6.Visible = false;
             // 
             // txtUsername
             // 
-            this.txtUsername.Location = new System.Drawing.Point(118, 223);
+            this.txtUsername.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtUsername.Location = new System.Drawing.Point(141, 220);
             this.txtUsername.Name = "txtUsername";
-            this.txtUsername.Size = new System.Drawing.Size(100, 20);
+            this.txtUsername.Size = new System.Drawing.Size(116, 22);
             this.txtUsername.TabIndex = 9;
             this.txtUsername.Visible = false;
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(118, 270);
+            this.txtPassword.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPassword.Location = new System.Drawing.Point(141, 271);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
-            this.txtPassword.Size = new System.Drawing.Size(100, 20);
+            this.txtPassword.Size = new System.Drawing.Size(116, 22);
             this.txtPassword.TabIndex = 10;
             this.txtPassword.Visible = false;
             // 
             // btnSingIn
             // 
-            this.btnSingIn.Location = new System.Drawing.Point(118, 309);
+            this.btnSingIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSingIn.Location = new System.Drawing.Point(61, 309);
             this.btnSingIn.Name = "btnSingIn";
-            this.btnSingIn.Size = new System.Drawing.Size(75, 23);
+            this.btnSingIn.Size = new System.Drawing.Size(149, 31);
             this.btnSingIn.TabIndex = 11;
-            this.btnSingIn.Text = "SING IN";
+            this.btnSingIn.Text = "SIGN IN";
             this.btnSingIn.UseVisualStyleBackColor = true;
             this.btnSingIn.Visible = false;
             this.btnSingIn.Click += new System.EventHandler(this.btnSingIn_Click);
             // 
             // dataGridView1
             // 
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.ControlLightLight;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(288, 44);
+            this.dataGridView1.GridColor = System.Drawing.Color.PaleTurquoise;
+            this.dataGridView1.Location = new System.Drawing.Point(309, 12);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(440, 159);
+            this.dataGridView1.ReadOnly = true;
+            this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(440, 281);
             this.dataGridView1.TabIndex = 12;
             // 
             // SingInSocijalniRadnik
@@ -128,7 +141,9 @@
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.btnOK);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.Name = "SingInSocijalniRadnik";
+            this.ShowIcon = false;
             this.Text = "SingInSocijalniRadnik";
             this.Load += new System.EventHandler(this.SingInSocijalniRadnik_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

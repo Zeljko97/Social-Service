@@ -34,7 +34,6 @@ namespace SocialService
             }
             else
             { 
-
                 string username = txtUsername.Text;
                 string password = txtPassword.Text;
 
@@ -63,6 +62,11 @@ namespace SocialService
         {
             FormSingInDirektor fd = new FormSingInDirektor();
             fd.Show();
+        }
+
+        private void LogInDirektor_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
