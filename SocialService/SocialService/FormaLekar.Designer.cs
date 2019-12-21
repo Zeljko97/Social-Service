@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnSpisakPacijenata = new System.Windows.Forms.Button();
             this.btnIzvestaj = new System.Windows.Forms.Button();
@@ -39,7 +40,9 @@
             this.label3 = new System.Windows.Forms.Label();
             this.btnDodaj = new System.Windows.Forms.Button();
             this.txtIzvestaj = new System.Windows.Forms.TextBox();
+            this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -160,10 +163,15 @@
             this.txtIzvestaj.Visible = false;
             this.txtIzvestaj.TextChanged += new System.EventHandler(this.txtIzvestaj_TextChanged);
             // 
+            // errorProvider1
+            // 
+            this.errorProvider1.ContainerControl = this;
+            // 
             // FormaLekar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.ClientSize = new System.Drawing.Size(958, 404);
             this.Controls.Add(this.txtIzvestaj);
             this.Controls.Add(this.btnDodaj);
@@ -182,6 +190,7 @@
             this.Text = "FormaLekar";
             this.Load += new System.EventHandler(this.FormaLekar_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -200,5 +209,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnDodaj;
         private System.Windows.Forms.TextBox txtIzvestaj;
+        private System.Windows.Forms.ErrorProvider errorProvider1;
     }
 }

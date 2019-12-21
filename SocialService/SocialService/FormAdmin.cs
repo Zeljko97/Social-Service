@@ -14,9 +14,15 @@ namespace SocialService
 {
     public partial class FormAdmin : Form
     {
+
+        public static string ime = "";
+        public static string prezime = "";
+        public static Zaposleni prenos;
+
         public FormAdmin()
         {
             InitializeComponent();
+           
         }
 
         private void btnDodajNovogZaposlenog_Click(object sender, EventArgs e)
@@ -44,6 +50,15 @@ namespace SocialService
                 cbKapacitet.Items.Add(i);
                 cbZauzeto.Items.Add(i);
             }
+
+
+            List<Dom> listaDomova = new List<Dom>();
+            listaDomova = DataProvider.GetDomovi();
+
+            for(int i = 0;i<listaDomova.Count;i++)
+            {
+                cbDom.Items.Add(listaDomova[i].naziv);
+            }
         }
 
         private void btnDodajDom_Click(object sender, EventArgs e)
@@ -58,14 +73,38 @@ namespace SocialService
             cbKapacitet.Visible = true;
             cbSpratnost.Visible = true;
             cbZauzeto.Visible = true;
+            btnDodaj.Visible = true;
         }
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+            if(cbKapacitet.SelectedItem == null)
+            {
+                errorProvider1.SetError(cbKapacitet, "Neophodno uneti!");
+                return;
+            }
+            else if(cbSpratnost.SelectedItem == null)
+            {
+                errorProvider1.SetError(cbSpratnost, "Neophodno uneti!");
+                return;
+            }
+            else if(cbZauzeto.SelectedItem == null)
+            {
+                errorProvider1.SetError(cbZauzeto, "Neophodno uneti!");
+                return;
+            }
 
             int spratnost = Convert.ToInt32(cbSpratnost.SelectedItem.ToString());
             int kapacitet = Convert.ToInt32(cbKapacitet.SelectedItem.ToString());
             int zauzeto = Convert.ToInt32(cbZauzeto.SelectedItem.ToString());
+
+        if(txtNaziv.Text == "")
+            {
+                errorProvider1.SetError(txtNaziv, "Neophodno uneti naziv!");
+                return;
+            }
+
+            
 
             DataProvider.AddDom(3,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,zauzeto);
            
@@ -79,6 +118,91 @@ namespace SocialService
         {
             FormNoviDirektor fnd = new FormNoviDirektor();
             fnd.Show();
+        }
+
+        private void btnZaposleni_Click(object sender, EventArgs e)
+        {
+        
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+           /* int indexRow = dataGridView1.CurrentRow.Index;
+            ime = dataGridView1[1, indexRow].Value.ToString();
+            prezime = dataGridView1[2, indexRow].Value.ToString() ;
+
+            FormUpdateZaposleni fuz = new FormUpdateZaposleni();
+            fuz.Show();*/
+
+            //ucita info
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[1, indexRow].Value;
+            string prezime = (string)dataGridView1[2, indexRow].Value;
+            prenos = DataProvider.GetZaposlen(ime, prezime);
+
+            FormUpdateZaposleni fnz = new FormUpdateZaposleni();
+            fnz.Show();
+
+            
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[1, indexRow].Value;
+            string prezime = (string)dataGridView1[2, indexRow].Value;
+            DataProvider.DeleteZaposlen(ime, prezime);
+
+            //nije bas optimalno stalno ucitavati listu, ali s obzirom da lista ne moze biti velika u ovom sistemu
+            //nece biti problema
+            string nazivDoma = cbDom.SelectedItem.ToString();
+            Dom dom = new Dom();
+            dom = DataProvider.GetDom(nazivDoma);
+
+            List<Zaposleni> listaZaposleni = new List<Zaposleni>();
+            listaZaposleni = DataProvider.GetZaposleni();
+
+
+            List<Zaposleni> listaZaposleni1 = new List<Zaposleni>();
+            for (int i = 0; i < listaZaposleni.Count; i++)
+            {
+                if (listaZaposleni[i].domID == dom.domID)
+                    listaZaposleni1.Add(listaZaposleni[i]);
+            }
+
+            dataGridView1.DataSource = listaZaposleni1;
+
+            dataGridView1.Columns["user_name"].Visible = false;
+            dataGridView1.Columns["password"].Visible = false;
+        }
+
+        private void cbDom_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cbDom.SelectedItem == null)
+            {
+                errorProvider1.SetError(cbDom, "Neophodno je izabrati dom!");
+                return;
+            }
+            string nazivDoma = cbDom.SelectedItem.ToString();
+            Dom dom = new Dom();
+            dom = DataProvider.GetDom(nazivDoma);
+
+            List<Zaposleni> listaZaposleni = new List<Zaposleni>();
+            listaZaposleni = DataProvider.GetZaposleni();
+
+
+            List<Zaposleni> listaZaposleni1 = new List<Zaposleni>();
+            for (int i = 0; i < listaZaposleni.Count; i++)
+            {
+                if (listaZaposleni[i].domID == dom.domID)
+                    listaZaposleni1.Add(listaZaposleni[i]);
+            }
+
+            dataGridView1.DataSource = listaZaposleni1;
+
+            dataGridView1.Columns["user_name"].Visible = false;
+            dataGridView1.Columns["password"].Visible = false;
         }
     }
 }

@@ -25,8 +25,16 @@ namespace SocialService
             {
                 cbRadniStaz.Items.Add(i);
             }
+            
+            
             List<Dom> domovi = new List<Dom>();
             domovi = DataProvider.GetDomovi();
+
+            for(int i = 0;i<domovi.Count;i++)
+            {
+                cbDom.Items.Add(domovi[i].naziv);
+            }
+
         }
         private void btnDodaj_Click(object sender, EventArgs e)
         {
@@ -38,12 +46,19 @@ namespace SocialService
             {
                 int radniStaz = Convert.ToInt32(cbRadniStaz.SelectedItem.ToString());
                 string datum = dtpDatumRodjenja.Value.ToString("yyyy-MM-dd");
-                DataProvider.AddZaposlen(txtJMBG.Text, txtIme.Text, txtPrezime.Text, radniStaz, datum, cbRadnoMesto.Text, FormaZaposleni.id_doma);
+
+                Dom dom = new Dom();
+                dom = DataProvider.GetDom(cbDom.SelectedItem.ToString());
+
+                DataProvider.AddZaposlen(txtJMBG.Text, txtIme.Text, txtPrezime.Text, radniStaz, datum, cbRadnoMesto.Text, dom.domID);
 
                 this.Close(); // zatvori formu za dodavanje i opet otvori formu za Zaposlene
                 FormaZaposleni fz = new FormaZaposleni();
                 fz.Show();
             }
+
+            
+            
         }
 
         private void txtPrezime_TextChanged(object sender, EventArgs e)
@@ -94,5 +109,32 @@ namespace SocialService
             return true;
         }
         #endregion
+
+        private void checkBox1_CheckedChanged(object sender, EventArgs e)
+        {
+            label8.Visible = true;
+            label9.Visible = true;
+            label10.Visible = true;
+            label11.Visible = true;
+            label12.Visible = true;
+            label13.Visible = true;
+            label14.Visible = true;
+            lblIme.Visible = true;
+            lblPrezime.Visible = true;
+            lblDatum.Visible = true;
+            lblJMBG.Visible = true;
+            lblRadniStaz.Visible = true;
+            lblRadnoMesto.Visible = true;
+            lblDom.Visible = true;
+
+            lblIme.Text = txtIme.Text;
+            lblPrezime.Text = txtPrezime.Text;
+            lblDatum.Text = dtpDatumRodjenja.Text;
+            lblJMBG.Text = txtJMBG.Text;
+            lblRadniStaz.Text = cbRadniStaz.Text;
+            lblRadnoMesto.Text = cbRadnoMesto.Text;
+            lblDom.Text = cbDom.Text;
+            
+        }
     }
 }

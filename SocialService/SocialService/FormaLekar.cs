@@ -58,6 +58,11 @@ namespace SocialService
 
         private void btnDodaj_Click(object sender, EventArgs e)
         {
+
+            if(txtIzvestaj.Text == "")
+            {
+                errorProvider1.SetError(txtIzvestaj, "Niste uneli izvestaj!");
+            }
             int indexRow = dataGridView1.CurrentRow.Index;
            // int izvestaj_id = (int)dataGridView1[14, indexRow].Value;
 

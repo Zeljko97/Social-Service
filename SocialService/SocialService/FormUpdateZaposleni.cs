@@ -21,23 +21,32 @@ namespace SocialService
 
         private void FormUpdateZaposleni_Load(object sender, EventArgs e)
         {
-            for (int i = 0; i < 40; i++)
+        /*    for (int i = 0; i < 40; i++)
             {
                 cbRadniStaz.Items.Add(i);
             }
-            Zaposleni z = FormaZaposleni.prenos;
-            txtIme.Text = z.ime;
-            txtPrezime.Text = z.prezime;
+         * */
+            Zaposleni z = FormAdmin.prenos;
+            lblIme.Text = z.ime;
+            lblPrezime.Text = z.prezime;
             txtJMBG.Text = z.jmbg;
-            cbRadniStaz.SelectedValue = z.radni_staz.ToString();
+            //cbRadniStaz.SelectedValue = z.radni_staz.ToString();
+          //  cbRadniStaz.Text = z.radni_staz.ToString();
             lblRadniStazPret.Text = z.radni_staz.ToString();
             dtpDatumRodjenja.Value = z.datum_rodjenja;
             lblRadnoMestoPret.Text = z.radno_mesto.ToString();
+            cbRadnoMesto.Text = z.radno_mesto.ToString();
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            // ???? Ne znam da li treba,lako ce obrisemo,ali nismo uzeli u obzir,sta ako se pri unosu podataka o zaposlenom,pogresi
+     
+            int radniStaz = Convert.ToInt32(lblRadniStazPret.Text);
+            string radnoMesto =  cbRadnoMesto.SelectedItem.ToString();
+            string datum = dtpDatumRodjenja.Value.ToString("yyyy-MM-dd");
+         
+            DataProvider.UpdateZaposlenAll(lblIme.Text, lblPrezime.Text, txtJMBG.Text, datum, radniStaz, radnoMesto);
+            this.Close();
         }
     }
 }

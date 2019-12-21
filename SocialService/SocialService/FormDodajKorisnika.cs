@@ -58,7 +58,8 @@ namespace SocialService
 
                // string nazivDoma = cbDomovi.SelectedItem.ToString();
                // Dom dom = DataProvider.GetDom(nazivDoma);
-                int id = Properties.Settings.Default.ID_korisnik;
+                int id = Properties.Settings.Default.ID_korisnik;                
+                
 
                 DataProvider.AddKorisnik(id, jmbg, ime, prezime, datum, pol, starosnaOdredba, licna_primanja, brojKnjizice, "", pokretljivost, lekovi, podnosilac_zahteva, FormKorisnici.id_doma);
                 MessageBox.Show("Uspesno dodat korisnik", "", MessageBoxButtons.OK, MessageBoxIcon.Information);

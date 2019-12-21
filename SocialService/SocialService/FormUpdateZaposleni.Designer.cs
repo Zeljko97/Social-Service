@@ -30,15 +30,12 @@
         {
             this.cbRadnoMesto = new System.Windows.Forms.ComboBox();
             this.btnUpdate = new System.Windows.Forms.Button();
-            this.cbRadniStaz = new System.Windows.Forms.ComboBox();
             this.dtpDatumRodjenja = new System.Windows.Forms.DateTimePicker();
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.txtPrezime = new System.Windows.Forms.TextBox();
-            this.txtIme = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.label7 = new System.Windows.Forms.Label();
@@ -46,6 +43,8 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblRadnoMestoPret = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.lblPrezime = new System.Windows.Forms.Label();
+            this.lblIme = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // cbRadnoMesto
@@ -71,14 +70,6 @@
             this.btnUpdate.Text = "Update Zaposlenog";
             this.btnUpdate.UseVisualStyleBackColor = true;
             this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
-            // 
-            // cbRadniStaz
-            // 
-            this.cbRadniStaz.FormattingEnabled = true;
-            this.cbRadniStaz.Location = new System.Drawing.Point(211, 157);
-            this.cbRadniStaz.Name = "cbRadniStaz";
-            this.cbRadniStaz.Size = new System.Drawing.Size(75, 21);
-            this.cbRadniStaz.TabIndex = 26;
             // 
             // dtpDatumRodjenja
             // 
@@ -138,22 +129,6 @@
             this.label3.Size = new System.Drawing.Size(49, 15);
             this.label3.TabIndex = 20;
             this.label3.Text = "JMBG:";
-            // 
-            // txtPrezime
-            // 
-            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.Location = new System.Drawing.Point(104, 39);
-            this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(182, 22);
-            this.txtPrezime.TabIndex = 19;
-            // 
-            // txtIme
-            // 
-            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(104, 6);
-            this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(182, 22);
-            this.txtIme.TabIndex = 18;
             // 
             // label2
             // 
@@ -225,11 +200,32 @@
             this.label8.TabIndex = 33;
             this.label8.Text = "Update?";
             // 
+            // lblPrezime
+            // 
+            this.lblPrezime.AutoSize = true;
+            this.lblPrezime.Location = new System.Drawing.Point(101, 44);
+            this.lblPrezime.Name = "lblPrezime";
+            this.lblPrezime.Size = new System.Drawing.Size(41, 13);
+            this.lblPrezime.TabIndex = 34;
+            this.lblPrezime.Text = "label10";
+            // 
+            // lblIme
+            // 
+            this.lblIme.AutoSize = true;
+            this.lblIme.Location = new System.Drawing.Point(101, 11);
+            this.lblIme.Name = "lblIme";
+            this.lblIme.Size = new System.Drawing.Size(41, 13);
+            this.lblIme.TabIndex = 35;
+            this.lblIme.Text = "label11";
+            // 
             // FormUpdateZaposleni
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(334, 319);
+            this.Controls.Add(this.lblIme);
+            this.Controls.Add(this.lblPrezime);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.lblRadnoMestoPret);
             this.Controls.Add(this.label9);
@@ -237,15 +233,12 @@
             this.Controls.Add(this.label7);
             this.Controls.Add(this.cbRadnoMesto);
             this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.cbRadniStaz);
             this.Controls.Add(this.dtpDatumRodjenja);
             this.Controls.Add(this.txtJMBG);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.txtPrezime);
-            this.Controls.Add(this.txtIme);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Name = "FormUpdateZaposleni";
@@ -260,15 +253,12 @@
 
         private System.Windows.Forms.ComboBox cbRadnoMesto;
         private System.Windows.Forms.Button btnUpdate;
-        private System.Windows.Forms.ComboBox cbRadniStaz;
         private System.Windows.Forms.DateTimePicker dtpDatumRodjenja;
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox txtPrezime;
-        private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label7;
@@ -276,5 +266,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblRadnoMestoPret;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Label lblPrezime;
+        private System.Windows.Forms.Label lblIme;
     }
 }

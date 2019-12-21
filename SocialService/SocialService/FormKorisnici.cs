@@ -45,7 +45,7 @@ namespace SocialService
             string prezime = (string)dataGridView1[3, indexRow].Value;
             int regBroj = Convert.ToInt32(dataGridView1[0,indexRow].Value); // mora po reg broju!
 
-            DataProvider.DeleteKorisnik(/*ime, prezime,*/regBroj);
+            DataProvider.DeleteKorisnik(ime, prezime);
             //ovo je dodato ,da bismo imali uvid u promeni zauzetosti i pri brisanju
             d.zauzeto -= 1;
             DataProvider.ZauzetoIncrement(d.naziv,d.domID,d.zauzeto);

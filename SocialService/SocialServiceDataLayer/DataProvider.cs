@@ -188,7 +188,7 @@ namespace SocialServiceDataLayer
             RowSet row = session.Execute("update \"zaposleni\" set user_name = '" + ussername + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz= " + radni_staz);
         }
         //za promenu svih informacija,ako hoces da imamo:
-        /*public static void UpdateZaposlen(string ime, string prezime,string jmbg,string datum_rodjenja, int radni_staz, string radno_mesto)
+        public static void UpdateZaposlenAll(string ime, string prezime,string jmbg,string datum_rodjenja, int radni_staz, string radno_mesto)
         {
             ISession session = SessionManager.GetSession();
             Zaposleni zaposlen = new Zaposleni();
@@ -196,8 +196,9 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return;
 
-            RowSet row = session.Execute("update \"zaposleni\" set ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + "', datum_rodjenja = '" + datum_rodjenja + "', radni_staz = '" + radni_staz + "', radno_mesto = '" + radno_mesto + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz= " + radni_staz);
-        }*/
+          //  RowSet row = session.Execute("update \"zaposleni\" set ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + "', datum_rodjenja = '" + datum_rodjenja + "', radni_staz = " + radni_staz + ", radno_mesto = '" + radno_mesto + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz = " + radni_staz);
+            RowSet row = session.Execute("update \"zaposleni\" set jmbg = '" + jmbg + "', datum_rodjenja = '" + datum_rodjenja + "', radno_mesto = '" + radno_mesto + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz = " + radni_staz + "");
+        }
 
             //dodato
         public static int ZaposleniIdDoma(string ime, string prezime)
@@ -645,15 +646,15 @@ namespace SocialServiceDataLayer
             return korisnici;
         }
 
-        public static void DeleteKorisnik(/*string ime, string prezime,*/int regBroj)
+        public static void DeleteKorisnik(string ime, string prezime)
         {
             ISession session = SessionManager.GetSession();
             
             if (session == null)
                 return;
             //promenjeno u bazi na regBroj?
-          //  RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = '" + regBroj.ToString() + "'");
-            RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = " + regBroj); //+ " and ime = '" + ime + "' and prezime = '" + prezime + "'");
+            RowSet row = session.Execute("delete from \"korisnik\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
+           // RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = " + regBroj); //+ " and ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
         #endregion
 

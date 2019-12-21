@@ -34,12 +34,12 @@
             this.btnDelete = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.lblIme = new System.Windows.Forms.Label();
-            this.lblPrezime = new System.Windows.Forms.Label();
-            this.lblNazivDoma = new System.Windows.Forms.Label();
-            this.lblAdresaDoma = new System.Windows.Forms.Label();
-            this.lblKapacitet = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.lblNazivDoma = new System.Windows.Forms.Label();
+            this.lblKapacitet = new System.Windows.Forms.Label();
+            this.lblAdresaDoma = new System.Windows.Forms.Label();
+            this.lblPrezime = new System.Windows.Forms.Label();
+            this.lblIme = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -103,16 +103,46 @@
             this.panel1.Size = new System.Drawing.Size(570, 148);
             this.panel1.TabIndex = 4;
             // 
-            // lblIme
+            // panel2
             // 
-            this.lblIme.AutoSize = true;
-            this.lblIme.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIme.ForeColor = System.Drawing.Color.Red;
-            this.lblIme.Location = new System.Drawing.Point(26, 32);
-            this.lblIme.Name = "lblIme";
-            this.lblIme.Size = new System.Drawing.Size(80, 33);
-            this.lblIme.TabIndex = 0;
-            this.lblIme.Text = "label1";
+            this.panel2.BackColor = System.Drawing.Color.Ivory;
+            this.panel2.Controls.Add(this.lblNazivDoma);
+            this.panel2.Controls.Add(this.lblKapacitet);
+            this.panel2.Controls.Add(this.lblAdresaDoma);
+            this.panel2.Location = new System.Drawing.Point(242, 22);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(314, 101);
+            this.panel2.TabIndex = 5;
+            // 
+            // lblNazivDoma
+            // 
+            this.lblNazivDoma.AutoSize = true;
+            this.lblNazivDoma.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNazivDoma.Location = new System.Drawing.Point(13, 16);
+            this.lblNazivDoma.Name = "lblNazivDoma";
+            this.lblNazivDoma.Size = new System.Drawing.Size(74, 16);
+            this.lblNazivDoma.TabIndex = 2;
+            this.lblNazivDoma.Text = "label1";
+            // 
+            // lblKapacitet
+            // 
+            this.lblKapacitet.AutoSize = true;
+            this.lblKapacitet.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblKapacitet.Location = new System.Drawing.Point(13, 66);
+            this.lblKapacitet.Name = "lblKapacitet";
+            this.lblKapacitet.Size = new System.Drawing.Size(74, 16);
+            this.lblKapacitet.TabIndex = 4;
+            this.lblKapacitet.Text = "label1";
+            // 
+            // lblAdresaDoma
+            // 
+            this.lblAdresaDoma.AutoSize = true;
+            this.lblAdresaDoma.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAdresaDoma.Location = new System.Drawing.Point(13, 41);
+            this.lblAdresaDoma.Name = "lblAdresaDoma";
+            this.lblAdresaDoma.Size = new System.Drawing.Size(74, 16);
+            this.lblAdresaDoma.TabIndex = 3;
+            this.lblAdresaDoma.Text = "label1";
             // 
             // lblPrezime
             // 
@@ -125,51 +155,22 @@
             this.lblPrezime.TabIndex = 1;
             this.lblPrezime.Text = "label1";
             // 
-            // lblNazivDoma
+            // lblIme
             // 
-            this.lblNazivDoma.AutoSize = true;
-            this.lblNazivDoma.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNazivDoma.Location = new System.Drawing.Point(13, 16);
-            this.lblNazivDoma.Name = "lblNazivDoma";
-            this.lblNazivDoma.Size = new System.Drawing.Size(74, 16);
-            this.lblNazivDoma.TabIndex = 2;
-            this.lblNazivDoma.Text = "label1";
-            // 
-            // lblAdresaDoma
-            // 
-            this.lblAdresaDoma.AutoSize = true;
-            this.lblAdresaDoma.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblAdresaDoma.Location = new System.Drawing.Point(13, 41);
-            this.lblAdresaDoma.Name = "lblAdresaDoma";
-            this.lblAdresaDoma.Size = new System.Drawing.Size(74, 16);
-            this.lblAdresaDoma.TabIndex = 3;
-            this.lblAdresaDoma.Text = "label1";
-            // 
-            // lblKapacitet
-            // 
-            this.lblKapacitet.AutoSize = true;
-            this.lblKapacitet.Font = new System.Drawing.Font("Lucida Console", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblKapacitet.Location = new System.Drawing.Point(13, 66);
-            this.lblKapacitet.Name = "lblKapacitet";
-            this.lblKapacitet.Size = new System.Drawing.Size(74, 16);
-            this.lblKapacitet.TabIndex = 4;
-            this.lblKapacitet.Text = "label1";
-            // 
-            // panel2
-            // 
-            this.panel2.BackColor = System.Drawing.Color.Ivory;
-            this.panel2.Controls.Add(this.lblNazivDoma);
-            this.panel2.Controls.Add(this.lblKapacitet);
-            this.panel2.Controls.Add(this.lblAdresaDoma);
-            this.panel2.Location = new System.Drawing.Point(242, 22);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(314, 101);
-            this.panel2.TabIndex = 5;
+            this.lblIme.AutoSize = true;
+            this.lblIme.Font = new System.Drawing.Font("Candara", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIme.ForeColor = System.Drawing.Color.Red;
+            this.lblIme.Location = new System.Drawing.Point(26, 32);
+            this.lblIme.Name = "lblIme";
+            this.lblIme.Size = new System.Drawing.Size(80, 33);
+            this.lblIme.TabIndex = 0;
+            this.lblIme.Text = "label1";
             // 
             // FormKorisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(762, 542);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.button1);
