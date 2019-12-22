@@ -18,6 +18,7 @@ namespace SocialService
         public static string ime = "";
         public static string prezime = "";
         public static Zaposleni prenos;
+        public static int id_doma = 1;
 
         public FormAdmin()
         {
@@ -41,24 +42,19 @@ namespace SocialService
 
         private void FormAdmin_Load(object sender, EventArgs e)
         {
-            for(int i = 0;i<=100;i++)
+            for(int i = 0;i<=5;i++)
             {
                 cbSpratnost.Items.Add(i);
             }
-            for(int i = 0;i<=1000;i++)
+            for(int i = 0;i<=500;i++)
             {
                 cbKapacitet.Items.Add(i);
                 cbZauzeto.Items.Add(i);
             }
+            Refresh();
 
 
-            List<Dom> listaDomova = new List<Dom>();
-            listaDomova = DataProvider.GetDomovi();
 
-            for(int i = 0;i<listaDomova.Count;i++)
-            {
-                cbDom.Items.Add(listaDomova[i].naziv);
-            }
         }
 
         private void btnDodajDom_Click(object sender, EventArgs e)
@@ -106,8 +102,7 @@ namespace SocialService
 
             
 
-            DataProvider.AddDom(3,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,zauzeto);
-           
+            DataProvider.AddDom(id_doma,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,0);
             List<Dom> domovi = new List<Dom>();
 
             domovi = DataProvider.GetDomovi();
@@ -203,6 +198,40 @@ namespace SocialService
 
             dataGridView1.Columns["user_name"].Visible = false;
             dataGridView1.Columns["password"].Visible = false;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            List<Zaposleni> zaposleni = new List<Zaposleni>();
+            zaposleni = DataProvider.GetZaposleni();
+            dataGridView1.DataSource = zaposleni;
+        }
+
+        private void btnUcitajDirektore_Click(object sender, EventArgs e)
+        {
+            List<Direktor> direktori = new List<Direktor>();
+            direktori = DataProvider.GetDirektori();
+            dataGridView1.DataSource = direktori;
+            dataGridView1.Columns["id"].Visible = false;
+
+        }
+
+        private void btnKorisnike_Click(object sender, EventArgs e)
+        {
+            List<Korisnik> korisnici = new List<Korisnik>();
+            korisnici = DataProvider.getKorisnici();
+            dataGridView1.DataSource = korisnici;
+        }
+        private void Refresh()
+        {
+            List<Dom> listaDomova = new List<Dom>();
+            listaDomova = DataProvider.GetDomovi();
+
+            for (int i = 0; i < listaDomova.Count; i++)
+            {
+                cbDom.Items.Add(listaDomova[i].naziv);
+            }
+            id_doma = listaDomova.Count();
         }
     }
 }

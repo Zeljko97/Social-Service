@@ -588,8 +588,6 @@ namespace SocialServiceDataLayer
             }
             return korisnik;*/
         }
-        
-
         public static void AddKorisnik(int reg_broj, string jmbg, string ime, string prezime, string datum, string pol,
             string starosna_odredba, string licna_primanja, string br_zdravstvene, string zdravstveno_stanje, string pokretljivost,
             string lekovi, string podnosilac,int domID)
@@ -773,7 +771,6 @@ namespace SocialServiceDataLayer
                 int domID = Convert.ToInt32(direktorData["domID"]); // id doma
 
              //   Direktor direktor = new Direktor();
-
                 //ucitavanje:
                 direktor.ime = direktorData["ime"] != null ? direktorData["ime"].ToString() : string.Empty;
                 direktor.prezime = direktorData["prezime"] != null ? direktorData["prezime"].ToString() : string.Empty;

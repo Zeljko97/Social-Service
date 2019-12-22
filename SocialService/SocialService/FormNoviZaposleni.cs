@@ -56,9 +56,6 @@ namespace SocialService
                 FormaZaposleni fz = new FormaZaposleni();
                 fz.Show();
             }
-
-            
-            
         }
 
         private void txtPrezime_TextChanged(object sender, EventArgs e)
