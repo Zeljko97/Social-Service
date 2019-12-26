@@ -1,19 +1,13 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using SocialServiceDataLayer;
+using System;
 using System.Windows.Forms;
-using SocialServiceDataLayer;
 using SocialServiceDataLayer.QueryEntities;
 
 namespace SocialService
 {
     public partial class LogInLekar : Form
     {
+        public static int radniStaz;
         public LogInLekar()
         {
             InitializeComponent();
@@ -33,13 +27,12 @@ namespace SocialService
             {
                 string userName = txtUsername.Text;
                 string password = txtPassword.Text;
-
                 bool a = DataProvider.CheckUserNameZaposleni(userName, password);
-
-
                 FormaLekar fl = new FormaLekar();
                 if (a == true)
                 {
+                    Zaposleni z = DataProvider.GetZaposlen(userName, password);
+                    radniStaz = z.radni_staz;
                     fl.Show();
                     this.Close();
                 }
@@ -51,6 +44,17 @@ namespace SocialService
         private void LogInLekar_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnSignIn_Click(object sender, EventArgs e)
+        {
+            FormSignInLekar f = new FormSignInLekar();
+            f.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

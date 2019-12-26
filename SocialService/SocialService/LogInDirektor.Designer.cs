@@ -109,7 +109,7 @@
             this.btnSingIn.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnSingIn.Location = new System.Drawing.Point(83, 150);
             this.btnSingIn.Name = "btnSingIn";
-            this.btnSingIn.Size = new System.Drawing.Size(217, 38);
+            this.btnSingIn.Size = new System.Drawing.Size(217, 30);
             this.btnSingIn.TabIndex = 6;
             this.btnSingIn.Text = "SING IN";
             this.btnSingIn.UseVisualStyleBackColor = true;
@@ -120,7 +120,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(402, 206);
+            this.ClientSize = new System.Drawing.Size(402, 189);
             this.Controls.Add(this.btnSingIn);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label2);

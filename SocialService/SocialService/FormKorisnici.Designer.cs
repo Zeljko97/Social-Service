@@ -55,7 +55,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
-            this.dataGridView1.Size = new System.Drawing.Size(740, 188);
+            this.dataGridView1.Size = new System.Drawing.Size(740, 263);
             this.dataGridView1.TabIndex = 0;
             // 
             // btnUcitajKorisnike

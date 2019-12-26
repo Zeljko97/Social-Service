@@ -26,16 +26,11 @@ namespace SocialServiceDataLayer
             foreach(var zaposlenData in zaposleniData)
             {
                 int radni_staz = Convert.ToInt32(zaposlenData["radni_staz"]);
-
-
-                string datum1 = zaposlenData["datum_rodjenja"].ToString();
+               string datum1 = zaposlenData["datum_rodjenja"].ToString();
                 DateTime datum = DateTime.Parse(datum1);
-
                 int domID = Convert.ToInt32(zaposlenData["domID"]);
 
                 Zaposleni zaposlen = new Zaposleni();
-
-                
 
                 zaposlen.jmbg = zaposlenData["jmbg"] != null ? zaposlenData["jmbg"].ToString() : string.Empty;
                 zaposlen.ime = zaposlenData["ime"] != null ? zaposlenData["ime"].ToString() : string.Empty;
@@ -102,14 +97,12 @@ namespace SocialServiceDataLayer
                 foreach (var zaposlenData in zaposleniData)
                 {
                     int radni_staz = Convert.ToInt32(zaposleniData["radni_staz"]);
-
-
                     string datum1 = zaposleniData["datum_rodjenja"].ToString();
                     DateTime datum = DateTime.Parse(datum1);
 
                     int domID = Convert.ToInt32(zaposleniData["domID"]);
 
-                 //   Zaposleni zaposlen = new Zaposleni();
+                   //Zaposleni zaposlen = new Zaposleni();
 
 
 
@@ -122,9 +115,7 @@ namespace SocialServiceDataLayer
                     zaposlen.user_name = zaposleniData["user_name"] != null ? zaposleniData["user_name"].ToString() : string.Empty;
                     zaposlen.password = zaposleniData["password"] != null ? zaposleniData["password"].ToString() : string.Empty;
                     zaposlen.domID = domID != 0 ? domID : 0;
-
                     //zaposleni.Add(zaposlen);
-
                 }
 
 
@@ -187,8 +178,8 @@ namespace SocialServiceDataLayer
 
             RowSet row = session.Execute("update \"zaposleni\" set user_name = '" + ussername + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz= " + radni_staz);
         }
-        //za promenu svih informacija,ako hoces da imamo:
-        public static void UpdateZaposlenAll(string ime, string prezime,string jmbg,string datum_rodjenja, int radni_staz, string radno_mesto)
+        //Update za Korisnicko ime i password samo,bez radnog staza!
+        public static void UpdateZaposlenUsernamePW(string ime, string prezime, string ussername, string password)
         {
             ISession session = SessionManager.GetSession();
             Zaposleni zaposlen = new Zaposleni();
@@ -196,11 +187,20 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return;
 
+            RowSet row = session.Execute("update \"zaposleni\" set user_name = '" + ussername + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime +"'");
+        }
+
+        //za promenu svih informacija,ako hoces da imamo:
+        public static void UpdateZaposlenAll(string ime, string prezime,string jmbg,string datum_rodjenja, int radni_staz, string radno_mesto)
+        {
+            ISession session = SessionManager.GetSession();
+            Zaposleni zaposlen = new Zaposleni();
+            if (session == null)
+                return;
           //  RowSet row = session.Execute("update \"zaposleni\" set ime = '" + ime + "', prezime = '" + prezime + "', jmbg = '" + jmbg + "', datum_rodjenja = '" + datum_rodjenja + "', radni_staz = " + radni_staz + ", radno_mesto = '" + radno_mesto + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz = " + radni_staz);
             RowSet row = session.Execute("update \"zaposleni\" set jmbg = '" + jmbg + "', datum_rodjenja = '" + datum_rodjenja + "', radno_mesto = '" + radno_mesto + "' where ime = '" + ime + "' and prezime = '" + prezime + "' and radni_staz = " + radni_staz + "");
         }
-
-            //dodato
+        //dodato
         public static int ZaposleniIdDoma(string ime, string prezime)
 
         {
@@ -214,7 +214,6 @@ namespace SocialServiceDataLayer
                 return 0;
         }
         #endregion
-
         #region Izvestaji
         public static List<Izvestaj> GetIzvestaji()
         {
@@ -335,7 +334,6 @@ namespace SocialServiceDataLayer
             return izvestaji;
         }
         #endregion
-
         #region DOM
         public static List<Dom> GetDomovi()
         {
@@ -597,9 +595,6 @@ namespace SocialServiceDataLayer
                 return;
             RowSet row =session.Execute("insert into \"korisnik\" (reg_broj,jmbg,ime,prezime,datum_rodjenja,pol,starosna_odredba,licna_primanja,br_zdravstvene_knjizice,zdravstveno_stanje,pokretljivost,lekovi,podnosilac_zahteva,\"domID\") values (" + reg_broj + ", '" + jmbg + "', '" + ime + "', '" + prezime + "', '" + datum + "', '" + pol + "', '" + starosna_odredba + "', '" + licna_primanja + "', '" + br_zdravstvene + "', '" + zdravstveno_stanje + "', '" + pokretljivost + "', '" + lekovi + "', '" + podnosilac + "', " + domID + ")");
         }
-
-
-
         //funkcija koja ce vratiti korisnike odredjenog doma:
         public static List<Korisnik> VratiKorisnikeDoma(int dom)
         {
@@ -785,7 +780,6 @@ namespace SocialServiceDataLayer
             return direktor;
         }
 
-
         public static void AddDirektor(string ime, string prezime, int domID)
         {
             ISession session = SessionManager.GetSession();
@@ -808,7 +802,7 @@ namespace SocialServiceDataLayer
             RowSet direktorData = session.Execute("update \"direktor\" set user_name = '" + user_name + "', password = '" + password + "' where ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
 
-       public static int DirektorIdDoma(string ime, string prezime)
+        public static int DirektorIdDoma(string ime, string prezime)
         
         {
             Direktor d = new Direktor();
@@ -821,8 +815,10 @@ namespace SocialServiceDataLayer
                 return 0;
         }
 
+        #endregion
 
+        #region DodatneFUnkcije
 
-            #endregion
-        }
+        #endregion
+    }
 }

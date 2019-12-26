@@ -61,7 +61,7 @@
             // btnSpisakPacijenata
             // 
             this.btnSpisakPacijenata.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSpisakPacijenata.Location = new System.Drawing.Point(27, 23);
+            this.btnSpisakPacijenata.Location = new System.Drawing.Point(12, 12);
             this.btnSpisakPacijenata.Name = "btnSpisakPacijenata";
             this.btnSpisakPacijenata.Size = new System.Drawing.Size(114, 49);
             this.btnSpisakPacijenata.TabIndex = 1;
@@ -72,7 +72,7 @@
             // btnIzvestaj
             // 
             this.btnIzvestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnIzvestaj.Location = new System.Drawing.Point(27, 78);
+            this.btnIzvestaj.Location = new System.Drawing.Point(12, 62);
             this.btnIzvestaj.Name = "btnIzvestaj";
             this.btnIzvestaj.Size = new System.Drawing.Size(114, 51);
             this.btnIzvestaj.TabIndex = 2;
@@ -142,7 +142,7 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodaj.Location = new System.Drawing.Point(12, 302);
+            this.btnDodaj.Location = new System.Drawing.Point(12, 341);
             this.btnDodaj.Name = "btnDodaj";
             this.btnDodaj.Size = new System.Drawing.Size(135, 23);
             this.btnDodaj.TabIndex = 10;
@@ -155,10 +155,10 @@
             // 
             this.txtIzvestaj.BackColor = System.Drawing.SystemColors.ButtonHighlight;
             this.txtIzvestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIzvestaj.Location = new System.Drawing.Point(12, 135);
+            this.txtIzvestaj.Location = new System.Drawing.Point(12, 119);
             this.txtIzvestaj.Multiline = true;
             this.txtIzvestaj.Name = "txtIzvestaj";
-            this.txtIzvestaj.Size = new System.Drawing.Size(337, 161);
+            this.txtIzvestaj.Size = new System.Drawing.Size(337, 216);
             this.txtIzvestaj.TabIndex = 11;
             this.txtIzvestaj.Visible = false;
             this.txtIzvestaj.TextChanged += new System.EventHandler(this.txtIzvestaj_TextChanged);

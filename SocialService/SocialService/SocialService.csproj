@@ -127,6 +127,12 @@
     <Compile Include="FormNoviZaposleni.Designer.cs">
       <DependentUpon>FormNoviZaposleni.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormSignInLekar.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormSignInLekar.Designer.cs">
+      <DependentUpon>FormSignInLekar.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormSingInDirektor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormNoviZaposleni.resx">
       <DependentUpon>FormNoviZaposleni.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormSignInLekar.resx">
+      <DependentUpon>FormSignInLekar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormSingInDirektor.resx">
       <DependentUpon>FormSingInDirektor.cs</DependentUpon>
