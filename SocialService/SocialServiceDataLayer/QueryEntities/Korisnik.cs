@@ -22,6 +22,7 @@ namespace SocialServiceDataLayer.QueryEntities
         public string lekovi { get; set; }
         public string podnosilac_zahteva { get; set; }
         public int domID { get; set; }
+        public bool stanje { get; set; }
        // public int izvestaj_id { get; set; }
     }
 }

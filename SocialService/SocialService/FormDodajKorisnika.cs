@@ -61,7 +61,7 @@ namespace SocialService
                 int id = Properties.Settings.Default.ID_korisnik;                
                 
 
-                DataProvider.AddKorisnik(id, jmbg, ime, prezime, datum, pol, starosnaOdredba, licna_primanja, brojKnjizice, "", pokretljivost, lekovi, podnosilac_zahteva, FormKorisnici.id_doma);
+                DataProvider.AddKorisnik(id, jmbg, ime, prezime, datum, pol, starosnaOdredba, licna_primanja, brojKnjizice, "", pokretljivost, lekovi, podnosilac_zahteva, FormKorisnici.id_doma,true);
                 MessageBox.Show("Uspesno dodat korisnik", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //kada uspesno ubaci korisnika,uveca se id :
                 Properties.Settings.Default.ID_korisnik += 1;

@@ -31,8 +31,8 @@ namespace SocialService
                 FormaLekar fl = new FormaLekar();
                 if (a == true)
                 {
-                    Zaposleni z = DataProvider.GetZaposlen(userName, password);
-                    radniStaz = z.radni_staz;
+                    //Zaposleni z = DataProvider.GetZaposlen(userName, password);
+                    //radniStaz = z.radni_staz;
                     fl.Show();
                     this.Close();
                 }

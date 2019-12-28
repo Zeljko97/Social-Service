@@ -18,7 +18,6 @@ namespace SocialService
         public static string ime = "";
         public static string prezime = "";
         public static Zaposleni prenos;
-        public static int id_doma = 1;
 
         public FormAdmin()
         {
@@ -100,13 +99,13 @@ namespace SocialService
                 return;
             }
 
-            
-
-            DataProvider.AddDom(id_doma,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,0);
+            DataProvider.AddDom(Properties.Settings.Default.ID_dom,txtNaziv.Text, txtAdresa.Text, spratnost, kapacitet,0);
             List<Dom> domovi = new List<Dom>();
 
             domovi = DataProvider.GetDomovi();
             dataGridView1.DataSource = domovi;
+            Properties.Settings.Default.ID_dom += 1;
+            Properties.Settings.Default.Save();
         }
 
         private void btnDodajDirektora_Click(object sender, EventArgs e)
@@ -137,9 +136,6 @@ namespace SocialService
 
             FormUpdateZaposleni fnz = new FormUpdateZaposleni();
             fnz.Show();
-
-            
-
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -231,7 +227,7 @@ namespace SocialService
             {
                 cbDom.Items.Add(listaDomova[i].naziv);
             }
-            id_doma = listaDomova.Count();
+           // Properties.Settings.Default.ID_dom = listaDomova.Count();
         }
     }
 }

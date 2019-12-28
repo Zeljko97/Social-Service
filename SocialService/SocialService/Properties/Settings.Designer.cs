@@ -34,5 +34,17 @@ namespace SocialService.Properties {
                 this["ID_korisnik"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("1")]
+        public int ID_dom {
+            get {
+                return ((int)(this["ID_dom"]));
+            }
+            set {
+                this["ID_dom"] = value;
+            }
+        }
     }
 }

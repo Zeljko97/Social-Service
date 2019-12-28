@@ -498,8 +498,8 @@ namespace SocialServiceDataLayer
                 int reg_broj = Convert.ToInt32(korisnikData["reg_broj"]);
                 //int licna_primanja = Convert.ToInt32(korisnikData["licna_primanja"]);
                 int domID = Convert.ToInt32(korisnikData["domID"]);
-               // int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
-
+                // int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
+                bool stanje = Convert.ToBoolean(korisnikData["stanje"]);
                 string datum1 = korisnikData["datum_rodjenja"].ToString();
                 DateTime datum = DateTime.Parse(datum1);
 
@@ -518,6 +518,7 @@ namespace SocialServiceDataLayer
                 korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
                 korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
                 korisnik.domID = domID != 0 ? domID : 0;
+                korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
               //  korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
 
                 korisnici.Add(korisnik);
@@ -543,8 +544,8 @@ namespace SocialServiceDataLayer
                 int reg_broj = Convert.ToInt32(korisnikData["reg_broj"]);
                 //int licna_primanja = Convert.ToInt32(korisnikData["licna_primanja"]);
                 int domID = Convert.ToInt32(korisnikData["domID"]);
-              //  int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
-
+                //  int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
+                bool stanje = Convert.ToBoolean(korisnikData["stanje"]);
                 string datum1 = korisnikData["datum_rodjenja"].ToString();
                 DateTime datum = DateTime.Parse(datum1);
 
@@ -563,9 +564,10 @@ namespace SocialServiceDataLayer
                 korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
                 korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
                 korisnik.domID = domID != 0 ? domID : 0;
-               // korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
+                korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
+                // korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
 
-               // korisnici.Add(korisnik);
+                // korisnici.Add(korisnik);
 
 
             }
@@ -588,12 +590,12 @@ namespace SocialServiceDataLayer
         }
         public static void AddKorisnik(int reg_broj, string jmbg, string ime, string prezime, string datum, string pol,
             string starosna_odredba, string licna_primanja, string br_zdravstvene, string zdravstveno_stanje, string pokretljivost,
-            string lekovi, string podnosilac,int domID)
+            string lekovi, string podnosilac,int domID,bool stanje)
         {
             ISession session = SessionManager.GetSession();
             if(session == null)
                 return;
-            RowSet row =session.Execute("insert into \"korisnik\" (reg_broj,jmbg,ime,prezime,datum_rodjenja,pol,starosna_odredba,licna_primanja,br_zdravstvene_knjizice,zdravstveno_stanje,pokretljivost,lekovi,podnosilac_zahteva,\"domID\") values (" + reg_broj + ", '" + jmbg + "', '" + ime + "', '" + prezime + "', '" + datum + "', '" + pol + "', '" + starosna_odredba + "', '" + licna_primanja + "', '" + br_zdravstvene + "', '" + zdravstveno_stanje + "', '" + pokretljivost + "', '" + lekovi + "', '" + podnosilac + "', " + domID + ")");
+            RowSet row =session.Execute("insert into \"korisnik\" (reg_broj,jmbg,ime,prezime,datum_rodjenja,pol,starosna_odredba,licna_primanja,br_zdravstvene_knjizice,zdravstveno_stanje,pokretljivost,lekovi,podnosilac_zahteva,\"domID\",stanje) values (" + reg_broj + ", '" + jmbg + "', '" + ime + "', '" + prezime + "', '" + datum + "', '" + pol + "', '" + starosna_odredba + "', '" + licna_primanja + "', '" + br_zdravstvene + "', '" + zdravstveno_stanje + "', '" + pokretljivost + "', '" + lekovi + "', '" + podnosilac + "', " + domID + ", " + stanje + ")");
         }
         //funkcija koja ce vratiti korisnike odredjenog doma:
         public static List<Korisnik> VratiKorisnikeDoma(int dom)
@@ -648,6 +650,17 @@ namespace SocialServiceDataLayer
             //promenjeno u bazi na regBroj?
             RowSet row = session.Execute("delete from \"korisnik\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
            // RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = " + regBroj); //+ " and ime = '" + ime + "' and prezime = '" + prezime + "'");
+        }
+
+        //mora postojati update,posto korisnike nikada ne brisemo!
+        public static void UpdateKorisnik(string ime, string prezime, bool stanje)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet korisnikData = session.Execute("update \"korisnik\" set stanje = " + stanje + " where ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
         #endregion
 
