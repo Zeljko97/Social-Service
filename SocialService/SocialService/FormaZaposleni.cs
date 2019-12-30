@@ -127,18 +127,23 @@ namespace SocialService
                 string ime = txtIme.Text;
                 string prezime = txtPrezime.Text;
 
-                Zaposleni z = DataProvider.GetZaposlen(ime, prezime);
+                List<Zaposleni> z = DataProvider.getZaposleniDom(id_doma);
                 if (z==null)
                 {
-                    MessageBox.Show("Nije pronadjena zaposlena osoba sa zadatim imenom i prezimenom!","Neuspesno pretrazivanje",MessageBoxButtons.OK,MessageBoxIcon.Information);
+                    MessageBox.Show("Nije pronadjena nijedna zaposlena osoba sa zadatim imenom i prezimenom!","Neuspesno pretrazivanje",MessageBoxButtons.OK,MessageBoxIcon.Information);
                 }
                 else
                 {
                     List<Zaposleni> zaposleni = new List<Zaposleni>();
-                    zaposleni.Add(z);
-                    dataGridView1.DataSource = zaposleni;
+                    for (int i = 0; i < z.Count(); i++)
+                    {
+                        if (z[i].ime==ime && z[i].prezime==prezime)
+                        {
+                            zaposleni.Add(z[i]);
+                            dataGridView1.DataSource = zaposleni;
+                        }
+                    }
                 }
-                
             }
         }
 
@@ -166,20 +171,16 @@ namespace SocialService
                 MessageBox.Show("Niste selektovali radno mesto!","Nije moguce obaviti pretragu!!",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 return;
             }
-            List<Zaposleni> zaposleni = new List<Zaposleni>();
+            List<Zaposleni> z = DataProvider.getZaposleniDom(id_doma);
             List<Zaposleni> pretrazeno = new List<Zaposleni>();
-
-            zaposleni = DataProvider.GetZaposleni(); // vrati sve korisnike
-            for (int i = 0; i < zaposleni.Count(); i++)
+            for (int i = 0; i < z.Count(); i++)
             {
-                if (zaposleni[i].radno_mesto==radnoMesto)
+                if (z[i].radno_mesto==radnoMesto)
                 {
-                    pretrazeno.Add(zaposleni[i]);
+                    pretrazeno.Add(z[i]);
                 }
             }
             dataGridView1.DataSource = pretrazeno;
-
-
         }
     }
 }

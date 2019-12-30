@@ -52,6 +52,8 @@
             this.txtJMBG = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
+            this.btnIzvestaj = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -65,13 +67,13 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.Aqua;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 257);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 270);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(926, 263);
+            this.dataGridView1.Size = new System.Drawing.Size(963, 250);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
@@ -80,7 +82,7 @@
             this.btnUcitajKorisnike.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnUcitajKorisnike.Location = new System.Drawing.Point(12, 132);
             this.btnUcitajKorisnike.Name = "btnUcitajKorisnike";
-            this.btnUcitajKorisnike.Size = new System.Drawing.Size(155, 45);
+            this.btnUcitajKorisnike.Size = new System.Drawing.Size(155, 35);
             this.btnUcitajKorisnike.TabIndex = 1;
             this.btnUcitajKorisnike.Text = "Ucitaj korisnike doma";
             this.btnUcitajKorisnike.UseVisualStyleBackColor = true;
@@ -89,11 +91,11 @@
             // btnDelete
             // 
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDelete.Location = new System.Drawing.Point(173, 182);
+            this.btnDelete.Location = new System.Drawing.Point(173, 173);
             this.btnDelete.Name = "btnDelete";
-            this.btnDelete.Size = new System.Drawing.Size(155, 46);
+            this.btnDelete.Size = new System.Drawing.Size(155, 36);
             this.btnDelete.TabIndex = 2;
-            this.btnDelete.Text = "Obrisi Korisnika";
+            this.btnDelete.Text = "Prebaci u pasivu";
             this.btnDelete.UseVisualStyleBackColor = true;
             this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
@@ -102,7 +104,7 @@
             this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.Location = new System.Drawing.Point(173, 132);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(155, 45);
+            this.button1.Size = new System.Drawing.Size(155, 35);
             this.button1.TabIndex = 3;
             this.button1.Text = "Dodaj Novog korisnika";
             this.button1.UseVisualStyleBackColor = true;
@@ -118,7 +120,7 @@
             this.panel1.Controls.Add(this.lblIme);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(926, 114);
+            this.panel1.Size = new System.Drawing.Size(963, 114);
             this.panel1.TabIndex = 4;
             // 
             // panel2
@@ -187,9 +189,9 @@
             // btnUcitajPasivne
             // 
             this.btnUcitajPasivne.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUcitajPasivne.Location = new System.Drawing.Point(12, 182);
+            this.btnUcitajPasivne.Location = new System.Drawing.Point(12, 172);
             this.btnUcitajPasivne.Name = "btnUcitajPasivne";
-            this.btnUcitajPasivne.Size = new System.Drawing.Size(155, 45);
+            this.btnUcitajPasivne.Size = new System.Drawing.Size(155, 35);
             this.btnUcitajPasivne.TabIndex = 5;
             this.btnUcitajPasivne.Text = "Ucitaj Korisnike Pasive";
             this.btnUcitajPasivne.UseVisualStyleBackColor = true;
@@ -262,7 +264,7 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(532, 132);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(226, 115);
+            this.groupBox2.Size = new System.Drawing.Size(226, 119);
             this.groupBox2.TabIndex = 7;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Pretrazivanje na osnovu JMBG korisnika:";
@@ -306,12 +308,35 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "label1";
             // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button2.Location = new System.Drawing.Point(173, 215);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(155, 36);
+            this.button2.TabIndex = 8;
+            this.button2.Text = "Prebaci u aktivu";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // btnIzvestaj
+            // 
+            this.btnIzvestaj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIzvestaj.BackgroundImage")));
+            this.btnIzvestaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.btnIzvestaj.Location = new System.Drawing.Point(785, 143);
+            this.btnIzvestaj.Name = "btnIzvestaj";
+            this.btnIzvestaj.Size = new System.Drawing.Size(106, 96);
+            this.btnIzvestaj.TabIndex = 9;
+            this.btnIzvestaj.UseVisualStyleBackColor = true;
+            // 
             // FormKorisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
-            this.ClientSize = new System.Drawing.Size(950, 542);
+            this.ClientSize = new System.Drawing.Size(987, 562);
+            this.Controls.Add(this.btnIzvestaj);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.btnUcitajPasivne);
@@ -362,5 +387,7 @@
         private System.Windows.Forms.TextBox txtJMBG;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnIzvestaj;
     }
 }

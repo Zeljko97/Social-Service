@@ -528,7 +528,49 @@ namespace SocialServiceDataLayer
             return korisnici;
 
         }
+        public static Korisnik GetKorisnikDoma(string ime, string prezime, int domID) // funkcija koja nam pomaze da nadjemo korisnika odredjenog doma na osnovu imena i prezimena
+        {
+            ISession session = SessionManager.GetSession();
+            Korisnik korisnik = new Korisnik();
 
+            if (session == null)
+                return null;
+
+            var korisniciData = session.Execute("select * from \"korisnik\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
+
+            foreach (var korisnikData in korisniciData)
+            {
+                int ID = Convert.ToInt32(korisnikData["domID"]);
+                if (ID==domID)
+                {
+                    int reg_broj = Convert.ToInt32(korisnikData["reg_broj"]);
+                    //int licna_primanja = Convert.ToInt32(korisnikData["licna_primanja"]);
+
+                    //  int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
+                    bool stanje = Convert.ToBoolean(korisnikData["stanje"]);
+                    string datum1 = korisnikData["datum_rodjenja"].ToString();
+                    DateTime datum = DateTime.Parse(datum1);
+
+                    // Korisnik korisnik = new Korisnik();
+                    korisnik.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                    korisnik.jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty;
+                    korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
+                    korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
+                    korisnik.datum_rodjenja = datum != null ? datum : DateTime.Now;
+                    korisnik.pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty;
+                    korisnik.starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty;
+                    korisnik.licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty;
+                    korisnik.br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty;
+                    korisnik.zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty;
+                    korisnik.pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty;
+                    korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
+                    korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
+                    korisnik.domID = domID != 0 ? domID : 0;
+                    korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
+                }
+            }
+            return korisnik;
+        }
         public static Korisnik GetKorisnik(string ime, string prezime)
         {
             ISession session = SessionManager.GetSession();

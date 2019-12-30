@@ -41,26 +41,13 @@ namespace SocialService
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int indexRow = dataGridView1.CurrentRow.Index;
-            string ime = (string)dataGridView1[2, indexRow].Value;
-            string prezime = (string)dataGridView1[3, indexRow].Value;
-            int regBroj = Convert.ToInt32(dataGridView1[0,indexRow].Value); // mora po reg broju!
-
-            DataProvider.UpdateKorisnik(ime, prezime,false);
-            //ovo je dodato ,da bismo imali uvid u promeni zauzetosti i pri brisanju
-            d.zauzeto -= 1;
-            DataProvider.ZauzetoIncrement(d.naziv,d.domID,d.zauzeto);
-            //dataGridView1.DataSource = DataProvider.VratiKorisnikeDoma(id_doma);
-            //Prikaz();
-            MessageBox.Show("Korisnik :"+ime + " " + prezime+ " je uspesno prenet u pasivu. \n Ucitajte korisnike ponovo","Pasivno",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            Promena(false);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             FormDodajKorisnika fdk = new FormDodajKorisnika();
             fdk.Show();
-            
-
         }
 
         private void FormKorisnici_Load(object sender, EventArgs e)
@@ -127,10 +114,10 @@ namespace SocialService
                 string ime = txtIme.Text;
                 string prezime = txtPrezime.Text;
 
-                    Korisnik k = DataProvider.GetKorisnik(ime, prezime);
-                    List<Korisnik> korisnici = new List<Korisnik>();
-                    korisnici.Add(k);
-                    dataGridView1.DataSource = korisnici;
+                List<Korisnik> korisnici = new List<Korisnik>();
+                Korisnik k = DataProvider.GetKorisnikDoma(ime,prezime,id_doma);
+                korisnici.Add(k);
+                dataGridView1.DataSource = korisnici;  
             }
         }
 
@@ -178,6 +165,33 @@ namespace SocialService
         {
             if (!Char.IsDigit(e.KeyChar) && !Char.IsControl(e.KeyChar))
                 e.Handled = true;
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Promena(true);
+            
+        }
+        public void Promena(bool state)
+        {
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[2, indexRow].Value;
+            string prezime = (string)dataGridView1[3, indexRow].Value;
+            int regBroj = Convert.ToInt32(dataGridView1[0, indexRow].Value); // mora po reg broju!
+
+            DataProvider.UpdateKorisnik(ime, prezime, state);
+            //ovo je dodato ,da bismo imali uvid u promeni zauzetosti i pri brisanju
+            if (state==true)
+            {
+                d.zauzeto += 1;
+                MessageBox.Show("Korisnik :" + ime + " " + prezime + " je uspesno prenet u aktivu. \n Ucitajte korisnike ponovo", "Aktivno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            else
+            {
+                d.zauzeto -= 1;
+                MessageBox.Show("Korisnik :" + ime + " " + prezime + " je uspesno prenet u pasivu. \n Ucitajte korisnike ponovo", "Pasivno", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            DataProvider.ZauzetoIncrement(d.naziv, d.domID, d.zauzeto);
         }
     }
 }

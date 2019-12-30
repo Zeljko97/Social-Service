@@ -12,8 +12,14 @@ insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUE
 
 ;;;;;;;;;;;;;;;      TEST podaci za Zaposlene         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('14512546651231', 'Stefan', 'Jankovic','lekar', 4,'1980-08-14', 2);
-insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('14512546651231', 'Mrle', 'Mrkonjic','lekar', 4,'1980-08-14','mrle','mrle', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0204980752012', 'Zorana', 'Bokanic','Lekar', 2,'1980-04-02', 1);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1901985752012', 'Nikola', 'Stankovic','Socijalni radnik', 3,'1985-01-19','nikola123','123321', 1);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1111970892044', 'Dragan','Kocukanovic','Domar', 10,'1970-11-11', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0803965754571', 'Ivana','Asmanovic','Domar', 10,'1965-03-08', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1104968754004', 'Nevena','Jovanovic','Medicinska sestra', 10,'1968-04-11', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0102975754555', 'Teodora','Zivkovic','Medicinska sestra', 7,'1975-02-01', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1451254665123', 'Stefan', 'Jankovic','lekar', 4,'1980-08-14', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1451254665123', 'Mrle', 'Mrkonjic','lekar', 4,'1980-08-14','mrle','mrle', 2);
 DataProvider.addZaposlen("15165484212312","Jovana", "Stefanovic", 4,"1979-04-15", 2);
           
 
@@ -32,6 +38,8 @@ insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "
 insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (3,'0319997864218','Emir','Draganovic','1960-08-20','M','stara osoba','socijalna pomoc','888888','','pokretan','','Jovana Savic',1,false);
 insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (4,'1597534682159','Dragana','Eric','1945-10-09','Z','stara osoba','penzija','00770098','','pokretan','','Dejan Zvani Ljubisa',1,false);
 
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID",stanje) values (1,'1802958752012','Milorad','Avdic','1958-02-18','M','stara osoba','penzija','112233445566','','pokretan','','David Avdic',2,true);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (2,'4579124510647','Jovica','Geric','1950-10-13','M','stara osoba','penzija','012345678999','','nepokretan','','Ljubinka Geric',2,false);
 
 
 
