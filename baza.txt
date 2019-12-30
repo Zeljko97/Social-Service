@@ -8,8 +8,4 @@ CREATE TABLE Korisnik ("reg_broj" int, jmbg text, ime text, prezime text, datum_
 CREATE TABLE Korisnik ("reg_broj" int, jmbg text, ime text, prezime text, datum_rodjenja date, pol text, starosna_odredba text, licna_primanja text, br_zdravstvene_knjizice text, zdravstveno_stanje text, pokretljivost text, lekovi text, podnosilac_zahteva text, "domID" int,"izvestaj_id" int,stanje boolean, PRIMARY KEY(ime ,prezime));
 
 
-
-
-
-
-CREATE TABLE Izvestaj(datum date, aktivnost text, "reg_broj" int, PRIMARY KEY("reg_broj"));
+CREATE TABLE Izvestaj(datum date, aktivnost text, "reg_broj" int, PRIMARY KEY("reg_broj",datum));

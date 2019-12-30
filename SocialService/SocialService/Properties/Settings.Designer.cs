@@ -46,5 +46,17 @@ namespace SocialService.Properties {
                 this["ID_dom"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("4")]
+        public int ID_Direktora {
+            get {
+                return ((int)(this["ID_Direktora"]));
+            }
+            set {
+                this["ID_Direktora"] = value;
+            }
+        }
     }
 }

@@ -16,6 +16,7 @@ namespace SocialService
     {
         public static int id_doma; // isto kao i ovamo
         public static Dom d;
+        public static Korisnik izvestaj;
         public FormKorisnici()
         {
             InitializeComponent();
@@ -23,19 +24,10 @@ namespace SocialService
 
         private void btnUcitajKorisnike_Click(object sender, EventArgs e)
         {
-            List<Korisnik> lista = new List<Korisnik>();
-            List<Korisnik> listaDoma = new List<Korisnik>();
-            lista = DataProvider.getKorisnici();
-            for (int i = 0; i < lista.Count; i++)
-            {
-                if (lista[i].domID==id_doma && lista[i].stanje==true) // prikazuje samo aktivne korisnike doma
-                {
-                    listaDoma.Add(lista[i]);
-                }
-            }
-            dataGridView1.DataSource = listaDoma;
+            dataGridView1.DataSource = DataProvider.getKorisniciDomaAktivnost(id_doma,true);
             dataGridView1.Columns["domID"].Visible = false;
             dataGridView1.Columns["stanje"].Visible = false;
+            dataGridView1.Columns["reg_broj"].Visible = false;
             Prikaz();
         }
 
@@ -53,7 +45,6 @@ namespace SocialService
         private void FormKorisnici_Load(object sender, EventArgs e)
         {
             Prikaz();
-
         }
         private void Prikaz()
         {
@@ -83,19 +74,10 @@ namespace SocialService
 
         private void btnUcitajPasivne_Click(object sender, EventArgs e)
         {
-            List<Korisnik> lista = new List<Korisnik>();
-            List<Korisnik> listaDoma = new List<Korisnik>();
-            lista = DataProvider.getKorisnici();
-            for (int i = 0; i < lista.Count; i++)
-            {
-                if (lista[i].domID == id_doma && lista[i].stanje == false) // prikazuje samo aktivne korisnike doma
-                {
-                    listaDoma.Add(lista[i]);
-                }
-            }
-            dataGridView1.DataSource = listaDoma;
+            dataGridView1.DataSource = DataProvider.getKorisniciDomaAktivnost(id_doma, false);
             dataGridView1.Columns["domID"].Visible = false;
             dataGridView1.Columns["stanje"].Visible = false;
+            dataGridView1.Columns["reg_broj"].Visible = false;
             Prikaz();
         }
 
@@ -147,9 +129,8 @@ namespace SocialService
             }
             else
             {
-                List<Korisnik> korisnici = new List<Korisnik>();
+                List<Korisnik> korisnici = DataProvider.VratiKorisnikeDoma(id_doma);
                 List<Korisnik> nadjeno = new List<Korisnik>();
-                korisnici = DataProvider.getKorisnici();
                 for (int i = 0; i < korisnici.Count(); i++)
                 {
                     if (korisnici[i].jmbg==txtJMBG.Text)
@@ -158,6 +139,8 @@ namespace SocialService
                     }
                 }
                 dataGridView1.DataSource = nadjeno;
+                dataGridView1.Columns["domID"].Visible = false;
+                dataGridView1.Columns["stanje"].Visible = false;
             }
         }
 
@@ -192,6 +175,18 @@ namespace SocialService
                 MessageBox.Show("Korisnik :" + ime + " " + prezime + " je uspesno prenet u pasivu. \n Ucitajte korisnike ponovo", "Pasivno", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
             DataProvider.ZauzetoIncrement(d.naziv, d.domID, d.zauzeto);
+        }
+
+        private void btnIzvestaj_Click(object sender, EventArgs e)
+        {
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[2, indexRow].Value;
+            string prezime = (string)dataGridView1[3, indexRow].Value;
+            int regBroj = Convert.ToInt32(dataGridView1[0, indexRow].Value); // mora po reg broju!
+
+            izvestaj = DataProvider.GetKorisnikDoma(ime,prezime,id_doma); // setujemo, da bi naredna forma mogla da koristi podatke.
+            FormKorisnikIzvestaj fki = new FormKorisnikIzvestaj();
+            fki.Show();
         }
     }
 }

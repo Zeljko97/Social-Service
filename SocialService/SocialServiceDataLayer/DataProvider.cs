@@ -247,7 +247,29 @@ namespace SocialServiceDataLayer
 
             return izvestaji;
         }
-
+        public static List<Izvestaj> vratiIzvestajeKorisnika(int regBroj)
+        {
+            ISession session = SessionManager.GetSession();
+            List<Izvestaj> izvestaji = new List<Izvestaj>();
+            if (session == null)
+                return null;
+            var izvestajiData = session.Execute("select * from \"izvestaj\"");
+            foreach (var izvestajData in izvestajiData)
+            {
+                int reg_broj = Convert.ToInt32(izvestajData["reg_broj"]);
+                if (reg_broj == regBroj)
+                {
+                    string datum1 = izvestajData["datum"].ToString();
+                    DateTime datum = DateTime.Parse(datum1);
+                    Izvestaj izvestaj = new Izvestaj();
+                    izvestaj.aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty;
+                    izvestaj.datum = datum != null ? datum : DateTime.Now;
+                    izvestaj.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                    izvestaji.Add(izvestaj);
+                }
+            }
+            return izvestaji;
+        }
         public static Izvestaj GetIzvestaj(int regBroj)
         {
             ISession session = SessionManager.GetSession();
@@ -274,7 +296,6 @@ namespace SocialServiceDataLayer
          
 
         }
-
         public static void AddIzvestaj(string date,string aktivnost, int reg_broj)
         {
             ISession session = SessionManager.GetSession();
@@ -282,9 +303,8 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return;
 
-            RowSet izvestajData = session.Execute("insert into \"izvestaj\" ( datum,aktivnost, \"reg_broj\") values ('" + date + "', '" + aktivnost + "', " + reg_broj +")");
+            RowSet izvestajData = session.Execute("insert into \"izvestaj\" (datum,aktivnost, \"reg_broj\") values ('" + date + "', '" + aktivnost + "', " + reg_broj +")");
         }
-
         public static void DeleteIzvestaj(int id)
         {
             ISession session = SessionManager.GetSession();
@@ -295,15 +315,14 @@ namespace SocialServiceDataLayer
 
             RowSet row = session.Execute("delete from \"izvestaj\" where \"izvestaj_id\" = " + id);
         }
-
-        public static void UpdateIzvestaj(string aktivnost, int izvestaj_id)
+        public static void UpdateIzvestaj(string aktivnost, int reg_broj)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            RowSet row = session.Execute("update \"izvestaj\" set aktivnost = '" + aktivnost + "' where izvestaj_id= " + izvestaj_id + "");
+            RowSet row = session.Execute("update \"izvestaj\" set aktivnost = '" + aktivnost + "' where \"reg_broj\"= " +  reg_broj+ "");
            
         }
         
@@ -528,6 +547,49 @@ namespace SocialServiceDataLayer
             return korisnici;
 
         }
+        //nova 
+        public static List<Korisnik> getKorisniciDomaAktivnost(int dom,bool s) // true je za aktivne,false je za pasivne korisnike
+        {
+            ISession session = SessionManager.GetSession();
+            List<Korisnik> korisnici = new List<Korisnik>();
+
+            if (session == null)
+                return null;
+            var korisniciData = session.Execute("select * from \"korisnik\"");
+            foreach (var korisnikData in korisniciData)
+            {
+                int domID = Convert.ToInt32(korisnikData["domID"]);
+                bool stanje = Convert.ToBoolean(korisnikData["stanje"]);
+                if (domID == dom && stanje == s)
+                {
+                    int reg_broj = Convert.ToInt32(korisnikData["reg_broj"]);
+
+                    string datum1 = korisnikData["datum_rodjenja"].ToString();
+                    DateTime datum = DateTime.Parse(datum1);
+
+                    Korisnik korisnik = new Korisnik();
+                    korisnik.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                    korisnik.jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty;
+                    korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
+                    korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
+                    korisnik.datum_rodjenja = datum != null ? datum : DateTime.Now;
+                    korisnik.pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty;
+                    korisnik.starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty;
+                    korisnik.licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty;
+                    korisnik.br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty;
+                    korisnik.zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty;
+                    korisnik.pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty;
+                    korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
+                    korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
+                    korisnik.domID = domID != 0 ? domID : 0;
+                    korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
+
+                    korisnici.Add(korisnik);
+                }
+            }
+            return korisnici;
+
+        }
         public static Korisnik GetKorisnikDoma(string ime, string prezime, int domID) // funkcija koja nam pomaze da nadjemo korisnika odredjenog doma na osnovu imena i prezimena
         {
             ISession session = SessionManager.GetSession();
@@ -652,32 +714,36 @@ namespace SocialServiceDataLayer
 
             foreach (var korisnikData in korisniciData)
             {
-                int reg_broj = Convert.ToInt32(korisnikData["reg_broj"]);
-                //int licna_primanja = Convert.ToInt32(korisnikData["licna_primanja"]);
                 int domID = Convert.ToInt32(korisnikData["domID"]);
-                int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
-                string datum1 = korisnikData["datum_rodjenja"].ToString();
-                DateTime datum = DateTime.Parse(datum1);
+                if (domID == dom)
+                {
+                    int reg_broj = Convert.ToInt32(korisnikData["reg_broj"]);
+                    //int licna_primanja = Convert.ToInt32(korisnikData["licna_primanja"]);
+                    bool stanje = Convert.ToBoolean(korisnikData["stanje"]);
+                    int izvestaj_id = Convert.ToInt32(korisnikData["izvestaj_id"]);
+                    string datum1 = korisnikData["datum_rodjenja"].ToString();
+                    DateTime datum = DateTime.Parse(datum1);
 
-                Korisnik korisnik = new Korisnik();
-                korisnik.reg_broj = reg_broj != 0 ? reg_broj : 0;
-                korisnik.jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty;
-                korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
-                korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
-                korisnik.datum_rodjenja = datum != null ? datum : DateTime.Now;
-                korisnik.pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty;
-                korisnik.starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty;
-                korisnik.licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty;
-                korisnik.br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty;
-                korisnik.zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty;
-                korisnik.pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty;
-                korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
-                korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
-                korisnik.domID = domID != 0 ? domID : 0;
-               // korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
+                    Korisnik korisnik = new Korisnik();
+                    korisnik.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                    korisnik.jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty;
+                    korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
+                    korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
+                    korisnik.datum_rodjenja = datum != null ? datum : DateTime.Now;
+                    korisnik.pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty;
+                    korisnik.starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty;
+                    korisnik.licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty;
+                    korisnik.br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty;
+                    korisnik.zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty;
+                    korisnik.pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty;
+                    korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
+                    korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
+                    korisnik.domID = domID != 0 ? domID : 0;
+                    korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
+                    // korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
 
-                korisnici.Add(korisnik);
-
+                    korisnici.Add(korisnik);
+                }
 
             }
             return korisnici;
@@ -703,6 +769,15 @@ namespace SocialServiceDataLayer
                 return;
 
             RowSet korisnikData = session.Execute("update \"korisnik\" set stanje = " + stanje + " where ime = '" + ime + "' and prezime = '" + prezime + "'");
+        }
+        public static void UpdateKorisnik(string ime, string prezime, string zdravstveno_stanje, string lekovi)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+
+            RowSet korisnikData = session.Execute("update \"korisnik\" set zdravstveno_stanje = '" + zdravstveno_stanje + "', lekovi = '"+ lekovi+"' where ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
         #endregion
 
@@ -835,16 +910,14 @@ namespace SocialServiceDataLayer
             return direktor;
         }
 
-        public static void AddDirektor(string ime, string prezime, int domID)
+        public static void AddDirektor(int id,string ime, string prezime, int domID)
         {
             ISession session = SessionManager.GetSession();
 
             if (session == null)
                 return;
 
-            RowSet direktorData = session.Execute("insert into \"direktor\" (ime, prezime,\"domID\") values ('" + ime + "', '" + prezime + "', " + domID + ")");
-
-
+            RowSet direktorData = session.Execute("insert into \"direktor\" (id,ime, prezime,\"domID\") values (" +id+", '" + ime + "', '" + prezime + "', " + domID + ")");
         }
 
         public static void UpdateDirektor(string ime, string prezime, string user_name, string password)

@@ -115,6 +115,12 @@
     <Compile Include="FormKorisnici.Designer.cs">
       <DependentUpon>FormKorisnici.cs</DependentUpon>
     </Compile>
+    <Compile Include="FormKorisnikIzvestaj.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormKorisnikIzvestaj.Designer.cs">
+      <DependentUpon>FormKorisnikIzvestaj.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormNoviDirektor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -188,6 +194,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormKorisnici.resx">
       <DependentUpon>FormKorisnici.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormKorisnikIzvestaj.resx">
+      <DependentUpon>FormKorisnikIzvestaj.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormNoviDirektor.resx">
       <DependentUpon>FormNoviDirektor.cs</DependentUpon>

@@ -52,7 +52,7 @@ namespace SocialService
           //  string prezime = txtPrezime.Text;
           //  string user_name = txtUsername.Text;
           //  string password = txtPassword.Text;
-            DataProvider.UpdateZaposlen(txtIme.Text,txtPrezime.Text,LogInLekar.radniStaz,txtUsername.Text,txtPassword.Text);
+            //DataProvider.UpdateZaposlen(txtIme.Text,txtPrezime.Text,LogInLekar.radniStaz,txtUsername.Text,txtPassword.Text);
             MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.","Uspesno unet Username i password",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
     }

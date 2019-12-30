@@ -40,7 +40,7 @@
             // txtIme
             // 
             this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(79, 9);
+            this.txtIme.Location = new System.Drawing.Point(79, 15);
             this.txtIme.Name = "txtIme";
             this.txtIme.Size = new System.Drawing.Size(156, 22);
             this.txtIme.TabIndex = 0;
@@ -57,7 +57,7 @@
             // 
             this.cbDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDom.FormattingEnabled = true;
-            this.cbDom.Location = new System.Drawing.Point(79, 96);
+            this.cbDom.Location = new System.Drawing.Point(79, 86);
             this.cbDom.Name = "cbDom";
             this.cbDom.Size = new System.Drawing.Size(156, 24);
             this.cbDom.TabIndex = 2;
@@ -86,7 +86,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(19, 99);
+            this.label3.Location = new System.Drawing.Point(19, 89);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(44, 16);
             this.label3.TabIndex = 5;
@@ -97,7 +97,7 @@
             this.btnUnesi.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.btnUnesi.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnUnesi.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUnesi.Location = new System.Drawing.Point(79, 126);
+            this.btnUnesi.Location = new System.Drawing.Point(79, 116);
             this.btnUnesi.Name = "btnUnesi";
             this.btnUnesi.Size = new System.Drawing.Size(156, 43);
             this.btnUnesi.TabIndex = 6;
@@ -109,7 +109,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(262, 174);
+            this.ClientSize = new System.Drawing.Size(258, 165);
             this.Controls.Add(this.btnUnesi);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);

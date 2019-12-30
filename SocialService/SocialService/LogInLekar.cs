@@ -7,7 +7,8 @@ namespace SocialService
 {
     public partial class LogInLekar : Form
     {
-        public static int radniStaz;
+        public static string UserName = "";
+        public static string PassWord = "";
         public LogInLekar()
         {
             InitializeComponent();

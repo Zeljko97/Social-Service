@@ -29,7 +29,16 @@ namespace SocialService
                 cbDom.Items.Add(domovi[i].naziv);
             }
         }
-
+        private void txtIme_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        private void txtPrezime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
         private void btnUnesi_Click(object sender, EventArgs e)
         {
             string dom = cbDom.SelectedItem.ToString();
@@ -37,9 +46,11 @@ namespace SocialService
             Dom d = new Dom();
             d = DataProvider.GetDom(dom);
 
-            DataProvider.AddDirektor(txtIme.Text, txtPrezime.Text, d.domID);
+            DataProvider.AddDirektor(Properties.Settings.Default.ID_Direktora,txtIme.Text, txtPrezime.Text, d.domID);
+            Properties.Settings.Default.ID_Direktora += 1;
+            Properties.Settings.Default.Save();
 
-            MessageBox.Show("Uspesno ste uneli podatke.");
+            MessageBox.Show("Uspesno ste uneli podatke.","Uspesan unos",MessageBoxButtons.OK,MessageBoxIcon.Information);
 
         }
     }
