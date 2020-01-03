@@ -36,7 +36,7 @@ namespace SocialService
             List<Dom> lista = new List<Dom>();
 
             lista = DataProvider.GetDomovi();
-            dataGridView1.DataSource = lista;
+            dataGridView3.DataSource = lista;
         }
 
         private void FormAdmin_Load(object sender, EventArgs e)
@@ -83,19 +83,13 @@ namespace SocialService
                 errorProvider1.SetError(cbSpratnost, "Neophodno uneti!");
                 return;
             }
-            else if(cbZauzeto.SelectedItem == null)
-            {
-                errorProvider1.SetError(cbZauzeto, "Neophodno uneti!");
-                return;
-            }
 
             int spratnost = Convert.ToInt32(cbSpratnost.SelectedItem.ToString());
             int kapacitet = Convert.ToInt32(cbKapacitet.SelectedItem.ToString());
-            int zauzeto = Convert.ToInt32(cbZauzeto.SelectedItem.ToString());
 
         if(txtNaziv.Text == "")
             {
-                errorProvider1.SetError(txtNaziv, "Neophodno uneti naziv!");
+                errorProvider1.SetError(txtNaziv, "Neophodno uneti naziv!!");
                 return;
             }
 
@@ -106,6 +100,19 @@ namespace SocialService
             dataGridView1.DataSource = domovi;
             Properties.Settings.Default.ID_dom += 1;
             Properties.Settings.Default.Save();
+
+            MessageBox.Show("Dom "+  txtNaziv.Text + " je uspesno dodat" ,"Adresa doma:" + txtAdresa.Text,MessageBoxButtons.OK,MessageBoxIcon.Information);
+            label1.Visible = false;
+            label2.Visible = false;
+            label3.Visible = false;
+            label4.Visible = false;
+            label5.Visible = false;
+            txtAdresa.Visible = false;
+            txtNaziv.Visible = false;
+            cbKapacitet.Visible = false;
+            cbSpratnost.Visible = false;
+            cbZauzeto.Visible = false;
+            btnDodaj.Visible = false;
         }
 
         private void btnDodajDirektora_Click(object sender, EventArgs e)
@@ -190,10 +197,10 @@ namespace SocialService
                     listaZaposleni1.Add(listaZaposleni[i]);
             }
 
-            dataGridView1.DataSource = listaZaposleni1;
+            dataGridView2.DataSource = listaZaposleni1;
 
-            dataGridView1.Columns["user_name"].Visible = false;
-            dataGridView1.Columns["password"].Visible = false;
+            dataGridView2.Columns["user_name"].Visible = false;
+            dataGridView2.Columns["password"].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -216,7 +223,7 @@ namespace SocialService
         {
             List<Korisnik> korisnici = new List<Korisnik>();
             korisnici = DataProvider.getKorisnici();
-            dataGridView1.DataSource = korisnici;
+            dataGridView4.DataSource = korisnici;
         }
         private void Refresh()
         {
@@ -228,6 +235,45 @@ namespace SocialService
                 cbDom.Items.Add(listaDomova[i].naziv);
             }
            // Properties.Settings.Default.ID_dom = listaDomova.Count();
+        }
+        private void dataGridView4_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void btnResetuj_Click(object sender, EventArgs e)
+        {
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[1, indexRow].Value;
+            string prezime = (string)dataGridView1[2, indexRow].Value;
+
+
+            Direktor d = DataProvider.GetDirektor(ime, prezime);
+            DataProvider.UpdateDirektor(ime, prezime,"", "");
+            MessageBox.Show("Username i password korisnika " + ime + " " + prezime + " su uspesno resetovani.","Resetovanje uspesno.",MessageBoxButtons.OK,MessageBoxIcon.Information);
+        }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnObrisiDirektora_Click(object sender, EventArgs e)
+        {
+            int indexRow = dataGridView1.CurrentRow.Index;
+            string ime = (string)dataGridView1[1, indexRow].Value;
+            string prezime = (string)dataGridView1[2, indexRow].Value;
+            Direktor d = DataProvider.GetDirektor(ime, prezime);
+            if (d == null)
+            {
+                MessageBox.Show("Nije moguce izvrsiti operaciju brisanja!");
+                return;
+            }
+            else
+            {
+                DataProvider.DeleteDirektor(ime, prezime);
+                MessageBox.Show("Uspesno je obrisan direktor "+ ime + " " + prezime,"Brisanje uspesno!",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            }
         }
     }
 }

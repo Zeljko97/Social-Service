@@ -14,6 +14,7 @@ namespace SocialService
 {
     public partial class FormSignInLekar : Form
     {
+        private static Zaposleni z;
         public FormSignInLekar()
         {
             InitializeComponent();
@@ -23,8 +24,7 @@ namespace SocialService
         {
             string ime = txtIme.Text;
             string prezime = txtPrezime.Text;
-
-             Zaposleni z = new Zaposleni();
+            z = new Zaposleni();
             z = DataProvider.GetZaposlen(ime, prezime);
 
             if (z.ime != ime && z.prezime != prezime && z.radno_mesto!="Lekar" )
@@ -48,12 +48,20 @@ namespace SocialService
 
         private void btnUnesi_Click(object sender, EventArgs e)
         {
-         //   string ime = txtIme.Text;
-          //  string prezime = txtPrezime.Text;
-          //  string user_name = txtUsername.Text;
-          //  string password = txtPassword.Text;
-            //DataProvider.UpdateZaposlen(txtIme.Text,txtPrezime.Text,LogInLekar.radniStaz,txtUsername.Text,txtPassword.Text);
-            MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.","Uspesno unet Username i password",MessageBoxButtons.OK,MessageBoxIcon.Information);
+
+            //   string ime = txtIme.Text;
+            //  string prezime = txtPrezime.Text;
+              string user_name = txtUsername.Text;
+              string password = txtPassword.Text;
+
+            DataProvider.UpdateZaposlen(z.ime,z.prezime,z.radni_staz,txtUsername.Text,txtPassword.Text);
+            MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.","Uspesno uneto korisnicko ime  i lozinka",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            this.Close();
+        }
+
+        private void FormSignInLekar_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -759,7 +759,6 @@ namespace SocialServiceDataLayer
             RowSet row = session.Execute("delete from \"korisnik\" where ime = '" + ime + "' and prezime = '" + prezime + "'");
            // RowSet row = session.Execute("delete from \"korisnik\" where \"reg_broj\" = " + regBroj); //+ " and ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
-
         //mora postojati update,posto korisnike nikada ne brisemo!
         public static void UpdateKorisnik(string ime, string prezime, bool stanje)
         {
@@ -770,6 +769,7 @@ namespace SocialServiceDataLayer
 
             RowSet korisnikData = session.Execute("update \"korisnik\" set stanje = " + stanje + " where ime = '" + ime + "' and prezime = '" + prezime + "'");
         }
+
         public static void UpdateKorisnik(string ime, string prezime, string zdravstveno_stanje, string lekovi)
         {
             ISession session = SessionManager.GetSession();
@@ -879,6 +879,7 @@ namespace SocialServiceDataLayer
 
             return direktori;
         }
+
         public static Direktor GetDirektor(string ime, string prezime)
         {
             ISession session = SessionManager.GetSession();
@@ -920,6 +921,17 @@ namespace SocialServiceDataLayer
             RowSet direktorData = session.Execute("insert into \"direktor\" (id,ime, prezime,\"domID\") values (" +id+", '" + ime + "', '" + prezime + "', " + domID + ")");
         }
 
+        public static void DeleteDirektor(string ime, string prezime)
+        {
+            ISession session = SessionManager.GetSession();
+            Direktor direktor = new Direktor();
+
+            if (session == null)
+                return;
+
+            RowSet row = session.Execute("delete from \"direktor\" where \"ime\" = '" + ime + "' and \"prezime\" = '" + prezime + "'");
+        }
+
         public static void UpdateDirektor(string ime, string prezime, string user_name, string password)
         {
             ISession session = SessionManager.GetSession();
@@ -942,7 +954,6 @@ namespace SocialServiceDataLayer
             else
                 return 0;
         }
-
         #endregion
 
         #region DodatneFUnkcije

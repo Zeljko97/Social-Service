@@ -85,7 +85,7 @@ namespace SocialService
             Direktor direktor = new Direktor();
             for(int i = 0;i<lista.Count;i++)
             {
-                if (lista[i].user_name == username && password == password)
+                if (lista[i].user_name == username && lista[i].password == password)
                     direktor = lista[i];
             }
 

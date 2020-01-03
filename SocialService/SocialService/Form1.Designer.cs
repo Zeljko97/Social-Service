@@ -28,12 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.button2 = new System.Windows.Forms.Button();
             this.btnSocijalniRadnik = new System.Windows.Forms.Button();
             this.btnLekar = new System.Windows.Forms.Button();
             this.btnAdmin = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
+            this.Admin = new System.Windows.Forms.ToolTip(this.components);
             this.SuspendLayout();
             // 
             // button2
@@ -78,12 +80,15 @@
             // btnAdmin
             // 
             this.btnAdmin.BackColor = System.Drawing.Color.MediumSeaGreen;
+            this.btnAdmin.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnAdmin.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnAdmin.Location = new System.Drawing.Point(602, 25);
+            this.btnAdmin.Location = new System.Drawing.Point(619, 12);
             this.btnAdmin.Name = "btnAdmin";
             this.btnAdmin.Size = new System.Drawing.Size(118, 29);
             this.btnAdmin.TabIndex = 8;
             this.btnAdmin.Text = "Administrator";
+            this.Admin.SetToolTip(this.btnAdmin, "Administratorski mod rada (Postavljanje direkora doma,unos novih domova,zaposleni" +
+        "h itd.");
             this.btnAdmin.UseVisualStyleBackColor = false;
             this.btnAdmin.Click += new System.EventHandler(this.btnAdmin_Click);
             // 
@@ -128,6 +133,7 @@
         private System.Windows.Forms.Button btnLekar;
         private System.Windows.Forms.Button btnAdmin;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ToolTip Admin;
     }
 }
 

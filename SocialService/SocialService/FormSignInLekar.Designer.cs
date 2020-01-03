@@ -164,6 +164,7 @@
             this.MinimizeBox = false;
             this.Name = "FormSignInLekar";
             this.Text = "FormSignInLekar";
+            this.Load += new System.EventHandler(this.FormSignInLekar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

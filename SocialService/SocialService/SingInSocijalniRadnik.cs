@@ -69,7 +69,8 @@ namespace SocialService
 
             int radni_staz = socRadnik.radni_staz;
             DataProvider.UpdateZaposlen(ime, prezime,radni_staz, userName, password);
-            MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.");
+            MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.","Uspesno setovano korisnicnicko ime i lozinka.",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            this.Close();
         }
 
         private void SingInSocijalniRadnik_Load(object sender, EventArgs e)
