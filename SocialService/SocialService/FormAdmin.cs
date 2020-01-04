@@ -278,7 +278,26 @@ namespace SocialService
 
         private void btnObrisiDom_Click(object sender, EventArgs e)
         {
+            int indexRow = dataGridView3.CurrentRow.Index;
+            string naziv = (string)dataGridView3[1, indexRow].Value;
+            int domID = Convert.ToInt32(dataGridView3[0, indexRow].Value);
+            Dom d = DataProvider.GetDom(naziv);
+            if (d == null)
+            {
+                MessageBox.Show("Nije moguce izvrsiti operaciju brisanja!");
+                return;
+            }
+            else
+            {
+                DataProvider.DeleteDirektoreDoma(domID);
+                DataProvider.DeleteKorisnikeDoma(domID);
+                DataProvider.DeleteZaposleneDoma(domID);
+                DataProvider.DeleteDom(naziv, domID);
+                MessageBox.Show(naziv + " dom:" + domID, "Uspesno obrisano!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
 
+
+           
         }
     }
 }

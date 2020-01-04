@@ -931,6 +931,7 @@ namespace SocialServiceDataLayer
 
             RowSet row = session.Execute("delete from \"direktor\" where \"ime\" = '" + ime + "' and \"prezime\" = '" + prezime + "'");
         }
+        
 
         public static void UpdateDirektor(string ime, string prezime, string user_name, string password)
         {
@@ -957,6 +958,49 @@ namespace SocialServiceDataLayer
         #endregion
 
         #region DodatneFUnkcije
+        public static void DeleteDirektoreDoma(int id_doma)
+        {
+            ISession session = SessionManager.GetSession();
+            Direktor direktor = new Direktor();
+
+            if (session == null)
+                return;
+            List<Direktor> direktori = DataProvider.GetDirektori();
+            foreach (var dir in direktori)
+            {
+                if (dir.domID == id_doma)
+                {
+                    DataProvider.DeleteDirektor(dir.ime, dir.prezime);
+                }
+            }
+        }
+        public static void DeleteZaposleneDoma(int id_doma)
+        {
+            ISession session = SessionManager.GetSession();
+            Direktor direktor = new Direktor();
+
+            if (session == null)
+                return;
+            List<Zaposleni> zaposleni = DataProvider.getZaposleniDom(id_doma);
+            foreach (var dir in zaposleni)
+            {
+                    DataProvider.DeleteZaposlen(dir.ime, dir.prezime);
+            }
+        }
+        public static void DeleteKorisnikeDoma(int id_doma)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+            List<Korisnik> korisnici = DataProvider.VratiKorisnikeDoma(id_doma);
+            foreach (var dir in korisnici)
+            {
+                    DataProvider.DeleteKorisnik(dir.ime, dir.prezime);
+            }
+        }
+
+
 
         #endregion
     }
