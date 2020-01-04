@@ -49,12 +49,12 @@
             this.labelaPrezime = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.ttPronadjiImePrezime = new System.Windows.Forms.ToolTip(this.components);
+            this.btnPronadjiKnjizica = new System.Windows.Forms.Button();
             this.ttUpis = new System.Windows.Forms.ToolTip(this.components);
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
             this.txtBrojKnjizice = new System.Windows.Forms.TextBox();
-            this.btnPronadjiKnjizica = new System.Windows.Forms.Button();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -269,47 +269,6 @@
             this.panel2.Size = new System.Drawing.Size(257, 308);
             this.panel2.TabIndex = 19;
             // 
-            // panel3
-            // 
-            this.panel3.BackColor = System.Drawing.Color.LightCyan;
-            this.panel3.Controls.Add(this.btnPronadjiKnjizica);
-            this.panel3.Controls.Add(this.txtBrojKnjizice);
-            this.panel3.Controls.Add(this.label6);
-            this.panel3.Controls.Add(this.label5);
-            this.panel3.Location = new System.Drawing.Point(476, 9);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(208, 117);
-            this.panel3.TabIndex = 20;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(3, 12);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(121, 19);
-            this.label5.TabIndex = 4;
-            this.label5.Text = "Pronadji pacijenta:";
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(14, 37);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(90, 15);
-            this.label6.TabIndex = 8;
-            this.label6.Text = "Broj knjizice:";
-            // 
-            // txtBrojKnjizice
-            // 
-            this.txtBrojKnjizice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBrojKnjizice.Location = new System.Drawing.Point(17, 59);
-            this.txtBrojKnjizice.Name = "txtBrojKnjizice";
-            this.txtBrojKnjizice.Size = new System.Drawing.Size(162, 21);
-            this.txtBrojKnjizice.TabIndex = 9;
-            this.txtBrojKnjizice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrojKnjizice_KeyPress);
-            // 
             // btnPronadjiKnjizica
             // 
             this.btnPronadjiKnjizica.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -322,12 +281,53 @@
             this.btnPronadjiKnjizica.UseVisualStyleBackColor = true;
             this.btnPronadjiKnjizica.Click += new System.EventHandler(this.btnPronadjiKnjizica_Click);
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.LightCyan;
+            this.panel3.Controls.Add(this.btnPronadjiKnjizica);
+            this.panel3.Controls.Add(this.txtBrojKnjizice);
+            this.panel3.Controls.Add(this.label6);
+            this.panel3.Controls.Add(this.label5);
+            this.panel3.Location = new System.Drawing.Point(476, 9);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(208, 117);
+            this.panel3.TabIndex = 20;
+            // 
+            // txtBrojKnjizice
+            // 
+            this.txtBrojKnjizice.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtBrojKnjizice.Location = new System.Drawing.Point(17, 59);
+            this.txtBrojKnjizice.Name = "txtBrojKnjizice";
+            this.txtBrojKnjizice.Size = new System.Drawing.Size(162, 21);
+            this.txtBrojKnjizice.TabIndex = 9;
+            this.txtBrojKnjizice.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBrojKnjizice_KeyPress);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.Location = new System.Drawing.Point(14, 37);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(90, 15);
+            this.label6.TabIndex = 8;
+            this.label6.Text = "Broj knjizice:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.Location = new System.Drawing.Point(3, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(121, 19);
+            this.label5.TabIndex = 4;
+            this.label5.Text = "Pronadji pacijenta:";
+            // 
             // FormaLekar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.ClientSize = new System.Drawing.Size(959, 459);
+            this.ClientSize = new System.Drawing.Size(952, 459);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.lblObavestenje);

@@ -53,8 +53,8 @@ namespace SocialService
                 DataProvider.AddZaposlen(txtJMBG.Text, txtIme.Text, txtPrezime.Text, radniStaz, datum, cbRadnoMesto.Text, dom.domID);
 
                 this.Close(); // zatvori formu za dodavanje i opet otvori formu za Zaposlene
-                FormaZaposleni fz = new FormaZaposleni();
-                fz.Show();
+               // FormaZaposleni fz = new FormaZaposleni();
+               // fz.Show();
             }
         }
 

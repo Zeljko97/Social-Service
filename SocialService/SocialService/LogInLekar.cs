@@ -28,6 +28,9 @@ namespace SocialService
             {
                 string userName = txtUsername.Text;
                 string password = txtPassword.Text;
+
+                UserName = userName;
+                PassWord = password;
                 bool a = DataProvider.CheckUserNameZaposleni(userName, password);
                 FormaLekar fl = new FormaLekar();
                 if (a == true)

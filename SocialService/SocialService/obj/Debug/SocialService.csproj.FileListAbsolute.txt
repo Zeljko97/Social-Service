@@ -76,3 +76,5 @@ E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.For
 C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormUpdateZaposleni.resources
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormSignInLekar.resources
 E:\GitHub\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormKorisnikIzvestaj.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormKorisnikIzvestaj.resources
+C:\GITHUB\Social-Service\SocialService\SocialService\obj\Debug\SocialService.FormSignInLekar.resources

@@ -308,6 +308,7 @@
             this.btnObrisiDom.Text = "Obrisi dom";
             this.NoviDom.SetToolTip(this.btnObrisiDom, "Pazljivo unesite podatke prilikom dodavanja novog doma u sistem.");
             this.btnObrisiDom.UseVisualStyleBackColor = true;
+            this.btnObrisiDom.Click += new System.EventHandler(this.btnObrisiDom_Click);
             // 
             // panel1
             // 

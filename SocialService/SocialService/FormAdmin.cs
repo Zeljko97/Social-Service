@@ -136,9 +136,9 @@ namespace SocialService
             fuz.Show();*/
 
             //ucita info
-            int indexRow = dataGridView1.CurrentRow.Index;
-            string ime = (string)dataGridView1[1, indexRow].Value;
-            string prezime = (string)dataGridView1[2, indexRow].Value;
+            int indexRow = dataGridView2.CurrentRow.Index;
+            string ime = (string)dataGridView2[1, indexRow].Value;
+            string prezime = (string)dataGridView2[2, indexRow].Value;
             prenos = DataProvider.GetZaposlen(ime, prezime);
 
             FormUpdateZaposleni fnz = new FormUpdateZaposleni();
@@ -147,9 +147,9 @@ namespace SocialService
 
         private void button1_Click(object sender, EventArgs e)
         {
-            int indexRow = dataGridView1.CurrentRow.Index;
-            string ime = (string)dataGridView1[1, indexRow].Value;
-            string prezime = (string)dataGridView1[2, indexRow].Value;
+            int indexRow = dataGridView2.CurrentRow.Index;
+            string ime = (string)dataGridView2[1, indexRow].Value;
+            string prezime = (string)dataGridView2[2, indexRow].Value;
             DataProvider.DeleteZaposlen(ime, prezime);
 
             //nije bas optimalno stalno ucitavati listu, ali s obzirom da lista ne moze biti velika u ovom sistemu
@@ -169,10 +169,10 @@ namespace SocialService
                     listaZaposleni1.Add(listaZaposleni[i]);
             }
 
-            dataGridView1.DataSource = listaZaposleni1;
+            dataGridView2.DataSource = listaZaposleni1;
 
-            dataGridView1.Columns["user_name"].Visible = false;
-            dataGridView1.Columns["password"].Visible = false;
+            dataGridView2.Columns["user_name"].Visible = false;
+            dataGridView2.Columns["password"].Visible = false;
         }
 
         private void cbDom_SelectedIndexChanged(object sender, EventArgs e)
@@ -274,6 +274,11 @@ namespace SocialService
                 DataProvider.DeleteDirektor(ime, prezime);
                 MessageBox.Show("Uspesno je obrisan direktor "+ ime + " " + prezime,"Brisanje uspesno!",MessageBoxButtons.OK,MessageBoxIcon.Information);
             }
+        }
+
+        private void btnObrisiDom_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
