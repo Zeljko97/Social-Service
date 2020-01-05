@@ -51,9 +51,6 @@ namespace SocialService
                 label5.Visible = true;
                 label6.Visible = true;
                 btnSingIn.Visible = true;
-
-
-               
             }
         }
 
@@ -62,8 +59,6 @@ namespace SocialService
             int indexRow = dataGridView1.CurrentRow.Index;
             string ime = dataGridView1[1, indexRow].Value.ToString();
             string prezime = dataGridView1[2, indexRow].Value.ToString();
-
-            
             string userName = txtUsername.Text;
             string password = txtPassword.Text;
 
@@ -85,14 +80,11 @@ namespace SocialService
                 if (zaposleni[i].radno_mesto == "Socijalni radnik")
                     socRadnici.Add(zaposleni[i]);
             }
-
             dataGridView1.DataSource = socRadnici;
-           
             dataGridView1.Columns["user_name"].Visible = false;
             dataGridView1.Columns["password"].Visible = false;
             dataGridView1.Columns["domID"].Visible = false;
             dataGridView1.Columns["datum_rodjenja"].Visible = false;
-
         }
     }
 }

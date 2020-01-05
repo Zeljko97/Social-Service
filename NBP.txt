@@ -1,55 +1,83 @@
-   
-;;;;;;;;;;;;;;;;;;;;;;;;       TEST podaci za IZVESTAJ          ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-insert into izvestaj ("izvestaj_id",datum,"aktivnost","reg_broj") VALUES(1,'1996-01-02','nesto', 21); 
-
-
-;;;;;;;;;;;;;;;;      TEST podaci za DIREKTOR-a      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      TEST podaci za DIREKTOR-a      ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (1,'Zeljko','Mitrovic','zeljko', 'mitar',1);
 insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (2,'Marko','Miloradovic','marezen', '123123',3);
 insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (3,'Ana','Ivanovic','anica', 'kiss69',2);
+insert into "direktor" (id,"ime","prezime","user_name","password","domID") VALUES (4,'Andrijana','Jovanovic','joksi', 'joksi88',4);
 
-;;;;;;;;;;;;;;;      TEST podaci za Zaposlene         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;      TEST podaci za Zaposlene         ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0204980752012', 'Zorana', 'Bokanic','Lekar', 2,'1980-04-02', 1);
 insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1901985752012', 'Nikola', 'Stankovic','Socijalni radnik', 3,'1985-01-19','nikola123','123321', 1);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0204960752012', 'Stojan', 'Jezdic','Domar', 17,'1960-04-02', 1);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('3003975759047', 'Kristina', 'Vasic','Medicinska sestra', 8,'1975-03-30', 1);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0410970759047', 'Ivona', 'Milosevic','Medicinska sestra', 13,'1970-10-04', 1);
 insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1111970892044', 'Dragan','Kocukanovic','Domar', 10,'1970-11-11', 2);
 insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0803965754571', 'Ivana','Asmanovic','Domar', 10,'1965-03-08', 2);
 insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1104968754004', 'Nevena','Jovanovic','Medicinska sestra', 10,'1968-04-11', 2);
 insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0102975754555', 'Teodora','Zivkovic','Medicinska sestra', 7,'1975-02-01', 2);
 insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1451254665123', 'Stefan', 'Jankovic','lekar', 4,'1980-08-14', 2);
-insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1451254665123', 'Mrle', 'Mrkonjic','lekar', 4,'1980-08-14','mrle','mrle', 2);
-DataProvider.addZaposlen("15165484212312","Jovana", "Stefanovic", 4,"1979-04-15", 2);
-          
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1451254665123', 'Mrle', 'Mrkonjic','Lekar', 4,'1980-08-14','mrle','mrle', 2);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0204960759999', 'Zoran', 'Mitic','Lekar', 10,'1960-04-02', 3);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1101972754770', 'Milena', 'Zivkovic','Socijalni radnik', 20,'1972-01-11','mima72','mimamima72', 3);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0812963950007', 'Goran', 'Ivanovic','Domar', 22,'1963-12-08', 3);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('2407969759040', 'Nena', 'Zivanovic','Medicinska sestra', 8,'1969-07-24', 3);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0102970751995', 'Nevena', 'Krstic','Medicinska sestra', 23,'1970-01-02', 3);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('0808978759999', 'Sara', 'Deletic','Lekar', 15,'1978-08-08', 4);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"user_name","password","domID") values ('1101990799999', 'Katarina', 'Zivanovic','Socijalni radnik', 17,'1990-01-11','Katarina90','mihajlosrce', 4);
+insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1810987951111', 'Nenad', 'Guaranovic','Domar', 16,'1987-10-18', 4);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1103969701588', 'Darko', 'Lukic','Medicinska sestra', 25,'1969-03-11', 4);
+insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1702985758899', 'Jelena', 'Sebastijanovic','Medicinska sestra', 20,'1985-02-17', 4);
 
-;;;;;;;;;;;;;;;;;;;;;;;;     TEST podaci za DOM       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;     TEST podaci za DOM       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (1,'Dom za stare', 'Vojvode Misica 2',4,100,4);
-insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (2,'Cegarska Dolina', 'Donji Matejevac ',4,120,0);
-insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (3,'Gerontoloski centar Nis', 'Deveti Maj 4',3,80,5);
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (1,'Radost', 'Djerdapska ulica 12',4,100,2);
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (2,'Cegarska Dolina', 'Donji Matejevac 17',4,120,1);
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (3,'Gerontoloski centar Nis', 'Deveti Maj 4',3,90,2);
+insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (4,'Eskulap Centar', 'Toplickih partizanskih odreda bb',3,120,2);
 
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;       TEST podaci za Korisnike ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;       TEST podaci za Korisnike ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID",stanje) values (1,'1234567891234','Mirko','Stojkovic','1945-10-09','Muski','stara osoba','penzija','126545','','pokretan','','Marko Stojkovic',1,true);
 insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (2,'4579124510647','Stefan','Milosevic','1950-04-13','Muski','stara osoba','penzija','99999','','nepokretan','','Ivana Milosevic',1,true);
 insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (3,'0319997864218','Emir','Draganovic','1960-08-20','Muski','stara osoba','socijalna pomoc','888888','','pokretan','','Jovana Savic',1,false);
 insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (4,'1597534682159','Dragana','Eric','1945-10-09','Zenski','stara osoba','penzija','00770098','','pokretan','','Dejan Zvani Ljubisa',1,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID",stanje) values (5,'1802958752012','Milorad','Avdic','1958-02-18','Muski','stara osoba','penzija','112233445566','','pokretan','','David Avdic',2,true);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (6,'4579124510647','Jovica','Geric','1950-10-13','Muski','stara osoba','penzija','012345678999','','nepokretan','','Ljubinka Geric',2,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID",stanje) values (7,'12025678999999','Zeljko','Zivanovic','1949-12-01','Muski','stara osoba','penzija','40404040','','pokretan','','Milos Zivanovic',3,true);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (8,'0202124518080','Marija','Antonijevic','1952-02-02','Zenski','stara osoba','penzija','17774578','','nepokretan','','Sara Ivanovic',3,true);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (9,'2807997861447','Mara','Dejanovic','1950-07-28','Zenski','stara osoba','socijalna pomoc','2314441478','','pokretan','','Anrea Savic',3,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (10,'1505534687777','Zivorad','Pavlovic','1945-05-15','Muski','stara osoba','penzija','11112224886','','pokretan','','Milan Zvani Zmaj',3,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID",stanje) values (11,'1010567891278','Mihajlo','Milovanovic','1945-10-10','Muski','stara osoba','socijalna pomoc','3579514','','nepokretan','','Ana Antic',4,true);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (12,'1307124555557','Nenad','Rudic','1947-07-13','Muski','stara osoba','penzija','789987987','','pokretan','','Katarina Rajkovic',4,true);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (13,'1301997062012','Aleksandar','Draganovic','1960-03-13','Muski','stara osoba','socijalna pomoc','77899987101','','pokretan','','Jasmina Jovovic',4,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (14,'0101957864209','Dusan','Krtola','1957-01-01','Muski','stara osoba','socijalna pomoc','775000000001','','pokretan','','Dragan Kukic',4,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (15,'1502534780020','Leposava','Eric','1947-02-15','Zenski','stara osoba','socijalna pomoc','123499997','','pokretan','','Marko Eric',4,false);
+insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (16,'2702534682444','Violeta','Djuric','1945-02-27','Zenski','stara osoba','penzija','1599999900','','pokretan','','Snezana Djuric',4,false);
 
-insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID",stanje) values (1,'1802958752012','Milorad','Avdic','1958-02-18','Muski','stara osoba','penzija','112233445566','','pokretan','','David Avdic',2,true);
-insert into "korisnik"("reg_broj","jmbg","ime","prezime",datum_rodjenja,"pol", "starosna_odredba",licna_primanja,"br_zdravstvene_knjizice","zdravstveno_stanje","pokretljivost","lekovi","podnosilac_zahteva", "domID", stanje) values (2,'4579124510647','Jovica','Geric','1950-10-13','Muski','stara osoba','penzija','012345678999','','nepokretan','','Ljubinka Geric',2,false);
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;     TEST podaci za Izvestaje koji se unose za korisnike.   ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-
-
-
-update "zaposleni" set "user_name" = 'kole', "password" = 'kole' where "ime" = 'Kosta' and "prezime" = 'Perovic' and radni_staz =3;
-
-
-Dodavanje novog zaposlenog treba da se doda samo direktno u dom direktora za koga smo se ulogovali,ne treba da ima izbor koji dom,koji dom moze da ima kada se dodaje u Admin rezimu
-
-
-
-
-insert into "izvestaj" ("izvestaj_id", aktivnost, datum, reg_broj) values(4,'nestoooo','2019-12-10',1);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',1);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-11 .','2019-12-11',1);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-12 .','2019-12-12',1);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-13 .','2019-12-13',1);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',2);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',3);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-11 .','2019-12-11',3);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',4);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',5);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-13 .','2019-12-13',6);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Ponovo neka desavanja.radi testiranja uneti izvestaji! 2019-12-17 .','2019-12-17',6);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',10);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-11 .','2019-12-11',10);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-12 .','2019-12-12',10);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-13 .','2019-12-13',10);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',11);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-11 .','2019-12-11',11);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-12 .','2019-12-12',11);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-13 .','2019-12-13',11);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-10 .','2019-12-10',12);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-11 .','2019-12-11',12);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-12 .','2019-12-12',12);
+insert into "izvestaj" (aktivnost, datum, reg_broj) values('Izvestaj o ponasanju koji je unet 2019-12-13 .','2019-12-13',12);

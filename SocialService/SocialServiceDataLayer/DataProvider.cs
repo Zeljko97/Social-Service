@@ -313,7 +313,7 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return;
 
-            RowSet row = session.Execute("delete from \"izvestaj\" where \"izvestaj_id\" = " + id);
+            RowSet row = session.Execute("delete from \"izvestaj\" where \"reg_broj\" = " + id);
         }
         public static void UpdateIzvestaj(string aktivnost, int reg_broj)
         {
@@ -997,6 +997,22 @@ namespace SocialServiceDataLayer
             foreach (var dir in korisnici)
             {
                     DataProvider.DeleteKorisnik(dir.ime, dir.prezime);
+            }
+        }
+        public static void DeleteIzvestajeKorisnika(string ime,string prezime,int id_doma)
+        {
+            ISession session = SessionManager.GetSession();
+
+            if (session == null)
+                return;
+            Korisnik k = DataProvider.GetKorisnikDoma(ime,prezime,id_doma); // ucita korisnika ciji se izvestaji brisu 
+            List<Izvestaj> izvestaji = DataProvider.vratiIzvestajeKorisnika(k.reg_broj); // sve korisnike tog korisnika
+            foreach (var dir in izvestaji)
+            {
+                if (dir.reg_broj==k.reg_broj)
+                {
+                    DataProvider.DeleteIzvestaj(dir.reg_broj);
+                }
             }
         }
 
