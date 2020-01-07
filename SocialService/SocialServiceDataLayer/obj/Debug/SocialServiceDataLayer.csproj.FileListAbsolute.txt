@@ -15,7 +15,6 @@ C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Newtonso
 C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\System.Threading.Tasks.Dataflow.xml
 C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.dll
 C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.pdb
-C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.csprojResolveAssemblyReference.cache
 E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\SocialServiceDataLayer.dll
 E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\SocialServiceDataLayer.pdb
 E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\bin\Debug\Cassandra.dll

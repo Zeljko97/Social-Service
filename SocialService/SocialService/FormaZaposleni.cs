@@ -64,7 +64,7 @@ namespace SocialService
 
 
 
-            DataProvider.DeleteZaposlen(ime, prezime);
+          //  DataProvider.DeleteZaposlen(ime, prezime);
 
             string username = LogInDirektor.UserName;
             string password = LogInDirektor.PassWord;
@@ -181,6 +181,29 @@ namespace SocialService
                 }
             }
             dataGridView1.DataSource = pretrazeno;
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            string username = LogInDirektor.UserName;
+            string password = LogInDirektor.PassWord;
+
+            List<Direktor> lista = new List<Direktor>();
+            lista = DataProvider.GetDirektori();
+
+            Direktor direktor = new Direktor();
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].user_name == username && lista[i].password == password)
+                {
+                    direktor = lista[i];
+                }
+            }
+
+           // dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
+            dataGridView1.DataSource = DataProvider.getKorisniciDomaAktivnost(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime), true);
+            
         }
     }
 }

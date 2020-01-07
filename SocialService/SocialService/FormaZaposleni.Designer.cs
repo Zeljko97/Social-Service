@@ -38,19 +38,20 @@
             this.lblKapacitet = new System.Windows.Forms.Label();
             this.btnPretraziImePrezime = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtIme = new System.Windows.Forms.TextBox();
-            this.txtPrezime = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtPrezime = new System.Windows.Forms.TextBox();
+            this.txtIme = new System.Windows.Forms.TextBox();
             this.errorProvider1 = new System.Windows.Forms.ErrorProvider(this.components);
             this.label3 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.label4 = new System.Windows.Forms.Label();
-            this.rbSocijalniRadnik = new System.Windows.Forms.RadioButton();
-            this.rbLekar = new System.Windows.Forms.RadioButton();
-            this.rbMedicinskaSestra = new System.Windows.Forms.RadioButton();
-            this.rbDomar = new System.Windows.Forms.RadioButton();
             this.btnPronadjiRB = new System.Windows.Forms.Button();
+            this.rbDomar = new System.Windows.Forms.RadioButton();
+            this.rbMedicinskaSestra = new System.Windows.Forms.RadioButton();
+            this.rbLekar = new System.Windows.Forms.RadioButton();
+            this.rbSocijalniRadnik = new System.Windows.Forms.RadioButton();
+            this.label4 = new System.Windows.Forms.Label();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -144,21 +145,15 @@
             this.panel1.Size = new System.Drawing.Size(224, 109);
             this.panel1.TabIndex = 8;
             // 
-            // txtIme
+            // label2
             // 
-            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIme.Location = new System.Drawing.Point(96, 9);
-            this.txtIme.Name = "txtIme";
-            this.txtIme.Size = new System.Drawing.Size(113, 21);
-            this.txtIme.TabIndex = 8;
-            // 
-            // txtPrezime
-            // 
-            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtPrezime.Location = new System.Drawing.Point(96, 41);
-            this.txtPrezime.Name = "txtPrezime";
-            this.txtPrezime.Size = new System.Drawing.Size(113, 21);
-            this.txtPrezime.TabIndex = 9;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(14, 40);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(64, 16);
+            this.label2.TabIndex = 11;
+            this.label2.Text = "Prezime";
             // 
             // label1
             // 
@@ -170,15 +165,21 @@
             this.label1.TabIndex = 10;
             this.label1.Text = "Ime:";
             // 
-            // label2
+            // txtPrezime
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(14, 40);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(64, 16);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Prezime";
+            this.txtPrezime.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPrezime.Location = new System.Drawing.Point(96, 41);
+            this.txtPrezime.Name = "txtPrezime";
+            this.txtPrezime.Size = new System.Drawing.Size(113, 21);
+            this.txtPrezime.TabIndex = 9;
+            // 
+            // txtIme
+            // 
+            this.txtIme.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtIme.Location = new System.Drawing.Point(96, 9);
+            this.txtIme.Name = "txtIme";
+            this.txtIme.Size = new System.Drawing.Size(113, 21);
+            this.txtIme.TabIndex = 8;
             // 
             // errorProvider1
             // 
@@ -208,50 +209,16 @@
             this.panel2.Size = new System.Drawing.Size(210, 134);
             this.panel2.TabIndex = 10;
             // 
-            // label4
+            // btnPronadjiRB
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(655, 283);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(191, 13);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Pretrazivanje na osnovu radnog mesta:";
-            // 
-            // rbSocijalniRadnik
-            // 
-            this.rbSocijalniRadnik.AutoSize = true;
-            this.rbSocijalniRadnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbSocijalniRadnik.Location = new System.Drawing.Point(16, 13);
-            this.rbSocijalniRadnik.Name = "rbSocijalniRadnik";
-            this.rbSocijalniRadnik.Size = new System.Drawing.Size(117, 17);
-            this.rbSocijalniRadnik.TabIndex = 12;
-            this.rbSocijalniRadnik.TabStop = true;
-            this.rbSocijalniRadnik.Text = "Socijalni Radnik";
-            this.rbSocijalniRadnik.UseVisualStyleBackColor = true;
-            // 
-            // rbLekar
-            // 
-            this.rbLekar.AutoSize = true;
-            this.rbLekar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbLekar.Location = new System.Drawing.Point(16, 36);
-            this.rbLekar.Name = "rbLekar";
-            this.rbLekar.Size = new System.Drawing.Size(57, 17);
-            this.rbLekar.TabIndex = 13;
-            this.rbLekar.TabStop = true;
-            this.rbLekar.Text = "Lekar";
-            this.rbLekar.UseVisualStyleBackColor = true;
-            // 
-            // rbMedicinskaSestra
-            // 
-            this.rbMedicinskaSestra.AutoSize = true;
-            this.rbMedicinskaSestra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rbMedicinskaSestra.Location = new System.Drawing.Point(16, 59);
-            this.rbMedicinskaSestra.Name = "rbMedicinskaSestra";
-            this.rbMedicinskaSestra.Size = new System.Drawing.Size(127, 17);
-            this.rbMedicinskaSestra.TabIndex = 14;
-            this.rbMedicinskaSestra.TabStop = true;
-            this.rbMedicinskaSestra.Text = "Medicinska sestra";
-            this.rbMedicinskaSestra.UseVisualStyleBackColor = true;
+            this.btnPronadjiRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPronadjiRB.Location = new System.Drawing.Point(59, 105);
+            this.btnPronadjiRB.Name = "btnPronadjiRB";
+            this.btnPronadjiRB.Size = new System.Drawing.Size(98, 26);
+            this.btnPronadjiRB.TabIndex = 16;
+            this.btnPronadjiRB.Text = "Pronadji";
+            this.btnPronadjiRB.UseVisualStyleBackColor = true;
+            this.btnPronadjiRB.Click += new System.EventHandler(this.btnPronadjiRB_Click);
             // 
             // rbDomar
             // 
@@ -265,16 +232,61 @@
             this.rbDomar.Text = "Domar";
             this.rbDomar.UseVisualStyleBackColor = true;
             // 
-            // btnPronadjiRB
+            // rbMedicinskaSestra
             // 
-            this.btnPronadjiRB.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPronadjiRB.Location = new System.Drawing.Point(59, 105);
-            this.btnPronadjiRB.Name = "btnPronadjiRB";
-            this.btnPronadjiRB.Size = new System.Drawing.Size(98, 26);
-            this.btnPronadjiRB.TabIndex = 16;
-            this.btnPronadjiRB.Text = "Pronadji";
-            this.btnPronadjiRB.UseVisualStyleBackColor = true;
-            this.btnPronadjiRB.Click += new System.EventHandler(this.btnPronadjiRB_Click);
+            this.rbMedicinskaSestra.AutoSize = true;
+            this.rbMedicinskaSestra.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbMedicinskaSestra.Location = new System.Drawing.Point(16, 59);
+            this.rbMedicinskaSestra.Name = "rbMedicinskaSestra";
+            this.rbMedicinskaSestra.Size = new System.Drawing.Size(127, 17);
+            this.rbMedicinskaSestra.TabIndex = 14;
+            this.rbMedicinskaSestra.TabStop = true;
+            this.rbMedicinskaSestra.Text = "Medicinska sestra";
+            this.rbMedicinskaSestra.UseVisualStyleBackColor = true;
+            // 
+            // rbLekar
+            // 
+            this.rbLekar.AutoSize = true;
+            this.rbLekar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbLekar.Location = new System.Drawing.Point(16, 36);
+            this.rbLekar.Name = "rbLekar";
+            this.rbLekar.Size = new System.Drawing.Size(57, 17);
+            this.rbLekar.TabIndex = 13;
+            this.rbLekar.TabStop = true;
+            this.rbLekar.Text = "Lekar";
+            this.rbLekar.UseVisualStyleBackColor = true;
+            // 
+            // rbSocijalniRadnik
+            // 
+            this.rbSocijalniRadnik.AutoSize = true;
+            this.rbSocijalniRadnik.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rbSocijalniRadnik.Location = new System.Drawing.Point(16, 13);
+            this.rbSocijalniRadnik.Name = "rbSocijalniRadnik";
+            this.rbSocijalniRadnik.Size = new System.Drawing.Size(117, 17);
+            this.rbSocijalniRadnik.TabIndex = 12;
+            this.rbSocijalniRadnik.TabStop = true;
+            this.rbSocijalniRadnik.Text = "Socijalni Radnik";
+            this.rbSocijalniRadnik.UseVisualStyleBackColor = true;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(655, 283);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(191, 13);
+            this.label4.TabIndex = 11;
+            this.label4.Text = "Pretrazivanje na osnovu radnog mesta:";
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.button2.Location = new System.Drawing.Point(173, 99);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(207, 32);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Spisak aktivnih korisnika";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click_1);
             // 
             // FormaZaposleni
             // 
@@ -282,6 +294,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(891, 460);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.panel1);
@@ -329,5 +342,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button btnPronadjiRB;
+        private System.Windows.Forms.Button button2;
     }
 }

@@ -97,7 +97,7 @@ namespace SocialService
             List<Dom> domovi = new List<Dom>();
 
             domovi = DataProvider.GetDomovi();
-            dataGridView1.DataSource = domovi;
+            dataGridView3.DataSource = domovi;
             Properties.Settings.Default.ID_dom += 1;
             Properties.Settings.Default.Save();
 
@@ -150,6 +150,7 @@ namespace SocialService
             int indexRow = dataGridView2.CurrentRow.Index;
             string ime = (string)dataGridView2[1, indexRow].Value;
             string prezime = (string)dataGridView2[2, indexRow].Value;
+          
             DataProvider.DeleteZaposlen(ime, prezime);
 
             //nije bas optimalno stalno ucitavati listu, ali s obzirom da lista ne moze biti velika u ovom sistemu
