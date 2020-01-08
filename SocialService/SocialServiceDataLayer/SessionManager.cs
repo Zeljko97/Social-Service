@@ -17,7 +17,7 @@ namespace SocialServiceDataLayer
             if(session == null)
             {
                 Cluster cluster = Cluster.Builder().AddContactPoint("127.0.0.1").Build();
-                session = cluster.Connect("socialservice");
+                session = cluster.Connect("social");
             }
             return session;
         }

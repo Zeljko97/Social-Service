@@ -21,6 +21,16 @@ namespace SocialService
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtIme.Text))
+            {
+                MessageBox.Show("Niste uneli ime direktora.", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else if (String.IsNullOrEmpty(txtPrezime.Text))
+            {
+                MessageBox.Show("Niste uneli prezime direktora.", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             string ime = txtIme.Text;
             string prezime = txtPrezime.Text;
 
@@ -31,7 +41,6 @@ namespace SocialService
             {
                 MessageBox.Show("Vase ime ne postoji u sistemu.");
             }
-
             else if(direktor.user_name != "" && direktor.password != "")
             {
                 MessageBox.Show("Korisnicko ime i lozinka su vec uneti!");
@@ -44,45 +53,54 @@ namespace SocialService
                 txtPassword.Visible = true;
                 btnUnesi.Visible = true;
             }
-            
-            
-        }
-
-        private void FormSingInDirektor_Load(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label4_Click(object sender, EventArgs e)
-        {
-
         }
 
         private void btnUnesi_Click(object sender, EventArgs e)
         {
+            if (String.IsNullOrEmpty(txtUsername.Text))
+            {
+                MessageBox.Show("Niste uneli korisnicko ime.","Greska",MessageBoxButtons.OK,MessageBoxIcon.Error);
+                return;
+            }
+            else if (String.IsNullOrEmpty(txtPassword.Text))
+            {
+                MessageBox.Show("Niste uneli sifru .", "Greska", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
             string ime = txtIme.Text;
             string prezime = txtPrezime.Text;
-
             string user_name = txtUsername.Text;
             string password = txtPassword.Text;
-
             DataProvider.UpdateDirektor(ime, prezime, user_name, password);
-            MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.");
+            MessageBox.Show("Uspesno ste uneli korisnicko ime i lozinku.","",MessageBoxButtons.OK,MessageBoxIcon.Information);
+            this.Close(); // zatvorimo formu
+            }
         }
 
-        private void label5_Click(object sender, EventArgs e)
+        private void txtIme_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
 
-        private void txtUsername_TextChanged(object sender, EventArgs e)
+        private void txtPrezime_KeyPress(object sender, KeyPressEventArgs e)
         {
-
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
 
-        private void txtPassword_TextChanged(object sender, EventArgs e)
+        private void txtUsername_KeyPress(object sender, KeyPressEventArgs e)
         {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
 
+        private void txtPassword_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
         }
     }
 }

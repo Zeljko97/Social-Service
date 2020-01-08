@@ -30,17 +30,18 @@ namespace SocialServiceDataLayer
                 DateTime datum = DateTime.Parse(datum1);
                 int domID = Convert.ToInt32(zaposlenData["domID"]);
 
-                Zaposleni zaposlen = new Zaposleni();
-
-                zaposlen.jmbg = zaposlenData["jmbg"] != null ? zaposlenData["jmbg"].ToString() : string.Empty;
-                zaposlen.ime = zaposlenData["ime"] != null ? zaposlenData["ime"].ToString() : string.Empty;
-                zaposlen.prezime = zaposlenData["prezime"] != null ? zaposlenData["prezime"].ToString() : string.Empty;
-                zaposlen.radni_staz = radni_staz != 0 ? radni_staz : 0;
-                zaposlen.radno_mesto = zaposlenData["radno_mesto"] != null ? zaposlenData["radno_mesto"].ToString() : string.Empty;
-                zaposlen.datum_rodjenja = datum != null ? datum : DateTime.Now;
-                zaposlen.user_name = zaposlenData["user_name"] != null ? zaposlenData["user_name"].ToString() : string.Empty;
-                zaposlen.password = zaposlenData["password"] != null ? zaposlenData["password"].ToString() : string.Empty;
-                zaposlen.domID = domID != 0 ? domID : 0;
+                Zaposleni zaposlen = new Zaposleni
+                {
+                    jmbg = zaposlenData["jmbg"] != null ? zaposlenData["jmbg"].ToString() : string.Empty,
+                    ime = zaposlenData["ime"] != null ? zaposlenData["ime"].ToString() : string.Empty,
+                    prezime = zaposlenData["prezime"] != null ? zaposlenData["prezime"].ToString() : string.Empty,
+                    radni_staz = radni_staz != 0 ? radni_staz : 0,
+                    radno_mesto = zaposlenData["radno_mesto"] != null ? zaposlenData["radno_mesto"].ToString() : string.Empty,
+                    datum_rodjenja = datum != null ? datum : DateTime.Now,
+                    user_name = zaposlenData["user_name"] != null ? zaposlenData["user_name"].ToString() : string.Empty,
+                    password = zaposlenData["password"] != null ? zaposlenData["password"].ToString() : string.Empty,
+                    domID = domID != 0 ? domID : 0
+                };
 
                 zaposleni.Add(zaposlen);
                 
@@ -68,16 +69,18 @@ namespace SocialServiceDataLayer
                     int radni_staz = Convert.ToInt32(zaposlenData["radni_staz"]);
                     string datum1 = zaposlenData["datum_rodjenja"].ToString();
                     DateTime datum = DateTime.Parse(datum1);
-                    Zaposleni zaposlen = new Zaposleni();
-                    zaposlen.jmbg = zaposlenData["jmbg"] != null ? zaposlenData["jmbg"].ToString() : string.Empty;
-                    zaposlen.ime = zaposlenData["ime"] != null ? zaposlenData["ime"].ToString() : string.Empty;
-                    zaposlen.prezime = zaposlenData["prezime"] != null ? zaposlenData["prezime"].ToString() : string.Empty;
-                    zaposlen.radni_staz = radni_staz != 0 ? radni_staz : 0;
-                    zaposlen.radno_mesto = zaposlenData["radno_mesto"] != null ? zaposlenData["radno_mesto"].ToString() : string.Empty;
-                    zaposlen.datum_rodjenja = datum != null ? datum : DateTime.Now;
-                    zaposlen.user_name = zaposlenData["user_name"] != null ? zaposlenData["user_name"].ToString() : string.Empty;
-                    zaposlen.password = zaposlenData["password"] != null ? zaposlenData["password"].ToString() : string.Empty;
-                    zaposlen.domID = domID != 0 ? domID : 0;
+                    Zaposleni zaposlen = new Zaposleni
+                    {
+                        jmbg = zaposlenData["jmbg"] != null ? zaposlenData["jmbg"].ToString() : string.Empty,
+                        ime = zaposlenData["ime"] != null ? zaposlenData["ime"].ToString() : string.Empty,
+                        prezime = zaposlenData["prezime"] != null ? zaposlenData["prezime"].ToString() : string.Empty,
+                        radni_staz = radni_staz != 0 ? radni_staz : 0,
+                        radno_mesto = zaposlenData["radno_mesto"] != null ? zaposlenData["radno_mesto"].ToString() : string.Empty,
+                        datum_rodjenja = datum != null ? datum : DateTime.Now,
+                        user_name = zaposlenData["user_name"] != null ? zaposlenData["user_name"].ToString() : string.Empty,
+                        password = zaposlenData["password"] != null ? zaposlenData["password"].ToString() : string.Empty,
+                        domID = domID != 0 ? domID : 0
+                    };
                     zaposleni.Add(zaposlen);
                 }
             }
@@ -228,19 +231,18 @@ namespace SocialServiceDataLayer
 
             foreach(var izvestajData in izvestajiData)
             {
-
                 int izvestaj_id = Convert.ToInt32(izvestajData["izvestaj_id"]);
                 int reg_broj = Convert.ToInt32(izvestajData["reg_broj"]);
 
                 string datum1 = izvestajData["datum"].ToString();
                 DateTime datum = DateTime.Parse(datum1);
-
-
-                Izvestaj izvestaj = new Izvestaj();
-              //  izvestaj.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
-                izvestaj.aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty;
-                izvestaj.datum = datum != null ? datum : DateTime.Now;
-                izvestaj.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                Izvestaj izvestaj = new Izvestaj
+                {
+                    //  izvestaj.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
+                    aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty,
+                    datum = datum != null ? datum : DateTime.Now,
+                    reg_broj = reg_broj != 0 ? reg_broj : 0
+                };
 
                 izvestaji.Add(izvestaj);
             }
@@ -261,10 +263,12 @@ namespace SocialServiceDataLayer
                 {
                     string datum1 = izvestajData["datum"].ToString();
                     DateTime datum = DateTime.Parse(datum1);
-                    Izvestaj izvestaj = new Izvestaj();
-                    izvestaj.aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty;
-                    izvestaj.datum = datum != null ? datum : DateTime.Now;
-                    izvestaj.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                    Izvestaj izvestaj = new Izvestaj
+                    {
+                        aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty,
+                        datum = datum != null ? datum : DateTime.Now,
+                        reg_broj = reg_broj != 0 ? reg_broj : 0
+                    };
                     izvestaji.Add(izvestaj);
                 }
             }
@@ -341,11 +345,13 @@ namespace SocialServiceDataLayer
                 int izvestaj_id = Convert.ToInt32(izvestajData["izvestaj_id"]);
                 int reg_broj = Convert.ToInt32(izvestajData["reg_broj"]);
 
-                Izvestaj izvestaj = new Izvestaj();
-            //    izvestaj.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
-                //dat
-                izvestaj.aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty;
-                izvestaj.reg_broj = reg_broj != 0 ? reg_broj : 0;
+                Izvestaj izvestaj = new Izvestaj
+                {
+                    //    izvestaj.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
+                    //dat
+                    aktivnost = izvestajData["aktivnost"] != null ? izvestajData["aktivnost"].ToString() : string.Empty,
+                    reg_broj = reg_broj != 0 ? reg_broj : 0
+                };
 
                 izvestaji.Add(izvestaj);
 
@@ -371,14 +377,15 @@ namespace SocialServiceDataLayer
                 int spratnost = Convert.ToInt32(domData["spratnost"]);
                 int zauzeto = Convert.ToInt32(domData["zauzeto"]);
 
-                Dom dom = new Dom();
-
-                dom.domID = domid != 0 ? domid : 0;
-                dom.naziv = domData["naziv"] != null ? domData["naziv"].ToString() : string.Empty;
-                dom.adresa = domData["adresa"] != null ? domData["adresa"].ToString() : string.Empty;
-                dom.kapacitet = kapacitet != 0 ? kapacitet : 0;
-                dom.spratnost = spratnost != 0 ? spratnost : 0;
-                dom.zauzeto = zauzeto != 0 ? zauzeto : 0;
+                Dom dom = new Dom
+                {
+                    domID = domid != 0 ? domid : 0,
+                    naziv = domData["naziv"] != null ? domData["naziv"].ToString() : string.Empty,
+                    adresa = domData["adresa"] != null ? domData["adresa"].ToString() : string.Empty,
+                    kapacitet = kapacitet != 0 ? kapacitet : 0,
+                    spratnost = spratnost != 0 ? spratnost : 0,
+                    zauzeto = zauzeto != 0 ? zauzeto : 0
+                };
 
 
 
@@ -522,23 +529,25 @@ namespace SocialServiceDataLayer
                 string datum1 = korisnikData["datum_rodjenja"].ToString();
                 DateTime datum = DateTime.Parse(datum1);
 
-                Korisnik korisnik = new Korisnik();
-                korisnik.reg_broj = reg_broj != 0 ? reg_broj : 0;
-                korisnik.jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty;
-                korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
-                korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
-                korisnik.datum_rodjenja = datum != null ? datum : DateTime.Now;
-                korisnik.pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty;
-                korisnik.starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty;
-                korisnik.licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty;
-                korisnik.br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty;
-                korisnik.zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty;
-                korisnik.pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty;
-                korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
-                korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
-                korisnik.domID = domID != 0 ? domID : 0;
-                korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
-              //  korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
+                Korisnik korisnik = new Korisnik
+                {
+                    reg_broj = reg_broj != 0 ? reg_broj : 0,
+                    jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty,
+                    ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty,
+                    prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty,
+                    datum_rodjenja = datum != null ? datum : DateTime.Now,
+                    pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty,
+                    starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty,
+                    licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty,
+                    br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty,
+                    zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty,
+                    pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty,
+                    lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty,
+                    podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty,
+                    domID = domID != 0 ? domID : 0,
+                    stanje = korisnikData["stanje"] != null ? stanje : false
+                };
+                //  korisnik.izvestaj_id = izvestaj_id != 0 ? izvestaj_id : 0;
 
                 korisnici.Add(korisnik);
 
@@ -567,22 +576,24 @@ namespace SocialServiceDataLayer
                     string datum1 = korisnikData["datum_rodjenja"].ToString();
                     DateTime datum = DateTime.Parse(datum1);
 
-                    Korisnik korisnik = new Korisnik();
-                    korisnik.reg_broj = reg_broj != 0 ? reg_broj : 0;
-                    korisnik.jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty;
-                    korisnik.ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty;
-                    korisnik.prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty;
-                    korisnik.datum_rodjenja = datum != null ? datum : DateTime.Now;
-                    korisnik.pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty;
-                    korisnik.starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty;
-                    korisnik.licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty;
-                    korisnik.br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty;
-                    korisnik.zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty;
-                    korisnik.pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty;
-                    korisnik.lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty;
-                    korisnik.podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty;
-                    korisnik.domID = domID != 0 ? domID : 0;
-                    korisnik.stanje = korisnikData["stanje"] != null ? stanje : false;
+                    Korisnik korisnik = new Korisnik
+                    {
+                        reg_broj = reg_broj != 0 ? reg_broj : 0,
+                        jmbg = korisnikData["jmbg"] != null ? korisnikData["jmbg"].ToString() : string.Empty,
+                        ime = korisnikData["ime"] != null ? korisnikData["ime"].ToString() : string.Empty,
+                        prezime = korisnikData["prezime"] != null ? korisnikData["prezime"].ToString() : string.Empty,
+                        datum_rodjenja = datum != null ? datum : DateTime.Now,
+                        pol = korisnikData["pol"] != null ? korisnikData["pol"].ToString() : string.Empty,
+                        starosna_odredba = korisnikData["starosna_odredba"] != null ? korisnikData["starosna_odredba"].ToString() : string.Empty,
+                        licna_primanja = korisnikData["licna_primanja"] != null ? korisnikData["licna_primanja"].ToString() : string.Empty,
+                        br_zdravstvene_knjizice = korisnikData["br_zdravstvene_knjizice"] != null ? korisnikData["br_zdravstvene_knjizice"].ToString() : string.Empty,
+                        zdravstveno_stanje = korisnikData["zdravstveno_stanje"] != null ? korisnikData["zdravstveno_stanje"].ToString() : string.Empty,
+                        pokretljivost = korisnikData["pokretljivost"] != null ? korisnikData["pokretljivost"].ToString() : string.Empty,
+                        lekovi = korisnikData["lekovi"] != null ? korisnikData["lekovi"].ToString() : string.Empty,
+                        podnosilac_zahteva = korisnikData["podnosilac_zahteva"] != null ? korisnikData["podnosilac_zahteva"].ToString() : string.Empty,
+                        domID = domID != 0 ? domID : 0,
+                        stanje = korisnikData["stanje"] != null ? stanje : false
+                    };
 
                     korisnici.Add(korisnik);
                 }

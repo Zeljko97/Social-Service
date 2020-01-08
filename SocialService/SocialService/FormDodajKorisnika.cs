@@ -18,14 +18,12 @@ namespace SocialService
         {
             InitializeComponent();
         }
-
         private void panel1_Paint(object sender, PaintEventArgs e)
         {
          
 
            
         }
-
         private void btnDodaj_Click(object sender, EventArgs e)
         {
             if (!CheckValidation())
@@ -62,7 +60,7 @@ namespace SocialService
                 
 
                 DataProvider.AddKorisnik(id, jmbg, ime, prezime, datum, pol, starosnaOdredba, licna_primanja, brojKnjizice, "", pokretljivost, lekovi, podnosilac_zahteva, FormKorisnici.id_doma,true);
-                MessageBox.Show("Uspesno dodat korisnik", "", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Uspesno dodat korisnik", ime+ " " + prezime+" je novi clan doma", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 //kada uspesno ubaci korisnika,uveca se id :
                 Properties.Settings.Default.ID_korisnik += 1;
                 Properties.Settings.Default.Save();
@@ -78,7 +76,6 @@ namespace SocialService
             List<Dom> domovi = new List<Dom>();
             domovi = DataProvider.GetDomovi();
         }
-
         #region validation
         //Da ne puca program:
         private bool CheckValidation()
@@ -113,12 +110,6 @@ namespace SocialService
                 MessageBox.Show("Broj knjizice je neophodan!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-            else if (FormKorisnici.d.kapacitet == FormKorisnici.d.zauzeto)
-            {
-                MessageBox.Show("Nije moguce dodati novog korisnika jer je kapacitet doma PUN!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                return false;
-            }
-            
             return true;
         }
         private void txtJMBG_KeyPress(object sender, KeyPressEventArgs e)

@@ -55,6 +55,9 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnDodajNovogZaposlenog = new System.Windows.Forms.Button();
+            this.btnUpdate = new System.Windows.Forms.Button();
+            this.btnObrisi = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnObrisiDirektora = new System.Windows.Forms.Button();
             this.btnResetuj = new System.Windows.Forms.Button();
@@ -62,9 +65,12 @@
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.btnDodajNovogZaposlenog = new System.Windows.Forms.Button();
-            this.btnUpdate = new System.Windows.Forms.Button();
-            this.btnObrisi = new System.Windows.Forms.Button();
+            this.txtImeKorisnika = new System.Windows.Forms.TextBox();
+            this.txtPrezimeKorisnika = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.label9 = new System.Windows.Forms.Label();
+            this.btnPretraziKorisnika = new System.Windows.Forms.Button();
+            this.PretragaKorisnika = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
             this.panel1.SuspendLayout();
@@ -105,7 +111,7 @@
             // btnDodajDom
             // 
             this.btnDodajDom.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajDom.Location = new System.Drawing.Point(601, 20);
+            this.btnDodajDom.Location = new System.Drawing.Point(616, 20);
             this.btnDodajDom.Name = "btnDodajDom";
             this.btnDodajDom.Size = new System.Drawing.Size(177, 26);
             this.btnDodajDom.TabIndex = 3;
@@ -121,6 +127,7 @@
             this.txtNaziv.Size = new System.Drawing.Size(100, 21);
             this.txtNaziv.TabIndex = 4;
             this.txtNaziv.Visible = false;
+            this.txtNaziv.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtNaziv_KeyPress);
             // 
             // txtAdresa
             // 
@@ -129,6 +136,7 @@
             this.txtAdresa.Size = new System.Drawing.Size(100, 21);
             this.txtAdresa.TabIndex = 5;
             this.txtAdresa.Visible = false;
+            this.txtAdresa.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtAdresa_KeyPress);
             // 
             // cbSpratnost
             // 
@@ -220,9 +228,9 @@
             // btnDodaj
             // 
             this.btnDodaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodaj.Location = new System.Drawing.Point(24, 164);
+            this.btnDodaj.Location = new System.Drawing.Point(33, 165);
             this.btnDodaj.Name = "btnDodaj";
-            this.btnDodaj.Size = new System.Drawing.Size(123, 27);
+            this.btnDodaj.Size = new System.Drawing.Size(144, 27);
             this.btnDodaj.TabIndex = 14;
             this.btnDodaj.Text = "Dodaj";
             this.btnDodaj.TextAlign = System.Drawing.ContentAlignment.TopCenter;
@@ -244,31 +252,32 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label6.Location = new System.Drawing.Point(10, 15);
+            this.label6.Location = new System.Drawing.Point(3, 8);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(139, 13);
+            this.label6.Size = new System.Drawing.Size(158, 15);
             this.label6.TabIndex = 16;
             this.label6.Text = "Ucitaj zaposlene doma:";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
             this.label7.ForeColor = System.Drawing.SystemColors.ControlLightLight;
             this.label7.Location = new System.Drawing.Point(14, 34);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(36, 13);
+            this.label7.Size = new System.Drawing.Size(41, 15);
             this.label7.TabIndex = 17;
             this.label7.Text = "Dom:";
             // 
             // cbDom
             // 
+            this.cbDom.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cbDom.FormattingEnabled = true;
-            this.cbDom.Location = new System.Drawing.Point(56, 31);
+            this.cbDom.Location = new System.Drawing.Point(56, 29);
             this.cbDom.Name = "cbDom";
-            this.cbDom.Size = new System.Drawing.Size(121, 21);
+            this.cbDom.Size = new System.Drawing.Size(132, 23);
             this.cbDom.TabIndex = 18;
             this.cbDom.SelectedIndexChanged += new System.EventHandler(this.cbDom_SelectedIndexChanged);
             // 
@@ -325,9 +334,9 @@
             this.panel1.Controls.Add(this.label4);
             this.panel1.Controls.Add(this.btnDodaj);
             this.panel1.Controls.Add(this.label5);
-            this.panel1.Location = new System.Drawing.Point(784, 20);
+            this.panel1.Location = new System.Drawing.Point(799, 20);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(193, 198);
+            this.panel1.Size = new System.Drawing.Size(223, 198);
             this.panel1.TabIndex = 25;
             // 
             // dataGridView2
@@ -351,10 +360,46 @@
             this.panel2.Controls.Add(this.dataGridView2);
             this.panel2.Controls.Add(this.label7);
             this.panel2.Controls.Add(this.cbDom);
+            this.panel2.Controls.Add(this.btnDodajNovogZaposlenog);
+            this.panel2.Controls.Add(this.btnUpdate);
+            this.panel2.Controls.Add(this.btnObrisi);
             this.panel2.Location = new System.Drawing.Point(558, 250);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(762, 232);
             this.panel2.TabIndex = 27;
+            // 
+            // btnDodajNovogZaposlenog
+            // 
+            this.btnDodajNovogZaposlenog.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDodajNovogZaposlenog.Location = new System.Drawing.Point(208, 8);
+            this.btnDodajNovogZaposlenog.Name = "btnDodajNovogZaposlenog";
+            this.btnDodajNovogZaposlenog.Size = new System.Drawing.Size(176, 26);
+            this.btnDodajNovogZaposlenog.TabIndex = 0;
+            this.btnDodajNovogZaposlenog.Text = "Dodaj novog zaposlenog";
+            this.btnDodajNovogZaposlenog.UseVisualStyleBackColor = true;
+            this.btnDodajNovogZaposlenog.Click += new System.EventHandler(this.btnDodajNovogZaposlenog_Click);
+            // 
+            // btnUpdate
+            // 
+            this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnUpdate.Location = new System.Drawing.Point(572, 8);
+            this.btnUpdate.Name = "btnUpdate";
+            this.btnUpdate.Size = new System.Drawing.Size(176, 26);
+            this.btnUpdate.TabIndex = 20;
+            this.btnUpdate.Text = "Update zaposlenog";
+            this.btnUpdate.UseVisualStyleBackColor = true;
+            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            // 
+            // btnObrisi
+            // 
+            this.btnObrisi.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.btnObrisi.Location = new System.Drawing.Point(390, 8);
+            this.btnObrisi.Name = "btnObrisi";
+            this.btnObrisi.Size = new System.Drawing.Size(176, 26);
+            this.btnObrisi.TabIndex = 21;
+            this.btnObrisi.Text = "Obrisi zaposlenog";
+            this.btnObrisi.UseVisualStyleBackColor = true;
+            this.btnObrisi.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
@@ -405,7 +450,7 @@
             this.dataGridView3.ReadOnly = true;
             this.dataGridView3.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView3.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView3.Size = new System.Drawing.Size(772, 161);
+            this.dataGridView3.Size = new System.Drawing.Size(787, 161);
             this.dataGridView3.TabIndex = 29;
             // 
             // groupBox2
@@ -418,14 +463,18 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(10, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(983, 229);
+            this.groupBox2.Size = new System.Drawing.Size(1037, 229);
             this.groupBox2.TabIndex = 30;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Domovi:";
-            this.groupBox2.Enter += new System.EventHandler(this.groupBox2_Enter);
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.btnPretraziKorisnika);
+            this.groupBox3.Controls.Add(this.label9);
+            this.groupBox3.Controls.Add(this.label8);
+            this.groupBox3.Controls.Add(this.txtPrezimeKorisnika);
+            this.groupBox3.Controls.Add(this.txtImeKorisnika);
             this.groupBox3.Controls.Add(this.dataGridView4);
             this.groupBox3.Controls.Add(this.btnKorisnike);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -449,40 +498,54 @@
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView4.Size = new System.Drawing.Size(1158, 149);
             this.dataGridView4.TabIndex = 25;
-            this.dataGridView4.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView4_CellContentClick);
             // 
-            // btnDodajNovogZaposlenog
+            // txtImeKorisnika
             // 
-            this.btnDodajNovogZaposlenog.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDodajNovogZaposlenog.Location = new System.Drawing.Point(999, 64);
-            this.btnDodajNovogZaposlenog.Name = "btnDodajNovogZaposlenog";
-            this.btnDodajNovogZaposlenog.Size = new System.Drawing.Size(196, 35);
-            this.btnDodajNovogZaposlenog.TabIndex = 0;
-            this.btnDodajNovogZaposlenog.Text = "Dodaj novog zaposlenog";
-            this.btnDodajNovogZaposlenog.UseVisualStyleBackColor = true;
-            this.btnDodajNovogZaposlenog.Click += new System.EventHandler(this.btnDodajNovogZaposlenog_Click);
+            this.txtImeKorisnika.Location = new System.Drawing.Point(283, 22);
+            this.txtImeKorisnika.Name = "txtImeKorisnika";
+            this.txtImeKorisnika.Size = new System.Drawing.Size(117, 21);
+            this.txtImeKorisnika.TabIndex = 26;
+            this.txtImeKorisnika.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImeKorisnika_KeyPress);
             // 
-            // btnUpdate
+            // txtPrezimeKorisnika
             // 
-            this.btnUpdate.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnUpdate.Location = new System.Drawing.Point(999, 105);
-            this.btnUpdate.Name = "btnUpdate";
-            this.btnUpdate.Size = new System.Drawing.Size(196, 35);
-            this.btnUpdate.TabIndex = 20;
-            this.btnUpdate.Text = "Update zaposlenog";
-            this.btnUpdate.UseVisualStyleBackColor = true;
-            this.btnUpdate.Click += new System.EventHandler(this.btnUpdate_Click);
+            this.txtPrezimeKorisnika.Location = new System.Drawing.Point(476, 22);
+            this.txtPrezimeKorisnika.Name = "txtPrezimeKorisnika";
+            this.txtPrezimeKorisnika.Size = new System.Drawing.Size(122, 21);
+            this.txtPrezimeKorisnika.TabIndex = 27;
+            this.txtPrezimeKorisnika.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezimeKorisnika_KeyPress);
             // 
-            // btnObrisi
+            // label8
             // 
-            this.btnObrisi.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.btnObrisi.Location = new System.Drawing.Point(999, 23);
-            this.btnObrisi.Name = "btnObrisi";
-            this.btnObrisi.Size = new System.Drawing.Size(196, 35);
-            this.btnObrisi.TabIndex = 21;
-            this.btnObrisi.Text = "Obrisi zaposlenog";
-            this.btnObrisi.UseVisualStyleBackColor = true;
-            this.btnObrisi.Click += new System.EventHandler(this.button1_Click);
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(242, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Ime:";
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(406, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 15);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Prezime:";
+            // 
+            // btnPretraziKorisnika
+            // 
+            this.btnPretraziKorisnika.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPretraziKorisnika.Location = new System.Drawing.Point(610, 20);
+            this.btnPretraziKorisnika.Name = "btnPretraziKorisnika";
+            this.btnPretraziKorisnika.Size = new System.Drawing.Size(159, 26);
+            this.btnPretraziKorisnika.TabIndex = 30;
+            this.btnPretraziKorisnika.Text = "Pronadji korisnika";
+            this.PretragaKorisnika.SetToolTip(this.btnPretraziKorisnika, "Preciznim unosom imena i prezima korisnika,omogucena je pretraga baze podataka.");
+            this.btnPretraziKorisnika.UseVisualStyleBackColor = true;
+            this.btnPretraziKorisnika.Click += new System.EventHandler(this.btnPretraziKorisnika_Click);
             // 
             // FormAdmin
             // 
@@ -494,9 +557,6 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.btnObrisi);
-            this.Controls.Add(this.btnUpdate);
-            this.Controls.Add(this.btnDodajNovogZaposlenog);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.Fixed3D;
             this.MaximizeBox = false;
             this.Name = "FormAdmin";
@@ -514,6 +574,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView4)).EndInit();
             this.ResumeLayout(false);
 
@@ -556,5 +617,11 @@
         private System.Windows.Forms.Button btnObrisi;
         private System.Windows.Forms.Button btnUpdate;
         private System.Windows.Forms.Button btnDodajNovogZaposlenog;
+        private System.Windows.Forms.Button btnPretraziKorisnika;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox txtPrezimeKorisnika;
+        private System.Windows.Forms.TextBox txtImeKorisnika;
+        private System.Windows.Forms.ToolTip PretragaKorisnika;
     }
 }

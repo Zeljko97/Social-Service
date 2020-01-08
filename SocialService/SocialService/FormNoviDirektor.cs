@@ -51,7 +51,8 @@ namespace SocialService
             Properties.Settings.Default.Save();
 
             MessageBox.Show("Uspesno ste uneli podatke.","Uspesan unos",MessageBoxButtons.OK,MessageBoxIcon.Information);
-
+            this.Close();
+           
         }
     }
 }

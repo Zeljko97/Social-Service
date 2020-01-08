@@ -30,6 +30,10 @@ insert into "zaposleni" ("jmbg", "ime", "prezime", "radno_mesto",radni_staz,datu
 insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1103969701588', 'Darko', 'Lukic','Medicinska sestra', 25,'1969-03-11', 4);
 insert into "zaposleni" ("jmbg", "ime", "prezime","radno_mesto",radni_staz,datum_rodjenja,"domID") values ('1702985758899', 'Jelena', 'Sebastijanovic','Medicinska sestra', 20,'1985-02-17', 4);
 
+
+
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;     TEST podaci za DOM       ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 insert into "dom" ("domID", "naziv", "adresa",spratnost,kapacitet,zauzeto) values (1,'Radost', 'Djerdapska ulica 12',4,100,2);

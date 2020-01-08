@@ -38,8 +38,16 @@ namespace SocialService
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FormDodajKorisnika fdk = new FormDodajKorisnika();
-            fdk.Show();
+            if (d.kapacitet == FormKorisnici.d.zauzeto)
+            {
+                MessageBox.Show("Nije moguce dodati novog korisnika jer je kapacitet doma PUN!", "Error", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            else
+            {
+                FormDodajKorisnika fdk = new FormDodajKorisnika();
+                fdk.Show();
+            }
         }
 
         private void FormKorisnici_Load(object sender, EventArgs e)

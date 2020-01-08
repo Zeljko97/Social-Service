@@ -21,8 +21,11 @@ namespace SocialService
         {
             InitializeComponent();
         }
-
         private void button1_Click(object sender, EventArgs e)
+        {
+            ucitajZaposlene();
+        }
+        private void ucitajZaposlene()
         {
             //da bi imao informaciju domID.
             string username = LogInDirektor.UserName;
@@ -30,28 +33,28 @@ namespace SocialService
 
             List<Direktor> lista = new List<Direktor>();
             lista = DataProvider.GetDirektori();
-
             Direktor direktor = new Direktor();
-
-            for (int i = 0; i < lista.Count;i++)
+            for (int i = 0; i < lista.Count; i++)
             {
-                if(lista[i].user_name == username && lista[i].password == password)
+                if (lista[i].user_name == username && lista[i].password == password)
                 {
                     direktor = lista[i];
                 }
             }
-
             dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
             dataGridView1.Columns["user_name"].Visible = false;
             dataGridView1.Columns["password"].Visible = false;
             dataGridView1.Columns["domID"].Visible = false;
+            dataGridView1.Columns["lekovi"].Visible = false;
+            dataGridView1.Columns["stanje"].Visible = false;
+            dataGridView1.Columns["zdravstevno_stanje"].Visible = false;
+            dataGridView1.Columns["starosna_odredba"].Visible = false;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
             FormNoviZaposleni fnz = new FormNoviZaposleni();
             fnz.Show();
-
             this.Close();
         }
 
@@ -61,9 +64,6 @@ namespace SocialService
             int indexRow = dataGridView1.CurrentRow.Index;
             string ime = (string)dataGridView1[1, indexRow].Value;
             string prezime = (string)dataGridView1[2, indexRow].Value;
-
-
-
           //  DataProvider.DeleteZaposlen(ime, prezime);
 
             string username = LogInDirektor.UserName;
@@ -78,7 +78,6 @@ namespace SocialService
             string username = LogInDirektor.UserName;
             string password = LogInDirektor.PassWord;
             Dom dom = new Dom();
-
             List<Direktor> lista = new List<Direktor>();
             lista = DataProvider.GetDirektori();
 
@@ -109,6 +108,7 @@ namespace SocialService
 
             FormUpdateZaposleni fnz = new FormUpdateZaposleni();
             fnz.Show();
+            ucitajZaposlene();
         }
 
         private void btnPretraziImePrezime_Click(object sender, EventArgs e)
@@ -120,13 +120,11 @@ namespace SocialService
             else if (txtPrezime.Text == string.Empty)
             {
                 errorProvider1.SetError(txtPrezime, "Morate uneti Prezime zaposlenog da bi pretrazivanje bilo omoguceno!");
-
             }
             else
             {
                 string ime = txtIme.Text;
                 string prezime = txtPrezime.Text;
-
                 List<Zaposleni> z = DataProvider.getZaposleniDom(id_doma);
                 if (z==null)
                 {
@@ -203,7 +201,41 @@ namespace SocialService
 
            // dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
             dataGridView1.DataSource = DataProvider.getKorisniciDomaAktivnost(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime), true);
-            
+        }
+
+        #region ogranicenja
+        private void txtIme_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+
+        private void txtPrezime_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+                e.Handled = true;
+        }
+        #endregion
+
+        private void btnPasivni_Click(object sender, EventArgs e)
+        {
+            string username = LogInDirektor.UserName;
+            string password = LogInDirektor.PassWord;
+
+            List<Direktor> lista = new List<Direktor>();
+            lista = DataProvider.GetDirektori();
+
+            Direktor direktor = new Direktor();
+
+            for (int i = 0; i < lista.Count; i++)
+            {
+                if (lista[i].user_name == username && lista[i].password == password)
+                {
+                    direktor = lista[i];
+                }
+            }
+            // dataGridView1.DataSource = DataProvider.getZaposleniDom(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime));
+            dataGridView1.DataSource = DataProvider.getKorisniciDomaAktivnost(DataProvider.DirektorIdDoma(direktor.ime, direktor.prezime), false);
         }
     }
 }

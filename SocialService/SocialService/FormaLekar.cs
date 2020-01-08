@@ -119,12 +119,6 @@ namespace SocialService
 
         #endregion
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            
-            
-        }
-
         private void Vidljivost(bool s)
         {
             lblLekovi.Visible = s;
@@ -164,7 +158,7 @@ namespace SocialService
         {
             if (String.IsNullOrEmpty(txtBrojKnjizice.Text))
             {
-                    MessageBox.Show("Niste uneli broj_knjizice!", "IME FALI", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Niste uneli broj_knjizice!", "Broj knjizice FALI", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
             else
             {
