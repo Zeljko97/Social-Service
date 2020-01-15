@@ -308,14 +308,14 @@ namespace SocialService
 
         private void txtNaziv_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
+           // if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            //    e.Handled = true;
         }
 
         private void txtAdresa_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
-                e.Handled = true;
+            //if (!Char.IsLetter(e.KeyChar) && !Char.IsControl(e.KeyChar))
+            //    e.Handled = true;
         }
         #endregion
     }

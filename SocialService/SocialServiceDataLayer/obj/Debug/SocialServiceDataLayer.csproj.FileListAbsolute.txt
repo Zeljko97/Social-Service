@@ -35,3 +35,4 @@ E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialSe
 E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.csproj.CopyComplete
 E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.dll
 E:\GitHub\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.pdb
+C:\GITHUB\Social-Service\SocialService\SocialServiceDataLayer\obj\Debug\SocialServiceDataLayer.csprojResolveAssemblyReference.cache

@@ -187,6 +187,8 @@ namespace SocialService
 
         private void btnIzvestaj_Click(object sender, EventArgs e)
         {
+            
+           
             int indexRow = dataGridView1.CurrentRow.Index;
             string ime = (string)dataGridView1[2, indexRow].Value;
             string prezime = (string)dataGridView1[3, indexRow].Value;

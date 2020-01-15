@@ -194,9 +194,9 @@
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.Location = new System.Drawing.Point(650, 137);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 13);
+            this.label3.Size = new System.Drawing.Size(253, 13);
             this.label3.TabIndex = 9;
-            this.label3.Text = "Pretrazivanje zahteva precizan unos podataka:";
+            this.label3.Text = "Pretrazivanje zaposlenih ( precizan unos podataka ):";
             // 
             // panel2
             // 

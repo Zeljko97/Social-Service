@@ -46,7 +46,6 @@
             this.txtPrezime = new System.Windows.Forms.TextBox();
             this.txtIme = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.label13 = new System.Windows.Forms.Label();
             this.label12 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -112,7 +111,6 @@
             this.panel1.Controls.Add(this.txtPrezime);
             this.panel1.Controls.Add(this.txtIme);
             this.panel1.Controls.Add(this.label14);
-            this.panel1.Controls.Add(this.label13);
             this.panel1.Controls.Add(this.label12);
             this.panel1.Controls.Add(this.label10);
             this.panel1.Controls.Add(this.groupBox1);
@@ -186,7 +184,6 @@
             this.cbStarosnaOdredba.FormattingEnabled = true;
             this.cbStarosnaOdredba.Items.AddRange(new object[] {
             "stara osoba",
-            "dete",
             "odrasla osoba"});
             this.cbStarosnaOdredba.Location = new System.Drawing.Point(153, 311);
             this.cbStarosnaOdredba.Name = "cbStarosnaOdredba";
@@ -268,16 +265,6 @@
             this.label14.Size = new System.Drawing.Size(142, 19);
             this.label14.TabIndex = 15;
             this.label14.Text = "Podnosilac  zahteva";
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Font = new System.Drawing.Font("Microsoft YaHei", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label13.Location = new System.Drawing.Point(288, 70);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(113, 19);
-            this.label13.TabIndex = 14;
-            this.label13.Text = "Datum prijema:";
             // 
             // label12
             // 
@@ -440,7 +427,6 @@
         private System.Windows.Forms.TextBox txtPrezime;
         private System.Windows.Forms.TextBox txtIme;
         private System.Windows.Forms.Label label14;
-        private System.Windows.Forms.Label label13;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.GroupBox groupBox1;

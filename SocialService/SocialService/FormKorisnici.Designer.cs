@@ -57,6 +57,7 @@
             this.btnIzvestaj = new System.Windows.Forms.Button();
             this.ttPretrazi1 = new System.Windows.Forms.ToolTip(this.components);
             this.ttIzvestaj = new System.Windows.Forms.ToolTip(this.components);
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
@@ -70,7 +71,7 @@
             this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.GridColor = System.Drawing.Color.Aqua;
-            this.dataGridView1.Location = new System.Drawing.Point(12, 257);
+            this.dataGridView1.Location = new System.Drawing.Point(12, 280);
             this.dataGridView1.MultiSelect = false;
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.ReadOnly = true;
@@ -329,9 +330,9 @@
             this.btnIzvestaj.BackColor = System.Drawing.Color.Transparent;
             this.btnIzvestaj.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIzvestaj.BackgroundImage")));
             this.btnIzvestaj.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.btnIzvestaj.Location = new System.Drawing.Point(838, 132);
+            this.btnIzvestaj.Location = new System.Drawing.Point(849, 192);
             this.btnIzvestaj.Name = "btnIzvestaj";
-            this.btnIzvestaj.Size = new System.Drawing.Size(137, 119);
+            this.btnIzvestaj.Size = new System.Drawing.Size(101, 82);
             this.btnIzvestaj.TabIndex = 9;
             this.ttIzvestaj.SetToolTip(this.btnIzvestaj, "Klikom na ikonicu otvorice se nova forma koja ce Vam omoguciti unos izvestaja za " +
         "selektovanog korisnika za danasnji datum.");
@@ -344,12 +345,22 @@
             this.ttIzvestaj.InitialDelay = 520;
             this.ttIzvestaj.ReshowDelay = 100;
             // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label5.Location = new System.Drawing.Point(846, 132);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(111, 60);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "Za izvestaj morate prethodno izabrati korisnika selektovanjem.";
+            // 
             // FormKorisnici
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(192)))), ((int)(((byte)(255)))));
             this.ClientSize = new System.Drawing.Size(987, 562);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.btnIzvestaj);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.groupBox2);
@@ -406,5 +417,6 @@
         private System.Windows.Forms.Button btnIzvestaj;
         private System.Windows.Forms.ToolTip ttPretrazi1;
         private System.Windows.Forms.ToolTip ttIzvestaj;
+        private System.Windows.Forms.Label label5;
     }
 }

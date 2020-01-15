@@ -45,10 +45,7 @@ namespace SocialService
             dataGridView1.Columns["user_name"].Visible = false;
             dataGridView1.Columns["password"].Visible = false;
             dataGridView1.Columns["domID"].Visible = false;
-            dataGridView1.Columns["lekovi"].Visible = false;
-            dataGridView1.Columns["stanje"].Visible = false;
-            dataGridView1.Columns["zdravstevno_stanje"].Visible = false;
-            dataGridView1.Columns["starosna_odredba"].Visible = false;
+          
         }
 
         private void button2_Click(object sender, EventArgs e)

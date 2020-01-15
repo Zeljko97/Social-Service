@@ -929,7 +929,7 @@ namespace SocialServiceDataLayer
             if (session == null)
                 return;
 
-            RowSet direktorData = session.Execute("insert into \"direktor\" (id,ime, prezime,\"domID\") values (" +id+", '" + ime + "', '" + prezime + "', " + domID + ")");
+            RowSet direktorData = session.Execute("insert into \"direktor\" (id, \"ime\", \"prezime\",\"domID\") values (" + id +", '" + ime + "', '" + prezime + "', " + domID + ")");
         }
 
         public static void DeleteDirektor(string ime, string prezime)

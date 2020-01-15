@@ -64,12 +64,12 @@
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.dataGridView4 = new System.Windows.Forms.DataGridView();
-            this.txtImeKorisnika = new System.Windows.Forms.TextBox();
-            this.txtPrezimeKorisnika = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
             this.btnPretraziKorisnika = new System.Windows.Forms.Button();
+            this.label9 = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.txtPrezimeKorisnika = new System.Windows.Forms.TextBox();
+            this.txtImeKorisnika = new System.Windows.Forms.TextBox();
+            this.dataGridView4 = new System.Windows.Forms.DataGridView();
             this.PretragaKorisnika = new System.Windows.Forms.ToolTip(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.errorProvider1)).BeginInit();
@@ -122,6 +122,7 @@
             // 
             // txtNaziv
             // 
+            this.txtNaziv.AcceptsTab = true;
             this.txtNaziv.Location = new System.Drawing.Point(86, 15);
             this.txtNaziv.Name = "txtNaziv";
             this.txtNaziv.Size = new System.Drawing.Size(100, 21);
@@ -485,6 +486,54 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Korisnici";
             // 
+            // btnPretraziKorisnika
+            // 
+            this.btnPretraziKorisnika.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnPretraziKorisnika.Location = new System.Drawing.Point(610, 20);
+            this.btnPretraziKorisnika.Name = "btnPretraziKorisnika";
+            this.btnPretraziKorisnika.Size = new System.Drawing.Size(159, 26);
+            this.btnPretraziKorisnika.TabIndex = 30;
+            this.btnPretraziKorisnika.Text = "Pronadji korisnika";
+            this.PretragaKorisnika.SetToolTip(this.btnPretraziKorisnika, "Preciznim unosom imena i prezima korisnika,omogucena je pretraga baze podataka.");
+            this.btnPretraziKorisnika.UseVisualStyleBackColor = true;
+            this.btnPretraziKorisnika.Click += new System.EventHandler(this.btnPretraziKorisnika_Click);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label9.Location = new System.Drawing.Point(406, 25);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(64, 15);
+            this.label9.TabIndex = 29;
+            this.label9.Text = "Prezime:";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
+            this.label8.Location = new System.Drawing.Point(242, 25);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 15);
+            this.label8.TabIndex = 28;
+            this.label8.Text = "Ime:";
+            // 
+            // txtPrezimeKorisnika
+            // 
+            this.txtPrezimeKorisnika.Location = new System.Drawing.Point(476, 22);
+            this.txtPrezimeKorisnika.Name = "txtPrezimeKorisnika";
+            this.txtPrezimeKorisnika.Size = new System.Drawing.Size(122, 21);
+            this.txtPrezimeKorisnika.TabIndex = 27;
+            this.txtPrezimeKorisnika.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezimeKorisnika_KeyPress);
+            // 
+            // txtImeKorisnika
+            // 
+            this.txtImeKorisnika.Location = new System.Drawing.Point(283, 22);
+            this.txtImeKorisnika.Name = "txtImeKorisnika";
+            this.txtImeKorisnika.Size = new System.Drawing.Size(117, 21);
+            this.txtImeKorisnika.TabIndex = 26;
+            this.txtImeKorisnika.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImeKorisnika_KeyPress);
+            // 
             // dataGridView4
             // 
             this.dataGridView4.BackgroundColor = System.Drawing.SystemColors.ButtonHighlight;
@@ -498,54 +547,6 @@
             this.dataGridView4.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView4.Size = new System.Drawing.Size(1158, 149);
             this.dataGridView4.TabIndex = 25;
-            // 
-            // txtImeKorisnika
-            // 
-            this.txtImeKorisnika.Location = new System.Drawing.Point(283, 22);
-            this.txtImeKorisnika.Name = "txtImeKorisnika";
-            this.txtImeKorisnika.Size = new System.Drawing.Size(117, 21);
-            this.txtImeKorisnika.TabIndex = 26;
-            this.txtImeKorisnika.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtImeKorisnika_KeyPress);
-            // 
-            // txtPrezimeKorisnika
-            // 
-            this.txtPrezimeKorisnika.Location = new System.Drawing.Point(476, 22);
-            this.txtPrezimeKorisnika.Name = "txtPrezimeKorisnika";
-            this.txtPrezimeKorisnika.Size = new System.Drawing.Size(122, 21);
-            this.txtPrezimeKorisnika.TabIndex = 27;
-            this.txtPrezimeKorisnika.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPrezimeKorisnika_KeyPress);
-            // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label8.Location = new System.Drawing.Point(242, 25);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 15);
-            this.label8.TabIndex = 28;
-            this.label8.Text = "Ime:";
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.label9.Location = new System.Drawing.Point(406, 25);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(64, 15);
-            this.label9.TabIndex = 29;
-            this.label9.Text = "Prezime:";
-            // 
-            // btnPretraziKorisnika
-            // 
-            this.btnPretraziKorisnika.Font = new System.Drawing.Font("Microsoft YaHei", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnPretraziKorisnika.Location = new System.Drawing.Point(610, 20);
-            this.btnPretraziKorisnika.Name = "btnPretraziKorisnika";
-            this.btnPretraziKorisnika.Size = new System.Drawing.Size(159, 26);
-            this.btnPretraziKorisnika.TabIndex = 30;
-            this.btnPretraziKorisnika.Text = "Pronadji korisnika";
-            this.PretragaKorisnika.SetToolTip(this.btnPretraziKorisnika, "Preciznim unosom imena i prezima korisnika,omogucena je pretraga baze podataka.");
-            this.btnPretraziKorisnika.UseVisualStyleBackColor = true;
-            this.btnPretraziKorisnika.Click += new System.EventHandler(this.btnPretraziKorisnika_Click);
             // 
             // FormAdmin
             // 

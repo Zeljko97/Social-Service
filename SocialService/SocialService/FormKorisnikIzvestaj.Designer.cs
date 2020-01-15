@@ -69,19 +69,19 @@
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.Location = new System.Drawing.Point(12, 12);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(388, 19);
+            this.label1.Size = new System.Drawing.Size(415, 46);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Upis izvestaja aktivnosti korisnika za danasnji dan:";
+            this.label1.Text = "Upis izvestaja aktivnosti korisnika za danasnji dan (za jednog korisnika unosi se" +
+    " jedan izvestaj dnevno):";
             // 
             // txtIzvestaj
             // 
             this.txtIzvestaj.BackColor = System.Drawing.Color.Beige;
             this.txtIzvestaj.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtIzvestaj.Location = new System.Drawing.Point(16, 43);
+            this.txtIzvestaj.Location = new System.Drawing.Point(12, 61);
             this.txtIzvestaj.Multiline = true;
             this.txtIzvestaj.Name = "txtIzvestaj";
             this.txtIzvestaj.Size = new System.Drawing.Size(502, 177);
@@ -125,11 +125,11 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft YaHei", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(12, 226);
+            this.label2.Location = new System.Drawing.Point(-7, 241);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(506, 19);
+            this.label2.Size = new System.Drawing.Size(525, 19);
             this.label2.TabIndex = 7;
-            this.label2.Text = "Izaberite datum, ako ne izabere,bice namesten na danasnji datum";
+            this.label2.Text = "Izaberite datum, ako ne izaberete, bice namesten na danasnji datum";
             // 
             // dateTimePicker1
             // 
@@ -155,7 +155,7 @@
             this.dataGridView1.RowHeadersWidth = 58;
             this.dataGridView1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(306, 268);
+            this.dataGridView1.Size = new System.Drawing.Size(316, 268);
             this.dataGridView1.TabIndex = 22;
             this.dataGridView1.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellDoubleClick);
             // 
